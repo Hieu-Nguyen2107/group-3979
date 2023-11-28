@@ -1,0 +1,8 @@
+form > input#pname , #pprice , #ptype{
+    width: 200px;
+    height: 20px;
+}
+form > input.submit , .reset{
+    width: 100px;
+    margin: 5px 10px;
+}
