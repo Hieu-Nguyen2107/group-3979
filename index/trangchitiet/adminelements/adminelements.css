@@ -6,3 +6,20 @@ form > input.submit , .reset{
     width: 100px;
     margin: 5px 10px;
 }
+div.icon{
+    position: absolute;
+    margin-top: 53px;
+    margin-left: 10px;
+}
+button.ti-trash{
+    color: red;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+button.ti-trash:hover{
+    background-color: pink;
+}
