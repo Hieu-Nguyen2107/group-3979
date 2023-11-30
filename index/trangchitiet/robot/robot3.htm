@@ -57,10 +57,33 @@
             <div class="product-name"><b>Mô hình Earthspark Warrior Megatron</b></div>
             <div class="product-price"><b>799,000 VNĐ</b></div>
             <div style="display: flex;justify-content: center;">
-              <button class="button-amount"><i class="ti-minus"></i></button>
+              <button class="button-amount decrease"><i class="ti-minus"></i></button>
               <input class="amount" type="text" placeholder="1">
-              <button class="button-amount"><i class="ti-plus"></i></button>
+              <button class="button-amount increase"><i class="ti-plus"></i></button>
             </div>
+              <script>
+                let increase = document.querySelector('.increase');
+                let amount = document.querySelector('.amount');
+                let decrease = document.querySelector('.decrease');
+
+                let v = 0;
+
+                increase.onclick = function(){
+                    v++;
+                    amount.value = v;
+                }
+                
+                decrease.onclick = function(){
+                    if (v == 0)
+                    {
+                        amount.value = 0;
+                    }
+                    else{
+                        v--;
+                        amount.value = v;
+                    }
+                }
+            </script>
             <div style="margin: 20px 0">
             <button class="button">Mua Ngay</button>
             <button class="button">Thêm Vào Giỏ Hàng</button>
