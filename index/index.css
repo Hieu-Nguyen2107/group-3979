@@ -19,16 +19,15 @@ html {
   background-color: black;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: nowrap;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 100%) {
   header {
     top: 0;
     left: 0;
     right: 0;
     height: 60px;
-    width: 1473px;
+    width: 100%;
     background-color: black;
     align-items: center;
     display: flex;
