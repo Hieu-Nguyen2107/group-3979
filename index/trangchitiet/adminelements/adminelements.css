@@ -49,3 +49,15 @@ div.user > img{
     border-left: none;
     border-bottom: none;
 }
+form.add-user{
+    background-color: pink;
+    margin: 10px 20px;
+    margin-right: 50px;
+    padding-left: 50px;
+    line-height: 25px;
+}
+form.add-user > input#submit , #reset{
+    margin: 10px 5px;
+    width: 40px;
+    cursor: pointer;
+}
