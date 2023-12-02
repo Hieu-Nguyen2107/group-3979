@@ -293,3 +293,18 @@ ul.function > li button:hover{
   background-color: gray;
   cursor: pointer;
 }
+button.page{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+button.page:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.page a{
+  text-decoration: none;
+  color: #000;
+}

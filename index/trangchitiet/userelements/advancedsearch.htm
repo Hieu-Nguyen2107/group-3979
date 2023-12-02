@@ -21,17 +21,19 @@
             <input type="text" id="pname" name="pname"><br/>
             <label for="ptype">Loại Sản Phẩm</label><br/>
             <select>
-                <option>Robot</option>
+                <option>ROBOT</option>
                 <option>Doll</option>
                 <option>dclg</option>
                 <option>dcvd</option>
             </select>
             <br/>
-            <label for="password">Mật Khẩu</label><br/>
-            <input type="password" id="pass" name="pass"><br/>
-            <label for="password">Nhập Lại Mật Khẩu</label><br/>
-            <input type="password" id="pass" name="pass"><br/>
-            <input type="submit" value="Đăng Ký" onclick="alert('Bạn đã đăng ký thành công !!!')">
+            <label for="price">Khoảng Giá</label><br/>
+            <input type="number" id="min" name="min" min="0" placeholder="Từ">
+            <span>-</span>
+            <input type="number" id="max" name="max" min="0" placeholder="Đến">
+            <br/>
+            <input type="submit" value="Tìm kiếm" onclick="alert('Tìm kiếm thành công !!!')">
+            <input type="reset" value="Reset">
           </form>
           <footer>
                         

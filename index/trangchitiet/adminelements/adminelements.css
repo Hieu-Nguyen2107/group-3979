@@ -23,3 +23,29 @@ button.ti-trash{
 button.ti-trash:hover{
     background-color: pink;
 }
+div.body-user{
+    display: flexbox;
+}
+div.user-row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+div.user{
+    display: flex;
+    background-color: bisque;
+    margin: 20px 20px;
+    border: 2px solid black;
+}
+div.information-user{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+div.user > img{
+    width: 150px;
+    height: 170px;
+    border: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
