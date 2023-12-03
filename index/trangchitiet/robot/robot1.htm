@@ -67,7 +67,7 @@
             <div class="product-price"><b>649,000 VNĐ</b></div>
             <div style="display: flex;justify-content: center;">
                 <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="0" readonly>
+                <input class="amount" type="text"value="1" readonly>
                 <button class="button-amount increase"><i class="ti-plus"></i></button>
             </div>
             <script>
@@ -83,9 +83,9 @@
                 }
                 
                 decrease.onclick = function(){
-                    if (v == 0)
+                    if (v == 1)
                     {
-                        amount.value = 0;
+                        amount.value = 1;
                     }
                     else{
                         v--;

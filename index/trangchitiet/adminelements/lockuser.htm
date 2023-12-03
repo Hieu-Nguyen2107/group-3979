@@ -27,6 +27,24 @@
                 margin-bottom: 10px;
             }
         </style>
+        <script>
+            function change(statusID,iconID){
+               var element = document.getElementById(iconID)
+
+               if(element.classList.contains("ti-lock"))
+               {
+                confirm("Bạn có chắc chắn muốn MỞ KHÓA tài khoản này không !!!")
+                element.classList.add("ti-unlock")
+                element.classList.remove("ti-lock")
+                document.getElementById(statusID).innerText = "Mở Khóa"
+               }else{
+                confirm("Bạn có chắc chắn muốn KHÓA tài khoản này không !!!")
+                element.classList.add("ti-lock")
+                element.classList.remove("ti-unlock")
+                document.getElementById(statusID).innerText = "Khóa"
+               }
+            }
+        </script>
     </head>
     <body> 
       <header>
@@ -56,9 +74,9 @@
                         <span class="name">Tên</span>
                         <span class="age">Tuổi</span>
                         <span class="email">Email</span>
-                        <span class="status">Trạng thái tài khoản</span>
+                        <span>Trạng thái tài khoản: <span id = "status1" class="status">Khóa</span></span>
                     </div>
-                    <button class="locknunlock" onclick="confirm('Bạn có chắc chắn muốn KHÓA tài khoản này không !!!')"><i class="ti-lock"></i></button>
+                    <button class="locknunlock" onclick="change('status1','icon1');"><i id="icon1" class="ti-lock"></i></button>
                 </div>
                 <div class="user">
                     <img src="../../productImage/doll/doll1.jpg">
@@ -66,9 +84,9 @@
                         <span class="name">Tên</span>
                         <span class="age">Tuổi</span>
                         <span class="email">Email</span>
-                        <span class="status">Trạng thái tài khoản</span>
+                        <span>Trạng thái tài khoản: <span id = "status2" class="status">Mở Khóa</span></span>
                     </div>
-                    <button class="locknunlock" onclick="confirm('Bạn có chắc chắn muốn MỞ KHÓA tài khoản này không !!!')"><i class="ti-unlock"></i></button>
+                    <button class="locknunlock" onclick="change('status2','icon2');"><i id = "icon2" class="ti-unlock"></i></button>
                 </div>
                 <div class="user">
                     <img src="../../productImage/lego/lego1.jpg">
@@ -76,9 +94,9 @@
                         <span class="name">Tên</span>
                         <span class="age">Tuổi</span>
                         <span class="email">Email</span>
-                        <span class="status">Trạng thái tài khoản</span>
+                        <span>Trạng thái tài khoản: <span id = "status3" class="status">Khóa</span></span>
                     </div>
-                    <button class="locknunlock" onclick="confirm('Bạn có chắc chắn muốn KHÓA tài khoản này không !!!')"><i class="ti-lock"></i></button>
+                    <button class="locknunlock" onclick="change('status3','icon3');"><i id = "icon3" class="ti-lock"></i></button>
                 </div>
             </div>
 
@@ -89,9 +107,9 @@
                         <span class="name">Tên</span>
                         <span class="age">Tuổi</span>
                         <span class="email">Email</span>
-                        <span class="status">Trạng thái tài khoản</span>
+                        <span>Trạng thái tài khoản: <span id = "status4" class="status">Mở Khóa</span></span>
                     </div>
-                    <button class="locknunlock" onclick="confirm('Bạn có chắc chắn muốn MỞ KHÓA tài khoản này không !!!')"><i class="ti-unlock"></i></button>
+                    <button class="locknunlock" onclick="change('status4','icon4');"><i id="icon4" class="ti-unlock"></i></button>
                 </div>
                 <div class="user">
                     <img src="../../productImage/doll/doll1.jpg">
@@ -99,9 +117,9 @@
                         <span class="name">Tên</span>
                         <span class="age">Tuổi</span>
                         <span class="email">Email</span>
-                        <span class="status">Trạng thái tài khoản</span>
+                        <span>Trạng thái tài khoản: <span id = "status5" class="status">Mở Khóa</span></span>
                     </div>
-                    <button class="locknunlock" onclick="confirm('Bạn có chắc chắn muốn MỞ KHÓA tài khoản này không !!!')"><i class="ti-unlock"></i></button>
+                    <button class="locknunlock" onclick="change('status5','icon5');"><i id = "icon5" class="ti-unlock"></i></button>
                 </div>
                 <div class="user">
                     <img src="../../productImage/lego/lego1.jpg">
@@ -109,9 +127,9 @@
                         <span class="name">Tên</span>
                         <span class="age">Tuổi</span>
                         <span class="email">Email</span>
-                        <span class="status">Trạng thái tài khoản</span>
+                        <span>Trạng thái tài khoản: <span id = "status6" class="status">Khóa</span></span>
                     </div>
-                    <button class="locknunlock" onclick="confirm('Bạn có chắc chắn muốn KHÓA tài khoản này không !!!')"><i class="ti-lock"></i></button>
+                    <button class="locknunlock" onclick="change('status6','icon6');"><i id="icon6" class="ti-lock"></i></button>
                 </div>
             </div>
 
