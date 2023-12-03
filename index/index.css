@@ -227,7 +227,6 @@ ul.footer {
     margin: 10px 50px;
     height: max-content;
     text-wrap: nowrap;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .product {
@@ -238,6 +237,7 @@ ul.footer {
     text-decoration: none;
     color: black;
     margin-inline-start: 5px;
+    margin-right: 10px;
 }
 
 .product img {
@@ -276,7 +276,7 @@ ul.footer {
 }
 ul.function > li{
   text-align: center;
-  margin: 10px;
+margin: 10px;
 }
 ul.function > li button{
   height: 50px;
@@ -292,6 +292,7 @@ ul.function > li a{
 ul.function > li button:hover{
   background-color: gray;
   cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 button.page{
   background-color: white;

@@ -51,13 +51,14 @@ div.user > img{
 }
 form.add-user{
     background-color: pink;
-    margin: 10px 20px;
-    margin-right: 50px;
     padding-left: 50px;
     line-height: 25px;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: fit-content;
 }
 form.add-user > input#submit , #reset{
     margin: 10px 5px;
-    width: 40px;
+    width: 50px;
     cursor: pointer;
 }

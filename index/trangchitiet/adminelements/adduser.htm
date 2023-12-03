@@ -12,7 +12,7 @@
         <div id="header">
           <!-- Begin nav -->
           <ul class="menubar" id="nav">
-            <li><a href="">home</a></li>
+            <li><a href="../../indexadmin.htm">home</a></li>
             <!-- Thêm phần tìm kiếm -->
   
             <!-- Thêm phần đăng nhập/đăng ký -->
@@ -25,7 +25,8 @@
           <!-- End nav -->
         </div>
       </header>
-        <h1 style="margin: 15px 20px; text-align: center;">Thêm Tài Khoản</h1>
+      <div style="display: flex;flex-direction: column;align-items: center;">
+        <h1 style="margin: 20px 0px;">Thêm Tài Khoản</h1>
         <form action="adduser.htm" class="add-user">
             <label for="username"><b>Tên</b></label><br/>
             <input type="text" id="username" name="username"><br/>
@@ -44,6 +45,7 @@
             <input id="submit" type="submit" value="Thêm" onclick="alert('Thêm tài khoản thành công !!!')">
             <input id="reset" type="reset" value="Reset">
         </form>
+      </div>
         <footer>
                         
             <ul style="margin-left: 3%;" class="footer">
