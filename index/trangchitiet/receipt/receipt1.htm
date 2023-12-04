@@ -5,7 +5,7 @@
         <title>Add Product 3979 Toys</title>
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
-        <link rel="stylesheet" href="adminelements.css" type="text/css">
+        <link rel="stylesheet" href="receipt.css" type="text/css">
     </head>
     <body>
       <header>
@@ -25,28 +25,48 @@
           <!-- End nav -->
         </div>
       </header>
-      <div style="display: flex;flex-direction: column;align-items: center;margin-block: 10%;">
-        <h1 style="margin: 20px 0px;">Thêm Tài Khoản</h1>
-        <form action="adduser.htm" class="add-user">
-            <label for="username"><b>Tên</b></label><br/>
-            <input type="text" id="username" name="username"><br/>
-            <label for="username"><b>Tuổi</b></label><br/>
-            <select>
-              <script>
-                for(i = 1 ; i < 100 ;i++){
-                  document.write("<option value = "+i+">"+ i + "</option>");
-                }
-              </script>
-            </select><br/>
-            <label for="username"><b>Email</b></label><br/>
-            <input type="text" id="useremail" name="useremail"><br/>
-            <label for="avatar"><b>Hình ảnh</b></label><br/>
-            <input type="file" id="avatar" name="avatar" accept="img/png, img/jpeg"><br/>
-            <input id="submit" type="submit" value="Thêm" onclick="alert('Thêm tài khoản thành công !!!')">
-            <input id="reset" type="reset" value="Reset">
-        </form>
+      <div class="body-receipt">
+        <div id="code"><h1>MÃ ĐƠN HÀNG: #001</h1></div>
+        <div class="user-information">
+            <div><i class="ti-user"></i><b>Thông tin khách hàng</b></div>
+            <div id="information">
+                Name    <br/>
+                Phone   <br/>
+                Address <br/>
+            </div>
+        </div>
+        <div id="receipt-list">
+
+            <div id="product">
+                <img src="../../productImage/robot/robot1.jpg">
+                <div id="name">
+                    Robot chú chó tinh nghịch
+                </div>
+                <div id="detail">
+                    <span id="amount">x1</span> <br/>
+                    <span id="price-container"><b>&#8363 <span id="price">649,000</span></b></span>
+                </div>
+            </div>
+
+            <div id="product">
+                <img src="../../productImage/robot/robot2.jpg">
+                <div id="name">
+                    Mô hình Earthspark Warrior Thrash
+                </div>
+                <div id="detail">
+                    <span id="amount">x1</span> <br/>
+                    <span id="price-container"><b>&#8363 <span id="price">799,000</span></b></span>
+                </div>
+            </div>
+
+            <div id="sum">
+                <span id="logo"><b><i class="ti-money"></i>Thành tiền:</b></span>  <br/>
+                <span id="total-price">&#8363 1,448,000</span>
+            </div>
       </div>
-        <footer>
+      <a class="back-button" href=""><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>
+      </div>
+        <footer style="margin-top: 250px;">
                         
             <ul style="margin-left: 3%;" class="footer">
                 <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>

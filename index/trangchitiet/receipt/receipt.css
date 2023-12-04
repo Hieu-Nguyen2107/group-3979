@@ -1,0 +1,63 @@
+div.user-information{
+    border: 4px solid salmon;
+    border-radius: 6px;
+    margin: 15px 20px;
+}
+div#code{
+    margin: 15px;
+}
+div > i.ti-user{
+    margin: 0px 5px;
+}
+div#information{
+    margin: 7px;
+    margin-left: 16px;
+    line-height: 20px;
+    color: rgb(89, 86, 86);
+}
+div#receipt-list{
+    display: flex;
+    flex-direction: column;
+}
+div#product{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 13px 0px 13px 16px;
+    margin: 10px 30px 10px 15px;
+}
+div#product > img{
+    width: 160px;
+    border: 2px solid rgb(183, 179, 179);
+    border-radius: 3px;
+}
+span#price-container{
+    color: orangered;
+}
+div#name{
+    margin-left: 20px;
+    font-size: larger;
+}
+div#detail{
+    text-align: right;
+    margin-left: auto;
+    align-self: flex-end;
+    margin-right: 20px;
+    font-size: larger;
+}
+div#sum{
+    font-size: larger;
+    text-align: right;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+div#sum #logo{
+    color: orangered;
+}
+#total-price{
+    text-decoration: underline;
+}
+.back-button > button{
+    padding: 15px;
+    margin: 15px 20px;
+}

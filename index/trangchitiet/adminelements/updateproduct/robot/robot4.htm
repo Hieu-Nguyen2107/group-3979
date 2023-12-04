@@ -100,31 +100,6 @@
         <input class="amount" type="text" value="1" readonly>
         <button class="button-amount increase"><i class="ti-plus"></i></button>
       </div>
-        <script>
-          let increase = document.querySelector('.increase');
-          let amount = document.querySelector('.amount');
-          let decrease = document.querySelector('.decrease');
-
-          let v = 0;
-
-          increase.onclick = function(){
-              v++;
-              amount.value = v;
-          }
-          
-          decrease.onclick = function(){
-            if(amount.value != 1){
-              if (v == 1)
-              {
-                  amount.value = 1;
-              }
-              else{
-                  v--;
-                  amount.value = v;
-              }
-          }
-          }
-      </script>
       <div style="margin: 20px 0">
       <button class="button">Mua Ngay</button>
       <button class="button">Thêm Vào Giỏ Hàng</button>
