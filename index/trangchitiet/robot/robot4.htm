@@ -11,17 +11,17 @@
   <div id="header">
     <!-- Begin nav -->
     <ul class="menubar" id="nav">
-      <li><a href="">home</a></li>
+      <li><a href="../../index.htm">home</a></li>
       <li>
         <a href="">
           product
           <i class="nav-arrow-down ti-angle-down"></i>
         </a>
         <ul class="subnav">
-          <li><a href="">ROBOT</a></li>
-          <li><a href="">BÚP BÊ</a></li>
-          <li><a href="">ĐỒ CHƠI LẮP GHÉP</a></li>
-          <li><a href="">ĐỒ CHƠI VẬN ĐỘNG</a></li>
+          <li><a href="../phanloaisanpham/robot.htm">ROBOT</a></li>
+          <li><a href="../phanloaisanpham/doll.htm">BÚP BÊ</a></li>
+          <li><a href="../phanloaisanpham/lego.htm">ĐỒ CHƠI LẮP GHÉP</a></li>
+          <li><a href="../phanloaisanpham/dcvd.htm">ĐỒ CHƠI VẬN ĐỘNG</a></li>
         </ul>
       </li>
       <li><a href="">about us</a></li>
@@ -65,9 +65,9 @@
   <div style="max-width: fit-content;">
       <div class="product-name"><b>Đồ chơi Robot biến hình Xe xúc VECTO VT34 </b></div>
       <div class="product-price"><b>129,000 VNĐ</b></div>
-      <div style="display: flex;justify-content: center;">
+      <div style="display: flex;margin-left: 30px;">
         <button class="button-amount decrease"><i class="ti-minus"></i></button>
-        <input class="amount" type="text" value="0" readonly>
+        <input class="amount" type="text" value="1" readonly>
         <button class="button-amount increase"><i class="ti-plus"></i></button>
       </div>
         <script>
@@ -83,14 +83,16 @@
           }
           
           decrease.onclick = function(){
-              if (v == 0)
+            if(amount.value != 1){
+              if (v == 1)
               {
-                  amount.value = 0;
+                  amount.value = 1;
               }
               else{
                   v--;
                   amount.value = v;
               }
+          }
           }
       </script>
       <div style="margin: 20px 0">
@@ -101,7 +103,7 @@
       <div style="line-height: 30px;"> <!--Describe-->
           <p><b>Mô Tả Sản Phẩm</b><p>
           <p>
-              <h3>Đồ Chơi Robot Biến Hình Xe Xúc VECTO VT34/YL</h3>
+              <h3>Đồ Chơi Robot Biến Hình Xe Xúc VECTO VT34</h3>
               Robot biến hình thành Xe xúc từ VECTO – Món đồ chơi biến hình siêu thú vị dành cho các bé trai, và giúp bé rèn luyện vận động tinh cực bổ ích.
 
               <br>
