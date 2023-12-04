@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../../../index.css" type="text/css">
+        <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
+        <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <style>
+            i.ti-pencil{
+                border: 1px solid black;
+                border-radius: 3px;
+                cursor: pointer;
+                color: black;
+            }
+            i.ti-pencil:hover{
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+                <li>
+                  <a href="">
+                    product
+                    <i class="nav-arrow-down ti-angle-down"></i>
+                  </a>
+                  <ul class="subnav">
+                    <li><a href="../phanloaisanpham/robot.htm">ROBOT</a></li>
+                    <li><a href="../phanloaisanpham/doll.htm">BÚP BÊ</a></li>
+                    <li><a href="../phanloaisanpham/lego.htm">ĐỒ CHƠI LẮP GHÉP</a></li>
+                    <li><a href="../phanloaisanpham/dcvd.htm">ĐỒ CHƠI VẬN ĐỘNG</a></li>
+                  </ul>
+                </li>
+                <li><a href="">about us</a></li>
+                <!-- Thêm phần tìm kiếm -->
+                <li>
+                  <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm..." />
+                    <a href="">
+                      <button type="button" id="search-button">Tìm kiếm</button>
+                    </a>
+                  </div>
+                </li>
+      
+                <div class="search-advanced-container">
+                  <a href="">
+                    <button id="search-advanced-button">Tìm kiếm nâng cao</button>
+                  </a>
+                </div>
+      
+                <!-- Thêm phần đăng nhập/đăng ký -->
+                <div class="user-container">
+                  <a href="" class="login-link">Đăng nhập</a>
+                  <a href="" class="register-link">Đăng ký</a>
+                  <i class="user-icon ti-user"></i>
+                </div>
+      
+                <!-- Thêm phần giỏ hàng -->
+                   <div class="cart-container">
+                  <a href="" class="cart-icon ti-shopping-cart"></a>
+                  <span class="cart-count"></span>
+                </div>
+              </ul>
+              <!-- End nav -->
+            </div>
+          </header> 
+        <div style="display: flex;margin-top: 40px;">
+        <div class="img-product">
+            <img class="img-chitiet" src="../../../../productImage/dochoivandong/dcvd3.jpg">
+            <div class="add-img">
+                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                    <img src="../../../../productImage/dochoivandong/dcvd3.jpg">
+                    <div class="ti-trash"></div>
+                </div>
+                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                    <div class="bgadd"></div>
+                    <div class="ti-plus"></div>
+                </div>
+                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                    <div class="bgadd"></div>
+                    <div class="ti-plus"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+        <div style="max-width: fit-content;">
+            <div class="product-name"><b>Máy gắp thú kích thước lớn có đèn và nhạc CHAMPION GAMES CPG76 </b>
+                <i class="ti-pencil"></i>
+            </div>
+            <div class="product-price"><b>699,000 VNĐ</b>
+                <i class="ti-pencil"></i>
+            </div>
+            <div style="display: flex;margin-left: 30px;">
+                <button class="button-amount decrease"><i class="ti-minus"></i></button>
+                <input class="amount" type="text"value="1" readonly>
+                <button class="button-amount increase"><i class="ti-plus"></i></button>
+            </div>
+            <script>
+                let increase = document.querySelector('.increase');
+                let amount = document.querySelector('.amount');
+                let decrease = document.querySelector('.decrease');
+
+                let v = 0;
+
+                increase.onclick = function(){
+                    v++;
+                    amount.value = v;
+                }
+                
+                decrease.onclick = function(){
+                    if(amount.value != 1){
+                    if (v == 1)
+                    {
+                        amount.value = 1;
+                    }
+                    else{
+                        v--;
+                        amount.value = v;
+                    }
+                }
+                }
+            </script>
+            <div style="margin: 20px 0">
+            <button class="button" onclick="alert('Bạn chưa đăng nhập !!!')">Mua Ngay</button>
+            <button class="button">Thêm Vào Giỏ Hàng</button>
+            </div>
+        </div>
+            <div style="line-height: 30px;"> <!--Describe-->
+                <p><b>Mô Tả Sản Phẩm</b>
+                    <i class="ti-pencil"></i>
+                    <p>
+                <p>
+                <h3>Đồ Chơi Máy Gắp Thú Kích Thước Lớn Có Đèn Và Nhạc CHAMPION GAMES CPG762</h3>
+                
+
+Máy gắp thú kích thước lớn có đèn và nhạc là máy mô phỏng trò chơi gắp thú tại các khu vui chơi.
+<br>
+- Với cơ chế hoạt động y như máy thật, bé chỉ cần bỏ đồng xu vào máy, khởi động và gắp những con thú xinh xắn. Khi gắp thành công, máy sẽ có âm thanh và đèn chúc mừng.
+<br>
+- Bé có thể phối hợp khéo léo giữa tay và mắt khi chơi. Đồng thời rèn luyện trí não để tìm cách gắp được con thú mà bé yêu thích
+<br>
+- Bé có thể chơi cùng bạn bè, gia đình để so tài gắp banh để thêm gắn kết tình cảm với mọi người.
+<br>
+Chú ý: Nạp xu để kích hoạt máy vận hành. 1 xu có thể vận hành máy trong khoảng 1 phút, khi hết thời gian này, máy sẽ ngừng hoạt động. Cần bỏ thêm xu để máy hoạt động trở lại.
+
+
+                
+              
+                </p>
+            </div>
+        </div>
+        </div>
+        <footer>
+            <ul style="margin-left: 3%;" class="footer">
+                <li class="footer-data"><img src="../../../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
+                <li class="footer-data"><img src="../../../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
+                <li class="footer-data"><img src="../../../../addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
+                <li class="footer-data"><img src="../../../../timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
+            </ul>
+            <div style="margin-left: 10%;">
+            <p class="footer-data" style="margin-bottom: 5%;"><img src="../../../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
+            <img src="../../../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+            <img src="../../../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+            <img src="../../../../youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+            </div>
+            <img src="../../../../bocongthuong.png" style="margin-left: 10%;">
+        </footer>
+    </body>
+</html> 
