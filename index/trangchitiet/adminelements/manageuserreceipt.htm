@@ -7,13 +7,40 @@
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
+        <script>
+
+          // window.onload = function(){
+          //   sessionStorage.removeItem('IsThisFirstTime_Log_From_LiveServer');
+          //   for (i = 0; i < sessionStorage.length ; i++){
+          //     x = sessionStorage.key(i);
+          //     y = sessionStorage.getItem(x);
+          //     check(x,y);
+          //   }
+          // }
+
+          function check(receipt,status) {
+            if(!!sessionStorage)
+            {
+              let parent = document.getElementById(receipt);
+              var target;
+              if ( status == 'processed'){
+                parent.querySelector('#processed').style.textDecoration = "underline";
+                parent.querySelector('#notprocessed').style.textDecoration = "none";
+              }else{
+                parent.querySelector('#processed').style.textDecoration = "none";
+                parent.querySelector('#notprocessed').style.textDecoration = "underline";
+              }
+              sessionStorage.setItem(receipt,status);
+            }
+          }
+        </script>
     </head>
     <body>
       <header>
         <div id="header">
           <!-- Begin nav -->
           <ul class="menubar" id="nav">
-            <li><a href="../../indexadmin.htm">home</a></li>
+            <li><a href="../../indexadmin.htm" onclick="">home</a></li>
             <!-- Thêm phần tìm kiếm -->
   
             <!-- Thêm phần đăng nhập/đăng ký -->
@@ -38,7 +65,8 @@
           </select>
           <button class="ti-search" style="padding: 5px;"></button>
         </form>
-        <div class="receipt">
+
+        <div id="receipt1" class="receipt">
           <span id="code">MÃ ĐƠN HÀNG #001
             <a href="../receipt/receipt1.htm">Xem thông tin đơn hàng</a>
           </span>
@@ -49,11 +77,11 @@
               Phone: 0909090909  <br/>
               Address: 333 Võ Văn Kiệt, Quận 5, Thành phố Hồ Chí Minh<br/>
             </span>
-            <span id="receipt-status">Trạng thái đơn hàng: Chưa xử lý</span>
+            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt1','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt1','notprocessed')">Chưa xử lý</span></span>
           </span>
         </div>
 
-        <div class="receipt">
+        <div id="receipt2" class="receipt">
           <span id="code">MÃ ĐƠN HÀNG #002
             <a href="../receipt/receipt2.htm">Xem thông tin đơn hàng</a>
           </span>
@@ -64,11 +92,11 @@
                 Phone: 0937898989  <br/>
                 Address: 898 Linh Đông, Thành phố Thủ Đức <br/>
             </span>
-            <span id="receipt-status">Trạng thái đơn hàng: Đã xử lý</span>
+            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt2','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt2','notprocessed')">Chưa xử lý</span></span>
           </span>
         </div>
 
-        <div class="receipt">
+        <div id="receipt3" class="receipt">
           <span id="code">MÃ ĐƠN HÀNG #003
             <a href="../receipt/receipt3.htm">Xem thông tin đơn hàng</a>
           </span>
@@ -79,11 +107,11 @@
               Phone: 0956789101  <br/>
               Address: 345 Tên Lửa, Quận Bình Tân, Thành phố Hồ Chí Minh <br/>
             </span>
-            <span id="receipt-status">Trạng thái đơn hàng: Chưa xử lý</span>
+            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt3','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt3','notprocessed')">Chưa xử lý</span></span>
           </span>
         </div>
 
-        <div class="receipt">
+        <div id="receipt4" class="receipt">
           <span id="code">MÃ ĐƠN HÀNG #004
             <a href="../receipt/receipt4.htm">Xem thông tin đơn hàng</a>
           </span>
@@ -94,11 +122,11 @@
               Phone: 0911311322  <br/>
               Address: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
             </span>
-            <span id="receipt-status">Trạng thái đơn hàng: Chưa xử lý</span>
+            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt4','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt4','notprocessed')">Chưa xử lý</span></span>
           </span>
         </div>
 
-        <div class="receipt">
+        <div id="receipt5" class="receipt">
           <span id="code">MÃ ĐƠN HÀNG #005
             <a href="../receipt/receipt5.htm">Xem thông tin đơn hàng</a>
           </span>
@@ -109,12 +137,13 @@
               Phone: 0916665668   <br/>
               Address: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
             </span>
-            <span id="receipt-status">Trạng thái đơn hàng: Đã xử lý</span>
+            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt5','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt5','notprocessed')">Chưa xử lý</span></span>
           </span>
         </div>
 
       </div>
-        <footer style="margin-top: 200px;">
+      <div style="display: block;margin-top: auto;">
+        <footer>
                         
             <ul style="margin-left: 3%;" class="footer">
                 <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
@@ -130,5 +159,6 @@
             </div>
             <img src="../../bocongthuong.png" style="margin-left: 10%;">
         </footer>
+      </div>
     </body>
 </html>

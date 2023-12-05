@@ -114,6 +114,9 @@ span#receipt-status{
     align-self: center;
     margin-right: 7px;
 }
+span#receipt-status > span{
+    cursor: pointer;
+}
 span#code{
     background-color: rgb(243, 156, 199);
     color: white;

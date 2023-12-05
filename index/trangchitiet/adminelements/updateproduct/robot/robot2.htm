@@ -5,17 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
-        <style>
-            i.ti-pencil{
-                border: 1px solid black;
-                border-radius: 3px;
-                cursor: pointer;
-                color: black;
-            }
-            i.ti-pencil:hover{
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            }
-        </style>
+        <script src="../update.js"></script>
     </head>
     <body>
       <header>
@@ -35,79 +25,80 @@
         </div>
       </header> 
         <div style="display: flex;margin-top: 40px;">
-        <div class="img-product">
-            <img class="img-chitiet" src="../../../../productImage/robot/robot2.jpg">
-            <div class="add-img">
-                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-                    <img src="../../../../productImage/robot/robot2.jpg">
-                    <div class="ti-trash"></div>
+            <div class="img-product">
+                <img class="img-chitiet" src="../../../../productImage/robot/robot2.jpg">
+                <div class="add-img">
+                    <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                        <img src="../../../../productImage/robot/robot2.jpg">
+                        <div class="ti-trash"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
                 </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
-                </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
-                </div>
             </div>
-        </div>
-        <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Mô hình Earthspark Warrior Thrash</b>
-                <i class="ti-pencil"></i> 
-            </div>
-            <div class="product-price"><b>799,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-              <button class="button-amount decrease"><i class="ti-minus"></i></button>
-              <input class="amount" type="text" value="1" readonly>
-              <button class="button-amount increase"><i class="ti-plus"></i></button>            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b>
-                    <i class="ti-pencil"></i>
-                    <p>
-                <p>
-                    <h3>Đồ Chơi Mô Hình Earthspark Warrior Thrash TRANSFORMERS F6729/F6230</h3>
-                    Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.
 
-                    <br>
-                    
-                    Đồ chơi siêu robot Transformers gây ấn tượng với những đặc điểm nổi bật sau đây:
-                    <br>
-                    <ul style="margin-left: 30px;">
-                    <li>Sản phẩm phù hợp cho các bé nam có độ tuổi từ 6 tuổi trở lên.</li>
-                    <li>Sở hữu thiết kế mô phỏng theo các nhân vật trong phim, không sản xuất hàng loạt theo một khuôn đúc. Từ khuôn mặt, vóc dáng, màu da cho đến trang phục, phụ kiện đều rất tinh tế, đẹp mắt.</li>
-                    <li>Mô hình có thể lắp hình nhân vật robot hoặc xe chỉ trong vài bước lắp ráp. Điều này giúp tăng cường phát triển trí tuệ cũng như khả năng tư duy.</li>
-                    <li>Sản phẩm làm từ nhựa cao cấp hoàn toàn không có chất kích ứng gây hại cho bé.</li>
-                    <li>Các góc cạnh được bo tròn với bề mặt nhẵn tạo sự an toàn, không làm trầy xước da khi bé chơi</li>
-                    <li>Đồ chơi giúp bé sẽ được thỏa thích chơi đùa, trò chuyện hoặc chơi nhập vai cùng người bạn Transformers yêu thích của mình. Từ đó kích thích trí tưởng tượng và sáng tạo của trẻ bay cao bay xa.</li>
-                    </ul>
-                </p>
+            <div>
+
+                <div class="edit">
+                    <div>
+                        <i class="ti-pencil" onclick="update('body')"></i>
+                        <i class="ti-save" onclick="save('body')"></i>
+                    </div>
+                </div>
+
+                <div id="body" contenteditable="false">
+                    <div style="max-width: fit-content;">
+                        <div class="product-name"><b>Mô hình Earthspark Warrior Thrash</b>
+                        </div>
+                        <div class="product-price"><b>799,000 VNĐ</b>
+                        </div>
+                    </div>
+                    <div style="line-height: 30px;"> <!--Describe-->
+                        <p><b>Mô Tả Sản Phẩm</b>
+                            <p>
+                        <p>
+                            <h3>Đồ Chơi Mô Hình Earthspark Warrior Thrash TRANSFORMERS F6729/F6230</h3>
+                            Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.
+
+                            <br>
+                            
+                            Đồ chơi siêu robot Transformers gây ấn tượng với những đặc điểm nổi bật sau đây:
+                            <br>
+                            <ul style="margin-left: 30px;">
+                            <li>Sản phẩm phù hợp cho các bé nam có độ tuổi từ 6 tuổi trở lên.</li>
+                            <li>Sở hữu thiết kế mô phỏng theo các nhân vật trong phim, không sản xuất hàng loạt theo một khuôn đúc. Từ khuôn mặt, vóc dáng, màu da cho đến trang phục, phụ kiện đều rất tinh tế, đẹp mắt.</li>
+                            <li>Mô hình có thể lắp hình nhân vật robot hoặc xe chỉ trong vài bước lắp ráp. Điều này giúp tăng cường phát triển trí tuệ cũng như khả năng tư duy.</li>
+                            <li>Sản phẩm làm từ nhựa cao cấp hoàn toàn không có chất kích ứng gây hại cho bé.</li>
+                            <li>Các góc cạnh được bo tròn với bề mặt nhẵn tạo sự an toàn, không làm trầy xước da khi bé chơi</li>
+                            <li>Đồ chơi giúp bé sẽ được thỏa thích chơi đùa, trò chuyện hoặc chơi nhập vai cùng người bạn Transformers yêu thích của mình. Từ đó kích thích trí tưởng tượng và sáng tạo của trẻ bay cao bay xa.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
-        </div>
-        <footer style="margin-top: 5%;">
-            <ul style="margin-left: 3%;" class="footer">
-                <li class="footer-data"><img src="../../../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
-                <li class="footer-data"><img src="../../../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
-                <li class="footer-data"><img src="../../../../addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
-                <li class="footer-data"><img src="../../../../timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
-                <li class="footer-data"></li>
-            </ul>
-            <div style="margin-left: 10%;">
-            <p class="footer-data" style="margin-bottom: 5%;"><img src="../../../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
-            <img src="../../../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            <img src="../../../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            <img src="../../../../youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            </div>
-            <img src="../../../../bocongthuong.png" style="margin-left: 10%;">
-        </footer>
+            <footer>
+                <ul style="margin-left: 3%;" class="footer">
+                    <li class="footer-data"><img src="../../../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
+                    <li class="footer-data"><img src="../../../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
+                    <li class="footer-data"><img src="../../../../addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
+                    <li class="footer-data"><img src="../../../../timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
+                    <li class="footer-data"></li>
+                </ul>
+                <div style="margin-left: 10%;">
+                <p class="footer-data" style="margin-bottom: 5%;"><img src="../../../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
+                <img src="../../../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+                <img src="../../../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+                <img src="../../../../youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+                </div>
+                <img src="../../../../bocongthuong.png" style="margin-left: 10%;">
+            </footer>
     </body>
 </html>

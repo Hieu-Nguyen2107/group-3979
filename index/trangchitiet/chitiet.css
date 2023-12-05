@@ -93,8 +93,35 @@ input.amount{
     border: 2px solid black;
     border-radius: 4px;
 }
-/* footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  } */
+div#body{
+    position: relative;
+    margin-bottom: 30px;
+}
+div.edit{
+    margin-bottom: 10px;
+    display: flex;
+}
+div.edit > div:nth-child(1){
+    margin-left: auto;
+    margin-right: 30px;
+}
+i.ti-pencil{
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    color: black;
+}
+i.ti-pencil:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+i.ti-save{
+    border-radius: 3px;
+    cursor: pointer;
+    color: black;
+}
+i.ti-save:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+i.ti-pencil , i.ti-save{
+    font-size: 30px;
+}
