@@ -7,6 +7,13 @@
 
 html {
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #header {
@@ -178,15 +185,16 @@ html {
 }
 
 footer {
-    position: relative;
+    position: relative; 
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     background-color: black;
     overflow-x: hidden;
-    margin-top: 30px;
+    align-items: flex-start;
     padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: auto;
+    overflow-y: hidden;
 }
 
 ul.footer {
@@ -276,14 +284,15 @@ ul.footer {
 }
 ul.function > li{
   text-align: center;
-margin: 10px;
+  margin: 10px;
 }
 ul.function > li button{
   height: 50px;
-  width: 200px;
+  width: 400px;
   border: 1px solid black;
   border-radius: 2px;
   background-color: white;
+  font-size: larger;
 }
 ul.function > li a{
   text-decoration: none;
@@ -298,9 +307,10 @@ button.page{
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
-  width: 30px;
+  width: 40px;
   height: 30px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 button.page:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -308,4 +318,8 @@ button.page:hover{
 .page a{
   text-decoration: none;
   color: #000;
+}
+ul.function{
+  list-style-type: none;
+  margin-top: 50px;
 }

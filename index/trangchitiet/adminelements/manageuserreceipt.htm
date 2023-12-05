@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
+        <link rel="stylesheet" href="../chitiet.css" type="text/css">
     </head>
     <body>
       <header>
@@ -25,8 +26,95 @@
           <!-- End nav -->
         </div>
       </header>
+      <div class="body-manageuserreceipt">
+        <h1 style="text-align: center;margin-top: 20px;margin-bottom: 25px;">Quản Lý Đơn Hàng</h1>
+        <form name="frm">
+          <span style="margin-left: 10px;"><b>Khoảng thời gian: </b></span>
+          <input type="number" id="time" name="time" min="1" placeholder="1" style="width: 50px;">
+          <select name="slt">
+            <option>Ngày</option>
+            <option>Tháng</option>
+            <option>Năm</option>
+          </select>
+          <button class="ti-search" style="padding: 5px;"></button>
+        </form>
+        <div class="receipt">
+          <span id="code">MÃ ĐƠN HÀNG #001
+            <a href="../receipt/receipt1.htm">Xem thông tin đơn hàng</a>
+          </span>
 
-        <footer style="margin-top: 250px;">
+          <span id="status">     
+            <span id="receipt-inform">     
+              Name: Lê Đức Anh    <br/>
+              Phone: 0909090909  <br/>
+              Address: 333 Võ Văn Kiệt, Quận 5, Thành phố Hồ Chí Minh<br/>
+            </span>
+            <span id="receipt-status">Trạng thái đơn hàng: Chưa xử lý</span>
+          </span>
+        </div>
+
+        <div class="receipt">
+          <span id="code">MÃ ĐƠN HÀNG #002
+            <a href="../receipt/receipt2.htm">Xem thông tin đơn hàng</a>
+          </span>
+
+          <span id="status">     
+            <span id="receipt-inform">     
+              Name: Nguyễn Thành Việt    <br/>
+                Phone: 0937898989  <br/>
+                Address: 898 Linh Đông, Thành phố Thủ Đức <br/>
+            </span>
+            <span id="receipt-status">Trạng thái đơn hàng: Đã xử lý</span>
+          </span>
+        </div>
+
+        <div class="receipt">
+          <span id="code">MÃ ĐƠN HÀNG #003
+            <a href="../receipt/receipt3.htm">Xem thông tin đơn hàng</a>
+          </span>
+
+          <span id="status">     
+            <span id="receipt-inform">     
+              Name: Trần Minh Quân   <br/>
+              Phone: 0956789101  <br/>
+              Address: 345 Tên Lửa, Quận Bình Tân, Thành phố Hồ Chí Minh <br/>
+            </span>
+            <span id="receipt-status">Trạng thái đơn hàng: Chưa xử lý</span>
+          </span>
+        </div>
+
+        <div class="receipt">
+          <span id="code">MÃ ĐƠN HÀNG #004
+            <a href="../receipt/receipt4.htm">Xem thông tin đơn hàng</a>
+          </span>
+
+          <span id="status">     
+            <span id="receipt-inform">     
+              Name: Trương Lê Gia Hưng    <br/>
+              Phone: 0911311322  <br/>
+              Address: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
+            </span>
+            <span id="receipt-status">Trạng thái đơn hàng: Chưa xử lý</span>
+          </span>
+        </div>
+
+        <div class="receipt">
+          <span id="code">MÃ ĐƠN HÀNG #005
+            <a href="../receipt/receipt5.htm">Xem thông tin đơn hàng</a>
+          </span>
+
+          <span id="status">     
+            <span id="receipt-inform">     
+              Name: Phạm Ngọc Triều  <br/>
+              Phone: 0916665668   <br/>
+              Address: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
+            </span>
+            <span id="receipt-status">Trạng thái đơn hàng: Đã xử lý</span>
+          </span>
+        </div>
+
+      </div>
+        <footer style="margin-top: 200px;">
                         
             <ul style="margin-left: 3%;" class="footer">
                 <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>

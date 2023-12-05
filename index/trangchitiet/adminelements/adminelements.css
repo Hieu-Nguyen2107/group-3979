@@ -32,14 +32,17 @@ div.user-row{
 }
 div.user{
     display: flex;
-    background-color: bisque;
+    background-color: rgb(200, 213, 216);
     margin: 20px 20px;
     border: 2px solid black;
 }
 div.information-user{
     display: flex;
+    font-size: 18px;
+    font-style: inherit;
     flex-direction: column;
-    margin-left: 8px;
+    margin-left: 35px;
+    margin-top: 30px;
 }
 div.user > img{
     width: 150px;
@@ -92,4 +95,38 @@ div#ava-delete:hover i.ti-pencil{
 }
 div#ava-delete:hover img{
     opacity: 0.6;
+}
+div.body-managereceipt{
+    display: flex;
+}
+div.receipt{
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    border-radius: 4px;
+    margin: 20px 20px;
+}
+span#status{
+    display: flex;
+}
+span#receipt-status{
+    margin-left: auto;
+    align-self: center;
+    margin-right: 7px;
+}
+span#code{
+    background-color: rgb(243, 156, 199);
+    color: white;
+    border-bottom: 2px solid black;
+    display: flex;
+    padding: 5px 5px;
+}
+span#code > a{
+    text-decoration: underline;
+    color: #000;
+    margin-left: auto;
+    margin-right: 5px;   
+}
+span#receipt-inform{
+    margin: 9px;
 }

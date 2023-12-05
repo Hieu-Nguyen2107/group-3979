@@ -5,15 +5,14 @@
         <title>Add Product 3979 Toys</title>
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
-        <link rel="stylesheet" href="adminelements.css" type="text/css">
-        <link rel="stylesheet" href="../chitiet.css" type="text/css">
+        <link rel="stylesheet" href="receipt.css" type="text/css">
     </head>
     <body>
       <header>
         <div id="header">
           <!-- Begin nav -->
           <ul class="menubar" id="nav">
-            <li><a href="../../indexadmin.htm">home</a></li>
+            <li><a href="../adminelements/manageuserreceipt.htm">home</a></li>
             <!-- Thêm phần tìm kiếm -->
   
             <!-- Thêm phần đăng nhập/đăng ký -->
@@ -26,26 +25,49 @@
           <!-- End nav -->
         </div>
       </header>
-      <div>
-        <h1 style="margin: 30px 15px;text-align: center;">Tình Hình Kinh Doanh</h1>
-        <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
-            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;">
-            <label for="ptype"><b>Loại sản phẩm: </b></label>
-            <select>
-                <option>ROBOT</option>
-                <option>BÚP BÊ</option>
-                <option>ĐỒ CHƠI LẮP GHÉP</option>
-                <option>ĐỒ CHƠI VẬN ĐỘNG</option>
-            </select>
-            <label for="time" style="margin-left: 20px;"><b>Khoảng thời gian: </b></label>
-            <input type="number" id="num" name="num" placeholder="1" min="1" max="100" style="width: 60px;">
-            <select>
-                <option>Ngày</option>
-                <option>Tháng</option>
-                <option>Năm</option>
-            </select>
-            <input type="submit" value="Tìm">
-        </form>
+      <div class="body-receipt">
+        <h1 style="text-align: center;margin: 20px 10px;">Thông Tin Đơn Hàng</h1>
+        <div id="code"><h1>MÃ ĐƠN HÀNG: #002</h1></div>
+        <div class="user-information">
+            <div><i class="ti-user"></i><b>Thông tin khách hàng</b></div>
+            <div id="information">
+                Name: Nguyễn Thành Việt    <br/>
+                Phone: 0937898989  <br/>
+                Address: 898 Linh Đông, Thành phố Thủ Đức <br/>
+            </div>
+        </div>
+        <div id="receipt-list">
+
+            <div id="product">
+                <img src="../../productImage/doll/doll3.jpg">
+                <div id="name">
+                   MLP Quả trứng kỳ diệu
+                </div>
+                <div id="detail">
+                    <span id="amount">x1</span> <br/>
+                    <span>&#8363 69,000 VNĐ</span> <br/>
+                    <span id="price-container"><b>Tổng cộng: &#8363 <span id="price">69,000 VNĐ</span></b></span>
+                </div>
+            </div>
+
+            <div id="product">
+                <img src="../../productImage/robot/robot3.jpg">
+                <div id="name">
+                    Mô hình Earthspark Warrior Megatron
+                </div>
+                <div id="detail">
+                    <span id="amount">x1</span> <br/>
+                    <span>&#8363 799,000 VNĐ</span> <br/>
+                    <span id="price-container"><b>Tổng cộng: &#8363 <span id="price">799,000 VNĐ</span></b></span>
+                </div>
+            </div>
+
+            <div id="sum">
+                <span id="logo"><b><i class="ti-money"></i>Thành tiền:</b></span>  <br/>
+                <span id="total-price">&#8363 868,000 VNĐ</span>
+            </div>
+      </div>
+      <a class="back-button" href="../adminelements/manageuserreceipt.htm"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>
       </div>
         <footer style="margin-top: 250px;">
                         
