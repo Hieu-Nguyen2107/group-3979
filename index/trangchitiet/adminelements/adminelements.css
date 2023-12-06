@@ -109,7 +109,7 @@ div.receipt{
 span#status{
     display: flex;
 }
-span#receipt-status{
+span#receipt-status , span#receipt-total{
     margin-left: auto;
     align-self: center;
     margin-right: 7px;
@@ -132,4 +132,22 @@ span#code > a{
 }
 span#receipt-inform{
     margin: 9px;
+}
+div#body-frame{
+    display: block;
+}
+div.body-statistics{
+    display: none;
+}
+div.container-statistics{
+    display: flex;
+    flex-direction: column;
+}
+span#total{
+    margin-left: auto;
+    margin-right: 30px;
+}
+span#result{
+    margin: 20px 0px 10px 20px;
+    line-height: 20px;
 }

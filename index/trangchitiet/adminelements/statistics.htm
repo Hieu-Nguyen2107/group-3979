@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
+        <script src="admin.js"></script>
     </head>
     <body>
       <header>
@@ -27,11 +28,14 @@
         </div>
       </header>
       <div>
+
         <h1 style="margin: 30px 15px;text-align: center;">Tình Hình Kinh Doanh</h1>
         <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
-            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;">
-            <label for="ptype"><b>Loại sản phẩm: </b></label>
-            <select>
+            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics'); return false;">
+            <label for="pname"><b>Tên sản phẩm: </b></label>
+            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm">
+            <label for="ptype" style="margin-left: 20px;"><b>Loại sản phẩm: </b></label>
+            <select name="ptype">
                 <option>ROBOT</option>
                 <option>BÚP BÊ</option>
                 <option>ĐỒ CHƠI LẮP GHÉP</option>
@@ -39,13 +43,65 @@
             </select>
             <label for="time" style="margin-left: 20px;"><b>Khoảng thời gian: </b></label>
             <input type="number" id="num" name="num" placeholder="1" min="1" max="100" style="width: 60px;">
-            <select>
+            <select name="timetype">
                 <option>Ngày</option>
                 <option>Tháng</option>
                 <option>Năm</option>
             </select>
             <input type="submit" value="Tìm">
         </form>
+        <div id="body-frame">
+
+          <div class="body-statistics"> 
+
+            <div class="container-statistics">
+
+              <span id="result">
+                <b>
+                Tên sản phẩm  <br/>
+                Loại sản phẩm <br/>
+                Khoảng thời gian  <br/>
+                </b>
+              </span>
+
+              <div id="receipt1" class="receipt">
+                <span id="code">MÃ ĐƠN HÀNG #001
+                  <!-- <a href="../receipt/receipt1.htm">Xem thông tin đơn hàng</a> -->
+                </span>
+      
+                <span id="status">     
+                  <span id="receipt-inform">     
+                    Name: Lê Đức Anh    <br/>
+                    Phone: 0909090909  <br/>
+                    Address: 333 Võ Văn Kiệt, Quận 5, Thành phố Hồ Chí Minh<br/>
+                  </span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
+                </span>
+              </div>
+
+              <div id="receipt4" class="receipt">
+                <span id="code">MÃ ĐƠN HÀNG #004
+                  <!-- <a href="../receipt/receipt4.htm">Xem thông tin đơn hàng</a> -->
+                </span>
+      
+                <span id="status">     
+                  <span id="receipt-inform">     
+                    Name: Trương Lê Gia Hưng    <br/>
+                    Phone: 0911311322  <br/>
+                    Address: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
+                  </span>
+                  <span id="receipt-status">Tổng giá tiền của sản phẩm: &#8363</span>
+                </span>
+              </div>
+
+              <span id="total"><i class="ti-money"></i>Tổng cộng: &#8363 </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
         <footer>
                         
