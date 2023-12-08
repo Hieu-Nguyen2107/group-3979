@@ -31,9 +31,9 @@
 
         <h1 style="margin: 30px 15px;text-align: center;">Tình Hình Kinh Doanh</h1>
         <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
-            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics'); return false;">
+            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics');">
             <label for="pname"><b>Tên sản phẩm: </b></label>
-            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;">
+            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;" required>
             <label for="ptype" style="margin-left: 20px;"><b>Loại sản phẩm: </b></label>
             <select name="ptype" onchange="document.getElementById('ptyperesult').innerText = this.value;">
               <option value="" selected disabled hidden>Choose here</option>

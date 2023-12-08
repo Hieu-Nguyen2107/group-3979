@@ -27,11 +27,11 @@
       </header>
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 30px;">
         <h1 style="margin: 20px 0px;">Thêm Tài Khoản</h1>
-        <form action="adduser.htm" class="add-user">
+        <form action="adduser.htm" class="add-user" onsubmit="return checkUser();">
             <label for="username"><b>Tên</b></label><br/>
-            <input type="text" id="username" name="username" placeholder="Username"><br/>
+            <input type="text" id="username" name="username" placeholder="Username" required><br/>
             <label for="userage"><b>Tuổi</b></label><br/>
-            <select name="userage">
+            <select name="userage" required>
               <script>
                 for(i = 1 ; i < 100 ;i++){
                   document.write("<option value = "+i+">"+ i + "</option>");
@@ -39,11 +39,26 @@
               </script>
             </select><br/>
             <label for="useremail"><b>Email</b></label><br/>
-            <input type="text" id="useremail" name="useremail" placeholder="Email"><br/>
+            <input type="text" id="useremail" name="useremail" placeholder="Email" required><br/>
             <label for="avatar"><b>Hình ảnh</b></label><br/>
             <input type="file" id="avatar" name="avatar" accept="img/png, img/jpeg"><br/>
             <input id="reset" type="reset" value="Reset">
-            <input id="submit" type="submit" value="Thêm" onclick="alert('Thêm tài khoản thành công !!!')">
+            <input id="submit" type="submit" value="Thêm">
+            <script>
+              function checkUser(){
+                let name = document.getElementById("#username").value;
+                let age = document.getElementById("#userage").value;
+                let email = document.getElementById("#useremail").value;
+                if ( name == "" || age == "" || email == "")
+                {
+                  alert("Vui lòng nhập đẩy đủ thông tin tài khoản !!!");
+                  return false;
+                }else{
+                  alert("Thêm tài khoản thành công !!!");
+                  return true;
+                }
+              }
+            </script>
         </form>
       </div>
         <footer>
