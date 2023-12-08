@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Add Product 3979 Toys</title>
+        <title>Statistics 3979 Toys</title>
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
@@ -33,13 +33,14 @@
         <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
             border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics'); return false;">
             <label for="pname"><b>Tên sản phẩm: </b></label>
-            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm">
+            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;">
             <label for="ptype" style="margin-left: 20px;"><b>Loại sản phẩm: </b></label>
-            <select name="ptype">
-                <option>ROBOT</option>
-                <option>BÚP BÊ</option>
-                <option>ĐỒ CHƠI LẮP GHÉP</option>
-                <option>ĐỒ CHƠI VẬN ĐỘNG</option>
+            <select name="ptype" onchange="document.getElementById('ptyperesult').innerText = this.value;">
+              <option value="" selected disabled hidden>Choose here</option>
+              <option value="ROBOT">ROBOT</option>
+              <option value="BÚP BÊ">BÚP BÊ</option>
+              <option value="ĐỒ CHƠI LẮP GHÉP">ĐỒ CHƠI LẮP GHÉP</option>
+              <option value="ĐỒ CHƠI VẬN ĐỘNG">ĐỒ CHƠI VẬN ĐỘNG</option>
             </select>
             <label for="time" style="margin-left: 20px;"><b>Khoảng thời gian: </b></label>
             <input type="number" id="num" name="num" placeholder="1" min="1" max="100" style="width: 60px;">
@@ -57,10 +58,11 @@
             <div class="container-statistics">
 
               <span id="result">
+                
                 <b>
-                Tên sản phẩm  <br/>
-                Loại sản phẩm <br/>
-                Khoảng thời gian  <br/>
+                Tên sản phẩm: <span id="pnameresult"></span> <br/> 
+                Loại sản phẩm: <span id="ptyperesult"></span> <br/> 
+                Khoảng thời gian: <span id="timeresult" onload="document.getElementById('#pname').innerHTML = document.getElementById('#pnameresult').value;"></span> <br/> 
                 </b>
               </span>
 
@@ -79,6 +81,21 @@
                 </span>
               </div>
 
+              <div id="receipt2" class="receipt">
+                <span id="code">MÃ ĐƠN HÀNG #002
+                  <a href="../receipt/receipt2.htm">Xem thông tin đơn hàng</a>
+                </span>
+      
+                <span id="status">     
+                  <span id="receipt-inform">     
+                    Name: Nguyễn Thành Việt    <br/>
+                      Phone: 0937898989  <br/>
+                      Address: 898 Linh Đông, Thành phố Thủ Đức <br/>
+                  </span>
+                  <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt2','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt2','notprocessed')">Chưa xử lý</span></span>
+                </span>
+              </div>
+
               <div id="receipt4" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #004
                   <!-- <a href="../receipt/receipt4.htm">Xem thông tin đơn hàng</a> -->
@@ -91,6 +108,21 @@
                     Address: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
                   </span>
                   <span id="receipt-status">Tổng giá tiền của sản phẩm: &#8363</span>
+                </span>
+              </div>
+
+              <div id="receipt5" class="receipt">
+                <span id="code">MÃ ĐƠN HÀNG #005
+                  <a href="../receipt/receipt5.htm">Xem thông tin đơn hàng</a>
+                </span>
+      
+                <span id="status">     
+                  <span id="receipt-inform">     
+                    Name: Phạm Ngọc Triều  <br/>
+                    Phone: 0916665668   <br/>
+                    Address: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
+                  </span>
+                  <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt5','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt5','notprocessed')">Chưa xử lý</span></span>
                 </span>
               </div>
 

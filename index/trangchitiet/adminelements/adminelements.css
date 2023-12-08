@@ -58,13 +58,27 @@ form.add-user{
     line-height: 25px;
     border: 2px solid black;
     border-radius: 4px;
-    width: fit-content;
+    width: 400px;
+    font-size: larger;
 }
 form.add-user > input#submit , #reset{
-    margin: 10px 5px;
-    width: 50px;
+    
+    width: 70px;
+    height: 30px;
     cursor: pointer;
 }
+form.add-user > input#submit{
+    float: right;
+    margin: 10px 10px;
+}
+form.add-user > input#reset{
+    float: right;
+    margin: 10px 10px;
+}
+form.add-user > input#username , input#useremail{
+    width: 250px;
+}
+
 div.user > div#ava-delete > img{
     position: absolute;
     width: 150px;
