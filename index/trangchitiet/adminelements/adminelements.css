@@ -54,29 +54,45 @@ div.user > img{
 }
 form.add-user{
     background-color: pink;
-    padding-left: 50px;
     line-height: 25px;
     border: 2px solid black;
     border-radius: 4px;
     width: 400px;
     font-size: larger;
+    margin-bottom: 20px;
 }
-form.add-user > input#submit , #reset{
+div.button-adduser{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+div.button-adduser > input#submit{
     
     width: 70px;
     height: 30px;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: 15px;
 }
-form.add-user > input#submit{
-    float: right;
-    margin: 10px 10px;
+div.button-adduser > input#reset{
+    
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 15px;
 }
-form.add-user > input#reset{
-    float: right;
-    margin: 10px 10px;
-}
+
 form.add-user > input#username , input#useremail{
     width: 250px;
+}
+div.user-result-frame{
+    border-top: 2px solid #000;
+    position: relative;
+    display: none;
+}
+div.user-result{
+    margin-left: 40px;
 }
 
 div.user > div#ava-delete > img{

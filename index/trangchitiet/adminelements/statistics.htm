@@ -31,7 +31,7 @@
 
         <h1 style="margin: 30px 15px;text-align: center;">Tình Hình Kinh Doanh</h1>
         <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
-            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics');">
+            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics');return false;">
             <label for="pname"><b>Tên sản phẩm: </b></label>
             <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;" required>
             <label for="ptype" style="margin-left: 20px;"><b>Loại sản phẩm: </b></label>
@@ -44,10 +44,11 @@
             </select>
             <label for="time" style="margin-left: 20px;"><b>Khoảng thời gian: </b></label>
             <input type="number" id="num" name="num" placeholder="1" min="1" max="100" style="width: 60px;">
-            <select name="timetype">
-                <option>Ngày</option>
-                <option>Tháng</option>
-                <option>Năm</option>
+            <select name="timetype" onchange="document.getElementById('timeresult').innerText = document.getElementById('num').value + ' ' + this.value">
+              <option value="" selected disabled hidden>Ngày , Tháng , Năm</option>
+              <option value="Ngày">Ngày</option>
+              <option value="Tháng">Tháng</option>
+              <option value="Năm">Năm</option>
             </select>
             <input type="submit" value="Tìm">
         </form>
@@ -62,7 +63,7 @@
                 <b>
                 Tên sản phẩm: <span id="pnameresult"></span> <br/> 
                 Loại sản phẩm: <span id="ptyperesult"></span> <br/> 
-                Khoảng thời gian: <span id="timeresult" onload="document.getElementById('#pname').innerHTML = document.getElementById('#pnameresult').value;"></span> <br/> 
+                Khoảng thời gian: <span id="timeresult"></span> <br/> 
                 </b>
               </span>
 
@@ -92,7 +93,7 @@
                       Phone: 0937898989  <br/>
                       Address: 898 Linh Đông, Thành phố Thủ Đức <br/>
                   </span>
-                  <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt2','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt2','notprocessed')">Chưa xử lý</span></span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
                 </span>
               </div>
 
@@ -107,7 +108,7 @@
                     Phone: 0911311322  <br/>
                     Address: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
                   </span>
-                  <span id="receipt-status">Tổng giá tiền của sản phẩm: &#8363</span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
                 </span>
               </div>
 
@@ -122,7 +123,7 @@
                     Phone: 0916665668   <br/>
                     Address: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
                   </span>
-                  <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt5','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt5','notprocessed')">Chưa xử lý</span></span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
                 </span>
               </div>
 
@@ -135,6 +136,7 @@
         </div>
 
       </div>
+      <div style="display: block;margin-top: auto;">
         <footer>
                         
             <ul style="margin-left: 3%;" class="footer">
@@ -151,5 +153,6 @@
             </div>
             <img src="../../bocongthuong.png" style="margin-left: 10%;">
         </footer>
+      </div>
     </body>
 </html>

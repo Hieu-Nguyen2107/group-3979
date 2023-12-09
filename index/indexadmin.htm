@@ -26,17 +26,28 @@
             </div>
           </header> 
         <h1 style="text-align: center; margin-top: 15px;">BẠN ĐANG SỬ DỤNG CHẾ ĐỘ ADMIN</h1>
-          <ul class="function">
-              <li><a href="trangchitiet/adminelements/addproduct.htm"><button>Thêm Sản Phẩm</button></a></li> <!--DONE-->
-              <li><a href="trangchitiet/adminelements/deleteproduct.htm"><button>Xóa Sản Phẩm</button></a></li> <!--DONE-->
-              <li><a href="trangchitiet/adminelements/updateproduct.htm"><button>Sửa Sản Phẩm</button></a></li> <!--DONE-->
-              <li><a href="trangchitiet/adminelements/checkuser.htm"><button>Kiểm Tra Thông Tin Người Dùng</button></a></li><!--DONE-->
-              <li><a href="trangchitiet/adminelements/adduser.htm"><button>Thêm Người Dùng</button></a></li>  <!--DONE-->
-              <li><a href="trangchitiet/adminelements/updateuser.htm"><button>Sửa Thông Tin Người Dùng</button></a></li>  <!--DONE-->
-              <li><a href="trangchitiet/adminelements/lockuser.htm"><button>Khóa Người Dùng</button></a></li> <!--DONE-->
-              <li><a href="trangchitiet/adminelements/manageuserreceipt.htm"><button>Quản Lý Đơn Hàng Người Dùng</button></a></li><!--Xem chi tiết các đơn hàng, hiện thỉ trạng thái đơn hàng (đang đóng gói,đang vận chuyển, đã giao)-->
-              <li><a href="trangchitiet/adminelements/statistics.htm"><button>Thống Kê Tình Hình Kinh Doanh</button></a></li><!--Hiện thỉ và tính tổng các đơn hàng theo tiêu chí : số lượng sản phẩm của 1 loại sản phẩm khoảng thời gian-->
-          </ul>
+          <div class="function">
+            <div class="product-manage">
+            <div><button id="product-manage">Quản lý sản phẩm</button></div>
+            <div class="product-manage-menu">
+              <div><a href="trangchitiet/adminelements/addproduct.htm"><button>Thêm Sản Phẩm</button></a></div> <!--DONE-->
+              <div><a href="trangchitiet/adminelements/deleteproduct.htm"><button>Xóa Sản Phẩm</button></a></div> <!--DONE-->
+              <div><a href="trangchitiet/adminelements/updateproduct.htm"><button>Sửa Sản Phẩm</button></a></div> <!--DONE-->
+            </div>
+            </div>
+            <script>
+              document.getElementById('product-manage').addEventListener('click', function() {
+              var productManage = document.querySelector('.product-manage');
+              productManage.classList.toggle('open');
+            }); 
+            </script>
+            <div><a href="trangchitiet/adminelements/checkuser.htm"><button>Kiểm Tra Thông Tin Người Dùng</button></a></div><!--DONE-->
+            <div><a href="trangchitiet/adminelements/adduser.htm"><button>Thêm Người Dùng</button></a></div>  <!--DONE-->
+            <div><a href="trangchitiet/adminelements/updateuser.htm"><button>Sửa Thông Tin Người Dùng</button></a></div>  <!--DONE-->
+            <div><a href="trangchitiet/adminelements/lockuser.htm"><button>Khóa Người Dùng</button></a></div> <!--DONE-->
+            <div><a href="trangchitiet/adminelements/manageuserreceipt.htm"><button>Quản Lý Đơn Hàng Người Dùng</button></a></div><!--Xem chi tiết các đơn hàng, hiện thỉ trạng thái đơn hàng (đang đóng gói,đang vận chuyển, đã giao)-->
+            <div><a href="trangchitiet/adminelements/statistics.htm"><button>Thống Kê Tình Hình Kinh Doanh</button></a></div><!--Hiện thỉ và tính tổng các đơn hàng theo tiêu chí : số lượng sản phẩm của 1 loại sản phẩm khoảng thời gian-->
+          </div>
         <div style="display: block; margin-top: auto;">
           <footer>
                           

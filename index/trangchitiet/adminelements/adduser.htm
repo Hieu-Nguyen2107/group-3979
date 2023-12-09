@@ -27,11 +27,12 @@
       </header>
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 30px;">
         <h1 style="margin: 20px 0px;">Thêm Tài Khoản</h1>
-        <form action="adduser.htm" class="add-user" onsubmit="return checkUser();">
+        <form action="" class="add-user" onsubmit="return checkUser();">
+          <div style="margin-left: 50px;">
             <label for="username"><b>Tên</b></label><br/>
-            <input type="text" id="username" name="username" placeholder="Username" required><br/>
+            <input type="text" id="username" name="username" placeholder="Username"><br/>
             <label for="userage"><b>Tuổi</b></label><br/>
-            <select name="userage" required>
+            <select id="userage" name="userage" required>
               <script>
                 for(i = 1 ; i < 100 ;i++){
                   document.write("<option value = "+i+">"+ i + "</option>");
@@ -39,26 +40,43 @@
               </script>
             </select><br/>
             <label for="useremail"><b>Email</b></label><br/>
-            <input type="text" id="useremail" name="useremail" placeholder="Email" required><br/>
+            <input type="text" id="useremail" name="useremail" placeholder="Email"><br/>
             <label for="avatar"><b>Hình ảnh</b></label><br/>
             <input type="file" id="avatar" name="avatar" accept="img/png, img/jpeg"><br/>
-            <input id="reset" type="reset" value="Reset">
-            <input id="submit" type="submit" value="Thêm">
+            <div class="button-adduser">
+              <input id="submit" type="submit" value="Thêm">
+              <input id="reset" type="reset" value="Reset">
+            </div>
+          </div>
+            
             <script>
               function checkUser(){
-                let name = document.getElementById("#username").value;
-                let age = document.getElementById("#userage").value;
-                let email = document.getElementById("#useremail").value;
+                let name = document.getElementById('username').value;
+                let age = document.getElementById('userage').value;
+                let email = document.getElementById('useremail').value;
                 if ( name == "" || age == "" || email == "")
                 {
                   alert("Vui lòng nhập đẩy đủ thông tin tài khoản !!!");
                   return false;
                 }else{
                   alert("Thêm tài khoản thành công !!!");
-                  return true;
+                  var target = document.getElementById('user-result-frame');
+                  target.style.display = "block";
+                  document.getElementById("username-result").innerText = name;
+                  document.getElementById("userage-result").innerText = age;
+                  document.getElementById("useremail-result").innerText = email;
+                  return false;
                 }
               }
             </script>
+            <div id="user-result-frame" class="user-result-frame">
+              <div class="user-result"> 
+                <span>Thêm thành công tài khoản !!!</span>  <br/>
+                Tên tài khoản: <span id="username-result"></span>  <br/>
+                Tuổi: <span id="userage-result"></span> <br/>
+                Email: <span id="useremail-result"></span> <br/>
+              </div>
+            </div>
         </form>
       </div>
         <footer>
