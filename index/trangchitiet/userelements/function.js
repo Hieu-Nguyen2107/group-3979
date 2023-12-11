@@ -28,7 +28,7 @@ function Login() {
 }
 function changeName() {
   if (isLogin) {
-    document.getElementById("taikhoan").innerHTML = "TRUNG HIEU";
+    document.getElementById("taikhoan").innerHTML = "ĐỨC ANH";
     document.getElementById("dangxuat").innerHTML = "Đăng xuất";
   }
 }
