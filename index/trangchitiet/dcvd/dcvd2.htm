@@ -5,58 +5,59 @@
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../userelements/function.js"></script>
     </head>
-    <body>
-        <header>
-            <div id="header">
-              <!-- Begin nav -->
-              <ul class="menubar" id="nav">
-                <li><a href="../userelements/index2.htm">home</a></li>
-                <li>
-                  <a href="">
-                    product
-                    <i class="nav-arrow-down ti-angle-down"></i>
-                  </a>
-                  <ul class="subnav">
-                    <li><a href="../phanloaisanpham/robot.htm">ROBOT</a></li>
-                    <li><a href="../phanloaisanpham/doll.htm">BÚP BÊ</a></li>
-                    <li><a href="../phanloaisanpham/lego.htm">ĐỒ CHƠI LẮP GHÉP</a></li>
-                    <li><a href="../phanloaisanpham/dcvd.htm">ĐỒ CHƠI VẬN ĐỘNG</a></li>
-                  </ul>
-                </li>
-                <li><a href="">about us</a></li>
-                <!-- Thêm phần tìm kiếm -->
-                <li>
-                  <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Tìm kiếm..." />
-                    <a href="">
-                      <button type="button" id="search-button">Tìm kiếm</button>
-                    </a>
-                  </div>
-                </li>
-      
-                <div class="search-advanced-container">
-                  <a href="">
-                    <button id="search-advanced-button">Tìm kiếm nâng cao</button>
-                  </a>
-                </div>
-      
-                <!-- Thêm phần đăng nhập/đăng ký -->
-                <div class="user-container">
-                  <a href="" class="login-link">Đăng nhập</a>
-                  <a href="" class="register-link">Đăng ký</a>
-                  <i class="user-icon ti-user"></i>
-                </div>
-      
-                <!-- Thêm phần giỏ hàng -->
-                   <div class="cart-container">
-                  <a href="" class="cart-icon ti-shopping-cart"></a>
-                  <span class="cart-count"></span>
-                </div>
+    <body onload="changeName();changeLinkProduct();">
+      <header>
+        <div id="header">
+          <!-- Begin nav -->
+          <ul class="menubar" id="nav">
+            <li><a href="../../index.htm">home</a></li>
+            <li>
+              <a href="">
+                product
+                <i class="nav-arrow-down ti-angle-down"></i>
+              </a>
+              <ul class="subnav">
+                <li><a href="../phanloaisanpham/robot.htm">ROBOT</a></li>
+                <li><a href="../phanloaisanpham/doll.htm">BÚP BÊ</a></li>
+                <li><a href="../phanloaisanpham/lego.htm">ĐỒ CHƠI LẮP GHÉP</a></li>
+                <li><a href="../phanloaisanpham/dcvd.htm">ĐỒ CHƠI VẬN ĐỘNG</a></li>
               </ul>
-              <!-- End nav -->
+            </li>
+            <li><a href="">about us</a></li>
+            <!-- Thêm phần tìm kiếm -->
+            <li>
+              <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm..." />
+                <a href="../phanloaisanpham/lego.htm">
+                  <button type="button" id="search-button">Tìm kiếm</button>
+                </a>
+              </div>
+            </li>
+  
+            <div class="search-advanced-container">
+              <a href="../userelements/advancedsearch.htm">
+                <button id="search-advanced-button">Tìm kiếm nâng cao</button>
+              </a>
             </div>
-          </header> 
+  
+            <!-- Thêm phần đăng nhập/đăng ký -->
+            <div class="user-container">
+              <a id="login-link" href="../userelements/login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
+              <a id="linkLogOut2" href="../userelements/register.htm" class="register-link" onclick="checkLogOut2()"><span id="dangxuat">Đăng ký</span></span></a>
+              <i class="user-icon ti-user"></i>
+            </div>
+  
+            <!-- Thêm phần giỏ hàng -->
+               <div class="cart-container">
+              <a href="../userelements/shoppingCart.htm" class="cart-icon ti-shopping-cart"></a>
+              <span class="cart-count"></span>
+            </div>
+          </ul>
+          <!-- End nav -->
+        </div>
+      </header> 
         <div style="display: flex;margin-top: 40px;">
         <div class="img-product">
             <img class="img-chitiet" src="../../productImage/dochoivandong/dcvd2.jpg">
@@ -96,8 +97,8 @@
                 }
             </script>
             <div style="margin: 20px 0">
-            <button class="button" onclick="alert('Bạn chưa đăng nhập !!!')">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
+              <button class="button" onclick="checkOrder();">Mua Ngay</button>
+              <button class="button" onclick="checkAddCart();">Thêm Vào Giỏ Hàng</button>
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
@@ -116,7 +117,8 @@ Trò chơi trận chiến không gian là một trò chơi đầy thú vị và 
               
                 </p>
             </div>
-        </div>
+            <div style="float: right;margin: 15px 30px;"><a href="../userelements/index2.htm"><button style="font-size: 17px;"><i class="ti-arrow-left"></i>Quay lại</button></a></div>
+          </div>
         </div>
         <footer>
             <ul style="margin-left: 3%;" class="footer">

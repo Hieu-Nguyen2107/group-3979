@@ -8,31 +8,28 @@
         <link rel="stylesheet" href="adminelements.css" type="text/css">
     </head>
     <body>
-      <header>
+      <header style="width: 100%;">
         <div id="header">
           <!-- Begin nav -->
           <ul class="menubar" id="nav">
             <li><a href="../../indexadmin.htm">home</a></li>
-            <!-- Thêm phần tìm kiếm -->
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
-            </div>
-  
-            <!-- Thêm phần giỏ hàng -->
+            
+
           </ul>
-          <!-- End nav -->
+
+        </div>
+        <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+          <i class="user-icon ti-user">Admin</i>
         </div>
       </header>
         <h1 style="margin: 15px 20px;text-align: center;">Thêm Sản Phẩm</h1>
-        <form action="" style="line-height: 25px;margin: 15px 20px;" onsubmit="return check();">
+        <form action="" style="line-height: 25px;margin: 20px 40px;" onsubmit="return check();">
             <label for="producttype">Loại sản phẩm:</label><br/>
-            <input type="text" id="ptype" name="ptype" placeholder="Loại sản phẩm" required><br/>
+            <input type="text" id="ptype" name="ptype" placeholder="Loại sản phẩm"><br/>
             <label for="productname">Tên sản phẩm:</label><br/>
-            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" required><br/>
+            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm"><br/>
             <label for="productprice">Giá tiền sản phẩm:</label><br/>
-            <input type="text" id="pprice" name="pprice" placeholder="&#8363 Giá tiền sản phẩm" required><br/>
+            <input type="text" id="pprice" name="pprice" placeholder="&#8363 Giá tiền sản phẩm"><br/>
             <label for="productimage">Hình ảnh sản phẩm:</label><br/>
             <input type="file" id="pimage" name="pimage" accept="img/png, img/jpeg"><br/>
             <label for="productdescribe">Mô tả sản phẩm:</label><br/>
@@ -48,7 +45,7 @@
                   return false;
                 }else{
                   alert("Thêm sản phẩm thành công !!!");
-                  return truel
+                  return true;
                 }
               }
             </script>

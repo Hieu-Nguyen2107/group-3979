@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,74 +19,68 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header>  
         <div style="display: flex;margin-top: 40px;">
-        <div class="img-product">
-            <img class="img-chitiet" src="../../../../productImage/lego/lego4.jpg">
-            <div class="add-img">
-                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-                    <img src="../../../../productImage/lego/lego4.jpg">
-                    <div class="ti-trash"></div>
-                </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
-                </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
+            <div class="img-product">
+                <img class="img-chitiet" src="../../../../productImage/lego/lego4.jpg">
+                <div class="add-img">
+                    <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                        <img src="../../../../productImage/lego/lego4.jpg">
+                        <div class="ti-trash"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
                 </div>
             </div>
-        </div>
         <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Đồ chơi lắp ráp Học viện Ma thuật và Pháp thuật Hogwarts LEGO HARRY POTTER 76419</b>
-                <i class="ti-pencil"></i>
+
+            <div class="edit">
+                <div>
+                    <i class="ti-pencil" onclick="update('body')"></i>
+                    <i class="ti-save" onclick="save('body')"></i>
+                </div>
             </div>
-            <div class="product-price"><b>5,299,000 VNĐ</b>
-                <i class="ti-pencil"></i>
+            <div id="body" contenteditable="false">
+                <div style="max-width: fit-content;">
+                    <div class="product-name"><b>Đồ chơi lắp ráp Học viện Ma thuật và Pháp thuật Hogwarts LEGO HARRY POTTER 76419</b>
+                    </div>
+                    <div class="product-price"><b>5,299,000 VNĐ</b>
+                    </div>
+                </div>
+                <div style="line-height: 30px;"> <!--Describe-->
+                    <p><b>Mô Tả Sản Phẩm</b> <p>
+                    <p>
+                    <h3> Đồ Chơi Lắp Ráp Học Viện Ma Thuật Và Pháp Thuật Hogwarts LEGO HARRY POTTER 76419 (2660 chi tiết)</h3>
+                    
+    Đắm mình trong trải nghiệm sáng tạo kỳ diệu với mô hình LEGO® đầu tiên của Học viện Ma thuật và Pháp thuật Hogwarts. Xây dựng Tòa Tháp Chính, Tháp Thiên văn, Đại sảnh đường, v.v. Khám phá những căn phòng mang tính biểu tượng như Phòng Chứa Bí mật™ và Phòng học môn Độc dược. Bên cạnh đó mô hình thu nhỏ của kiến trúc sư Hogwarts, Durmstrang Ship và các công trình xây dựng khác mà bạn sẽ nhận ra ngay lần đầu chiêm ngưỡng và hoàn thành bộ lâu đài pháp thuật đầy huyền bí.
+    <br>
+    • Mô hình LEGO® đầu tiên của Học viện Ma thuật và Pháp thuật Hogwarts™ (76417) – Cùng xây dựng lại công trình mang tính biểu tượng nhất trong Thế giới Phù Thủy với bộ mô hình LEGO Harry Potter™ có thể xây dựng này.
+    <br>
+    • Bao gồm một bức tượng nhỏ – Đặt bức tượng kiến trúc sư Hogwarts™ màu vàng bên cạnh bảng tên “Lâu đài Hogwarts” hoặc ở góc của tấm đế để hoàn thiện phần trưng bày.
+    <br>
+    • Mô hình tỷ lệ – Xây dựng Học Viện Hogwarts™ và khu vực xung quanh, bao gồm Tháp Chính, Tháp Thiên văn, Đại sảnh đường, sân trong, cầu, Nhà kính, Nhà thuyền và Hồ Đen
+    <br>
+    • Khám phá những chi tiết thú vị – Khám phá Phòng chứa Bí mật™, Phòng Chìa khóa có cánh, Phòng học môn Độc dược và Phòng Bàn cờ, cùng với Con tàu Durmstrang, Cỗ xe Beauxbatons, Cây Liễu Roi™ và chiếc xe bay Ford Anglia
+                    </p>
+                </div>
             </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b> <i class="ti-pencil"></i> <p>
-                <p>
-                <h3> Đồ Chơi Lắp Ráp Học Viện Ma Thuật Và Pháp Thuật Hogwarts LEGO HARRY POTTER 76419 (2660 chi tiết)</h3>
-                
-Đắm mình trong trải nghiệm sáng tạo kỳ diệu với mô hình LEGO® đầu tiên của Học viện Ma thuật và Pháp thuật Hogwarts. Xây dựng Tòa Tháp Chính, Tháp Thiên văn, Đại sảnh đường, v.v. Khám phá những căn phòng mang tính biểu tượng như Phòng Chứa Bí mật™ và Phòng học môn Độc dược. Bên cạnh đó mô hình thu nhỏ của kiến trúc sư Hogwarts, Durmstrang Ship và các công trình xây dựng khác mà bạn sẽ nhận ra ngay lần đầu chiêm ngưỡng và hoàn thành bộ lâu đài pháp thuật đầy huyền bí.
-<br>
-• Mô hình LEGO® đầu tiên của Học viện Ma thuật và Pháp thuật Hogwarts™ (76417) – Cùng xây dựng lại công trình mang tính biểu tượng nhất trong Thế giới Phù Thủy với bộ mô hình LEGO Harry Potter™ có thể xây dựng này.
-<br>
-• Bao gồm một bức tượng nhỏ – Đặt bức tượng kiến trúc sư Hogwarts™ màu vàng bên cạnh bảng tên “Lâu đài Hogwarts” hoặc ở góc của tấm đế để hoàn thiện phần trưng bày.
-<br>
-• Mô hình tỷ lệ – Xây dựng Học Viện Hogwarts™ và khu vực xung quanh, bao gồm Tháp Chính, Tháp Thiên văn, Đại sảnh đường, sân trong, cầu, Nhà kính, Nhà thuyền và Hồ Đen
-<br>
-• Khám phá những chi tiết thú vị – Khám phá Phòng chứa Bí mật™, Phòng Chìa khóa có cánh, Phòng học môn Độc dược và Phòng Bàn cờ, cùng với Con tàu Durmstrang, Cỗ xe Beauxbatons, Cây Liễu Roi™ và chiếc xe bay Ford Anglia
-                </p>
-            </div>
+            <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
         </div>
         </div>
         <footer>

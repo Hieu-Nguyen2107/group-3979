@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,79 +19,72 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header> 
         <div style="display: flex;margin-top: 40px;">
-        <div class="img-product">
-            <img class="img-chitiet" src="../../../../productImage/lego/lego1.jpg">
-            <div class="add-img">
-                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-                    <img src="../../../../productImage/lego/lego1.jpg">
-                    <div class="ti-trash"></div>
+            <div class="img-product">
+                <img class="img-chitiet" src="../../../../productImage/lego/lego1.jpg">
+                <div class="add-img">
+                    <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                        <img src="../../../../productImage/lego/lego1.jpg">
+                        <div class="ti-trash"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
                 </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
+            </div>
+            <div>
+                <div class="edit">
+                    <div>
+                        <i class="ti-pencil" onclick="update('body')"></i>
+                        <i class="ti-save" onclick="save('body')"></i>
+                    </div>
                 </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
+                <div id="body" contenteditable="false">
+                    <div style="max-width: fit-content;">
+                        <div class="product-name"><b>Đồ chơi lắp ráp Phi thuyền X-Wing Starfighter™ LEGO STAR WARS</b>
+                            </div>
+                        <div class="product-price"><b>7,559,000 VNĐ</b>
+                            </div>
+                    </div>
+                    <div style="line-height: 30px;"> <!--Describe-->
+                        <p><b>Mô Tả Sản Phẩm</b><p>
+                        <p>
+                        <h3> Đồ Chơi Lắp Ráp Phi Thuyền X-Wing Starfighter™ LEGO STAR WARS 75355 (1953 chi tiết)</h3>
+                        
+                        
+                        Tái hiện những pha hành động đầy kịch tính của bộ phim Star Wars: The Mandalorian khi xây dựng phiên bản Phi thuyền X-Wing Starfighter thuộc bộ sưu tập cao cấp. Bộ lắp ráp mang đầy đủ chi tiết theo phong cách LEGO®. Người chơi có thể trưng bày chiếc X-wing với 2 hình thái khác nhau, chế độ do thám hoặc chế độ tấn công cùng với chân đế đi kèm. Bộ lắp ráp gồm một Phi thuyền X-Wing Starfighter, một nhân vật minifigure Luke Skywalker và Robot R2-D2.
+                        <br>
+                        • Sử dụng Sức Mạnh Sáng Tạo của bạn để lắp ráp và trưng bày phiên bản Phi thuyền X-Wing Starfighter LEGO® Star Wars™ (75355) đến từ bộ phim Star Wars: Người Mandalorian
+                        <br>
+                        • 2 nhân vật Star Wars™ - Bao gồm nhân vật minifigure Luke Skywalker LEGO® với kiếm ánh sáng và bộ đồ được thiết kế đặc biệt dành riêng, cùng với Robot R2-D2
+                        <br>
+                        • Người chơi có thể quay nút trên đỉnh X-wing để điều chỉnh chuyển hình thái của phi thuyền từ do thám sang tấn công. Ngoài ra phi thuyền có một khoảng trống để đặt Robot R2-D2 phía sau buồng lái
+                        <br>
+                        • Trưng bày chiếc phi thuyền X-wing trên chân đế đi kèm, cùng bảng hiển thị dữ liệu kỹ thuật của X-wing và có không gian cho Luke Skywalker
+                        <br>
+                        • Ý tưởng tặng quà – Với 1.949 chi tiết, đây là một món quà vô cùng ý nghĩa vào dịp lễ hoặc sinh nhật và cực kì đặc biệt dành cho fan Lego hoặc những người hâm mộ bộ phim Star Wars™
+                    
+                        </p>
+                    </div>
                 </div>
+                <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
             </div>
-        </div>
-        <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Đồ chơi lắp ráp Phi thuyền X-Wing Starfighter™ LEGO STAR WARS</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div class="product-price"><b>7,559,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b> <i class="ti-pencil"></i> <p>
-                <p>
-                <h3> Đồ Chơi Lắp Ráp Phi Thuyền X-Wing Starfighter™ LEGO STAR WARS 75355 (1953 chi tiết)</h3>
-                
-                
-                Tái hiện những pha hành động đầy kịch tính của bộ phim Star Wars: The Mandalorian khi xây dựng phiên bản Phi thuyền X-Wing Starfighter thuộc bộ sưu tập cao cấp. Bộ lắp ráp mang đầy đủ chi tiết theo phong cách LEGO®. Người chơi có thể trưng bày chiếc X-wing với 2 hình thái khác nhau, chế độ do thám hoặc chế độ tấn công cùng với chân đế đi kèm. Bộ lắp ráp gồm một Phi thuyền X-Wing Starfighter, một nhân vật minifigure Luke Skywalker và Robot R2-D2.
-                <br>
-                • Sử dụng Sức Mạnh Sáng Tạo của bạn để lắp ráp và trưng bày phiên bản Phi thuyền X-Wing Starfighter LEGO® Star Wars™ (75355) đến từ bộ phim Star Wars: Người Mandalorian
-                <br>
-                • 2 nhân vật Star Wars™ - Bao gồm nhân vật minifigure Luke Skywalker LEGO® với kiếm ánh sáng và bộ đồ được thiết kế đặc biệt dành riêng, cùng với Robot R2-D2
-                <br>
-                • Người chơi có thể quay nút trên đỉnh X-wing để điều chỉnh chuyển hình thái của phi thuyền từ do thám sang tấn công. Ngoài ra phi thuyền có một khoảng trống để đặt Robot R2-D2 phía sau buồng lái
-                <br>
-                • Trưng bày chiếc phi thuyền X-wing trên chân đế đi kèm, cùng bảng hiển thị dữ liệu kỹ thuật của X-wing và có không gian cho Luke Skywalker
-                <br>
-                • Ý tưởng tặng quà – Với 1.949 chi tiết, đây là một món quà vô cùng ý nghĩa vào dịp lễ hoặc sinh nhật và cực kì đặc biệt dành cho fan Lego hoặc những người hâm mộ bộ phim Star Wars™
-              
-                </p>
-            </div>
-        </div>
         </div>
         <footer>
             <ul style="margin-left: 3%;" class="footer">

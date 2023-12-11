@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,77 +19,72 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header>  
         <div style="display: flex;margin-top: 40px;">
-        <div class="img-product">
-            <img class="img-chitiet" src="../../../../productImage/lego/lego3.jpg">
-            <div class="add-img">
-                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-                    <img src="../../../../productImage/lego/lego3.jpg">
-                    <div class="ti-trash"></div>
+            <div class="img-product">
+                <img class="img-chitiet" src="../../../../productImage/lego/lego3.jpg">
+                <div class="add-img">
+                    <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                        <img src="../../../../productImage/lego/lego3.jpg">
+                        <div class="ti-trash"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
                 </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
-                </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
-                </div>
             </div>
-        </div>
-        <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Đồ chơi lắp ráp Phiên chợ Vương quốc Rosa LEGO DISNEY PRINCESS 43223</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div class="product-price"><b>629,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b> <i class="ti-pencil"></i> <p>
-                <p>
-                <h3>   Đồ Chơi Lắp Ráp Phiên Chợ Vương Quốc Rosa LEGO DISNEY PRINCESS 43223 (154 chi tiết)</h3>
-                
-              
-                Tham quan thành phố Rosas cùng Asha! Bộ LEGO® Disney này được sáng tạo dựa trên bộ phim mới của Walt Disney Animation Studios, “Điều Ước” cùng với nhân vật Asha, Star và Valentino, và xem bạn có thể tìm thấy gì trong bộ lắp ráp này! Thành phố Rosas có bán các loại bánh ngọt, rau củ và nhiều trái cây thơm ngon, hấp dẫn.
-                <br>
-                
-                • Một quà tặng hấp dẫn cho người hâm mộ Disney hoặc bé từ 6 tuổi trở lên yêu thích phiêu lưu, một món quà truyền cảm hứng cho trí tưởng tượng LEGO® Disney Phiên Chợ Vương Quốc Rosas (43223)
-                <br>
-                • Bộ lắp ráp mô phỏng lại 1 góc của khu chợ có cửa đôi, cầu thang, bàn làm việc, ban công, xe đẩy có cờ, cùng nhiều phụ kiện vui chơi sáng tạo
-                <br>
-            
-                • Các nhân vật vui nhộn – Bao gồm minifigure nhân vật Asha , chú dê Valentino và Star dựa trên bộ phim sắp ra mắt của Walt Disney Animation Studios, Điều Ước
+            <div>
 
-                </p>
+                <div class="edit">
+                    <div>
+                        <i class="ti-pencil" onclick="update('body')"></i>
+                        <i class="ti-save" onclick="save('body')"></i>
+                    </div>
+                </div>
+
+                <div id="body" contenteditable="false">
+                    <div style="max-width: fit-content;">
+                        <div class="product-name"><b>Đồ chơi lắp ráp Phiên chợ Vương quốc Rosa LEGO DISNEY PRINCESS 43223</b>
+                        </div>
+                        <div class="product-price"><b>629,000 VNĐ</b>
+                        </div>
+                    </div>
+                    <div style="line-height: 30px;"> <!--Describe-->
+                        <p><b>Mô Tả Sản Phẩm</b><p>
+                        <p>
+                        <h3>   Đồ Chơi Lắp Ráp Phiên Chợ Vương Quốc Rosa LEGO DISNEY PRINCESS 43223 (154 chi tiết)</h3>
+                        
+                    
+                        Tham quan thành phố Rosas cùng Asha! Bộ LEGO® Disney này được sáng tạo dựa trên bộ phim mới của Walt Disney Animation Studios, “Điều Ước” cùng với nhân vật Asha, Star và Valentino, và xem bạn có thể tìm thấy gì trong bộ lắp ráp này! Thành phố Rosas có bán các loại bánh ngọt, rau củ và nhiều trái cây thơm ngon, hấp dẫn.
+                        <br>
+                        
+                        • Một quà tặng hấp dẫn cho người hâm mộ Disney hoặc bé từ 6 tuổi trở lên yêu thích phiêu lưu, một món quà truyền cảm hứng cho trí tưởng tượng LEGO® Disney Phiên Chợ Vương Quốc Rosas (43223)
+                        <br>
+                        • Bộ lắp ráp mô phỏng lại 1 góc của khu chợ có cửa đôi, cầu thang, bàn làm việc, ban công, xe đẩy có cờ, cùng nhiều phụ kiện vui chơi sáng tạo
+                        <br>
+                    
+                        • Các nhân vật vui nhộn – Bao gồm minifigure nhân vật Asha , chú dê Valentino và Star dựa trên bộ phim sắp ra mắt của Walt Disney Animation Studios, Điều Ước
+
+                        </p>
+                    </div>
+                </div>
+                <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
             </div>
-        </div>
         </div>
         <footer>
             <ul style="margin-left: 3%;" class="footer">

@@ -3,4 +3,5 @@ function showbody(id,className){
     var target = parent.querySelector('.'+className);
 
     target.style.display = "block";
+    return false;
 }

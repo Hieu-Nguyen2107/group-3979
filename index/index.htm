@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="index.css" type="text/css">
         <link rel="stylesheet" href="themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="trangchitiet/chitiet.css">
+        <script src="trangchitiet/userelements/function.js"></script>
     </head>
-    <body>
+    <body onload="changeName();changeLinkIndex();">
         <header>
             <div id="header">
               <!-- Begin nav -->
@@ -30,28 +31,28 @@
                 <li>
                   <div class="search-container">
                     <input type="text" id="search-input" placeholder="Tìm kiếm..." />
-                    <a href="">
+                    <a href="trangchitiet/phanloaisanpham/lego.htm">
                       <button type="button" id="search-button">Tìm kiếm</button>
                     </a>
                   </div>
                 </li>
       
                 <div class="search-advanced-container">
-                  <a href="">
+                  <a href="trangchitiet/userelements/advancedsearch.htm">
                     <button id="search-advanced-button">Tìm kiếm nâng cao</button>
                   </a>
                 </div>
       
                 <!-- Thêm phần đăng nhập/đăng ký -->
                 <div class="user-container">
-                  <a href="trangchitiet/userelements/login.htm" class="login-link">Đăng nhập</a>
-                  <a href="" class="register-link">Đăng ký</a>
+                  <a id="login-link" href="trangchitiet/userelements/login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
+                  <a id="linkLogOut" href="trangchitiet/userelements/register.htm" class="register-link" onclick="checkLogOut()"><span id="dangxuat">Đăng ký</span></span></a>
                   <i class="user-icon ti-user"></i>
                 </div>
       
                 <!-- Thêm phần giỏ hàng -->
                    <div class="cart-container">
-                  <a href="" class="cart-icon ti-shopping-cart"></a>
+                  <a href="trangchitiet/userelements/shoppingCart.htm" class="cart-icon ti-shopping-cart"></a>
                   <span class="cart-count"></span>
                 </div>
               </ul>

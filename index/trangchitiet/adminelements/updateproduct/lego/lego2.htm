@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,77 +19,71 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header> 
         <div style="display: flex;margin-top: 40px;">
-        <div class="img-product">
-            <img class="img-chitiet" src="../../../../productImage/lego/lego2.jpg">
-            <div class="add-img">
-                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-                    <img src="../../../../productImage/lego/lego2.jpg">
-                    <div class="ti-trash"></div>
+            <div class="img-product">
+                <img class="img-chitiet" src="../../../../productImage/lego/lego2.jpg">
+                <div class="add-img">
+                    <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                        <img src="../../../../productImage/lego/lego2.jpg">
+                        <div class="ti-trash"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
                 </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
+            </div>
+            <div>
+                <div class="edit">
+                    <div>
+                        <i class="ti-pencil" onclick="update('body')"></i>
+                        <i class="ti-save" onclick="save('body')"></i>
+                    </div>
                 </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
+
+                <div id="body" contenteditable="false">
+                    <div style="max-width: fit-content;">
+                        <div class="product-name"><b>Đồ chơi lắp ráp Vườn bách thảo LEGO FRIENDS 41757</b>
+                            </div>
+                        <div class="product-price"><b>2,599,000 VNĐ</b>
+                            </div>
+                        </div>
+                    <div style="line-height: 30px;"> <!--Describe-->
+                        <p><b>Mô Tả Sản Phẩm</b><p>
+                        <p>
+                        <h3>   Đồ Chơi Lắp Ráp Vườn Bách Thảo LEGO FRIENDS 41757 (1072 chi tiết)</h3>
+                        
+                        Thể hiện tình yêu với thiên nhiên qua bộ lắp ráp Vườn Bách Thảo LEGO Friends. Xây dựng nhà kính và bổ sung thêm vào các loại cây cỏ, các loài hoa để hu vườn trở nên sống động. Vòm kính trong suốt có chức năng xoay để mô phỏng các chú bướm đang bay quanh - giống như trong một vườn thực sự. Trưng bày mô hình của bạn để thưởng thức khu vườn đáng yêu này quanh năm nhé!
+                    <br>
+                        • Bộ lắp ráp dành cho trẻ từ 12 tuổi – Bộ lắp rắp Vườn Bách Thảo này giúp cho trẻ yêu thích thực vật có thể tận hưởng qua từng mảnh ghép
+                        <br>
+                        • Lấy cảm hứng từ các dòng thực vật - Trẻ sẽ khám phá một loạt các loài cây và hoa kỳ lạ dựa trên các loài thực tế. Đó là một cách tuyệt vời để trẻ tìm hiểu thêm về thế giới thực vật
+                    <br>
+                        • Vòm kính trong suốt của đồ chơi nhà kính có chức năng xoay, cho phép 4 chú bướm bay quanh giống như bướm thật trong vườn thực vật
+                        <br>
+                        • Phụ kiện nhà kính bao gồm một cái bình tưới nước, kéo, sổ tay, máy ảnh, bút, cái chiếu, giỏ, chai, bánh croissants và trái cây
+                        <br>
+                        • Bộ lắp ráp Vườn Bách Thảo này là một món quà lý tưởng cho trẻ từ 12 tuổi trở lên và cho những người sưu tập.
+                        </p>
+                        </div>
                 </div>
+                <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
             </div>
-        </div>
-        <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Đồ chơi lắp ráp Vườn bách thảo LEGO FRIENDS 41757</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div class="product-price"><b>2,599,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b> <i class="ti-pencil"></i> <p>
-                <p>
-                <h3>   Đồ Chơi Lắp Ráp Vườn Bách Thảo LEGO FRIENDS 41757 (1072 chi tiết)</h3>
-                
-                Thể hiện tình yêu với thiên nhiên qua bộ lắp ráp Vườn Bách Thảo LEGO Friends. Xây dựng nhà kính và bổ sung thêm vào các loại cây cỏ, các loài hoa để hu vườn trở nên sống động. Vòm kính trong suốt có chức năng xoay để mô phỏng các chú bướm đang bay quanh - giống như trong một vườn thực sự. Trưng bày mô hình của bạn để thưởng thức khu vườn đáng yêu này quanh năm nhé!
-               <br>
-                • Bộ lắp ráp dành cho trẻ từ 12 tuổi – Bộ lắp rắp Vườn Bách Thảo này giúp cho trẻ yêu thích thực vật có thể tận hưởng qua từng mảnh ghép
-                <br>
-                • Lấy cảm hứng từ các dòng thực vật - Trẻ sẽ khám phá một loạt các loài cây và hoa kỳ lạ dựa trên các loài thực tế. Đó là một cách tuyệt vời để trẻ tìm hiểu thêm về thế giới thực vật
-               <br>
-                • Vòm kính trong suốt của đồ chơi nhà kính có chức năng xoay, cho phép 4 chú bướm bay quanh giống như bướm thật trong vườn thực vật
-                <br>
-                • Phụ kiện nhà kính bao gồm một cái bình tưới nước, kéo, sổ tay, máy ảnh, bút, cái chiếu, giỏ, chai, bánh croissants và trái cây
-                <br>
-                • Bộ lắp ráp Vườn Bách Thảo này là một món quà lý tưởng cho trẻ từ 12 tuổi trở lên và cho những người sưu tập.
-                </p>
-            </div>
-        </div>
         </div>
         <footer>
             <ul style="margin-left: 3%;" class="footer">

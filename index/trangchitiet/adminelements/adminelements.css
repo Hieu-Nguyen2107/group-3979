@@ -83,7 +83,7 @@ div.button-adduser > input#reset{
     margin-right: 15px;
 }
 
-form.add-user > input#username , input#useremail{
+form.add-user input#username ,  input#useremail{
     width: 250px;
 }
 div.user-result-frame{
@@ -126,8 +126,17 @@ div#ava-delete:hover i.ti-pencil{
 div#ava-delete:hover img{
     opacity: 0.6;
 }
-div.body-managereceipt{
+div.body-manageuserreceipt{
     display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+div.frame-userreceipt{
+    display: flex;
+    flex-direction: column;
+}
+div#frame-userreceipt{
+    display: none;
 }
 div.receipt{
     display: flex;

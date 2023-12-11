@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,22 +19,17 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header> 
         <div style="display: flex;margin-top: 40px;">
         <div class="img-product">
             <img class="img-chitiet" src="../../../../productImage/dochoivandong/dcvd1.jpg">
@@ -54,41 +50,39 @@
         </div>
         
         <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Máy đập hành tinh chuột chũi CHAMPION GAMES HG1503066</b>
-                <i class="ti-pencil"></i>
+
+            <div class="edit">
+                <div>
+                    <i class="ti-pencil" onclick="update('body')"></i>
+                    <i class="ti-save" onclick="save('body')"></i>
+                </div>
             </div>
-            <div class="product-price"><b>459,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b>
-                    <i class="ti-pencil"></i>
+            <div id="body" contenteditable="false">
+                <div style="max-width: fit-content;">
+                    <div class="product-name"><b>Máy đập hành tinh chuột chũi CHAMPION GAMES HG1503066</b>
+                        </div>
+                    <div class="product-price"><b>459,000 VNĐ</b>
+                        </div>
+                    </div>
+                <div style="line-height: 30px;"> <!--Describe-->
+                    <p><b>Mô Tả Sản Phẩm</b>
+                        <p>
                     <p>
-                <p>
-                <h3>Đồ Chơi Máy Đập Hành Tinh Chuột Chũi CHAMPION GAMES HG1503066</h3>
+                    <h3>Đồ Chơi Máy Đập Hành Tinh Chuột Chũi CHAMPION GAMES HG1503066</h3>
+                    
+    Máy đập hành tinh chuột chũi là máy mô phỏng trò chơi đập chuột chũi tại các khu vui chơi.
+    <br>
+    - Với cơ chế hoạt động y như máy thật, bé chỉ cần bỏ đồng xu vào máy, khởi động và đập những chú chuột chũi đang ló đầu lên để ghi điểm
+    <br>
+    - Bé có thể rèn luyện sự phối hợp nhanh nhẹn giữa tay và mắt
+    <br>
+    - Bé có thể vui chơi cùng bạn bè và gia đình để thêm gắn kết tình cảm với mọi người.
+                    
                 
-Máy đập hành tinh chuột chũi là máy mô phỏng trò chơi đập chuột chũi tại các khu vui chơi.
-<br>
-- Với cơ chế hoạt động y như máy thật, bé chỉ cần bỏ đồng xu vào máy, khởi động và đập những chú chuột chũi đang ló đầu lên để ghi điểm
-<br>
-- Bé có thể rèn luyện sự phối hợp nhanh nhẹn giữa tay và mắt
-<br>
-- Bé có thể vui chơi cùng bạn bè và gia đình để thêm gắn kết tình cảm với mọi người.
-                
-              
-                </p>
+                    </p>
+                    </div>
             </div>
+            <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
         </div>
         </div>
         <footer>

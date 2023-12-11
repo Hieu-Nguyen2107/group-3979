@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,81 +19,73 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header>
         <div style="display: flex;margin-top: 40px;">
-        <div class="img-product">
-            <img class="img-chitiet" src="../../../../productImage/dochoivandong/dcvd3.jpg">
-            <div class="add-img">
-                <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-                    <img src="../../../../productImage/dochoivandong/dcvd3.jpg">
-                    <div class="ti-trash"></div>
-                </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
-                </div>
-                <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-                    <div class="bgadd"></div>
-                    <div class="ti-plus"></div>
+            <div class="img-product">
+                <img class="img-chitiet" src="../../../../productImage/dochoivandong/dcvd3.jpg">
+                <div class="add-img">
+                    <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
+                        <img src="../../../../productImage/dochoivandong/dcvd3.jpg">
+                        <div class="ti-trash"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
+                    <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
+                        <div class="bgadd"></div>
+                        <div class="ti-plus"></div>
+                    </div>
                 </div>
             </div>
-        </div>
         <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Máy gắp thú kích thước lớn có đèn và nhạc CHAMPION GAMES CPG76 </b>
-                <i class="ti-pencil"></i>
+            <div class="edit">
+                <div>
+                    <i class="ti-pencil" onclick="update('body')"></i>
+                    <i class="ti-save" onclick="save('body')"></i>
+                </div>
             </div>
-            <div class="product-price"><b>699,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b>
-                    <i class="ti-pencil"></i>
+            <div id="body" contenteditable="false">
+                <div style="max-width: fit-content;">
+                    <div class="product-name"><b>Máy gắp thú kích thước lớn có đèn và nhạc CHAMPION GAMES CPG76 </b>
+                    </div>
+                    <div class="product-price"><b>699,000 VNĐ</b>
+                    </div>
+                </div>
+                <div style="line-height: 30px;"> <!--Describe-->
+                    <p><b>Mô Tả Sản Phẩm</b>
+                        <p>
                     <p>
-                <p>
-                <h3>Đồ Chơi Máy Gắp Thú Kích Thước Lớn Có Đèn Và Nhạc CHAMPION GAMES CPG762</h3>
+                    <h3>Đồ Chơi Máy Gắp Thú Kích Thước Lớn Có Đèn Và Nhạc CHAMPION GAMES CPG762</h3>
+                    
+
+    Máy gắp thú kích thước lớn có đèn và nhạc là máy mô phỏng trò chơi gắp thú tại các khu vui chơi.
+    <br>
+    - Với cơ chế hoạt động y như máy thật, bé chỉ cần bỏ đồng xu vào máy, khởi động và gắp những con thú xinh xắn. Khi gắp thành công, máy sẽ có âm thanh và đèn chúc mừng.
+    <br>
+    - Bé có thể phối hợp khéo léo giữa tay và mắt khi chơi. Đồng thời rèn luyện trí não để tìm cách gắp được con thú mà bé yêu thích
+    <br>
+    - Bé có thể chơi cùng bạn bè, gia đình để so tài gắp banh để thêm gắn kết tình cảm với mọi người.
+    <br>
+    Chú ý: Nạp xu để kích hoạt máy vận hành. 1 xu có thể vận hành máy trong khoảng 1 phút, khi hết thời gian này, máy sẽ ngừng hoạt động. Cần bỏ thêm xu để máy hoạt động trở lại.
+
+
+                    
                 
-
-Máy gắp thú kích thước lớn có đèn và nhạc là máy mô phỏng trò chơi gắp thú tại các khu vui chơi.
-<br>
-- Với cơ chế hoạt động y như máy thật, bé chỉ cần bỏ đồng xu vào máy, khởi động và gắp những con thú xinh xắn. Khi gắp thành công, máy sẽ có âm thanh và đèn chúc mừng.
-<br>
-- Bé có thể phối hợp khéo léo giữa tay và mắt khi chơi. Đồng thời rèn luyện trí não để tìm cách gắp được con thú mà bé yêu thích
-<br>
-- Bé có thể chơi cùng bạn bè, gia đình để so tài gắp banh để thêm gắn kết tình cảm với mọi người.
-<br>
-Chú ý: Nạp xu để kích hoạt máy vận hành. 1 xu có thể vận hành máy trong khoảng 1 phút, khi hết thời gian này, máy sẽ ngừng hoạt động. Cần bỏ thêm xu để máy hoạt động trở lại.
-
-
-                
-              
-                </p>
+                    </p>
+                </div>
             </div>
+            <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
         </div>
         </div>
         <footer>

@@ -5,8 +5,9 @@
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../userelements/function.js"></script>
     </head>
-    <body>
+    <body onload="changeName();changeLinkProduct();">
       <header>
         <div id="header">
           <!-- Begin nav -->
@@ -29,28 +30,28 @@
             <li>
               <div class="search-container">
                 <input type="text" id="search-input" placeholder="Tìm kiếm..." />
-                <a href="">
+                <a href="../phanloaisanpham/lego.htm">
                   <button type="button" id="search-button">Tìm kiếm</button>
                 </a>
               </div>
             </li>
   
             <div class="search-advanced-container">
-              <a href="">
+              <a href="../userelements/advancedsearch.htm">
                 <button id="search-advanced-button">Tìm kiếm nâng cao</button>
               </a>
             </div>
   
             <!-- Thêm phần đăng nhập/đăng ký -->
             <div class="user-container">
-              <a href="" class="login-link">Đăng nhập</a>
-              <a href="" class="register-link">Đăng ký</a>
+              <a id="login-link" href="../userelements/login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
+              <a id="linkLogOut2" href="../userelements/register.htm" class="register-link" onclick="checkLogOut2()"><span id="dangxuat">Đăng ký</span></span></a>
               <i class="user-icon ti-user"></i>
             </div>
   
             <!-- Thêm phần giỏ hàng -->
                <div class="cart-container">
-              <a href="" class="cart-icon ti-shopping-cart"></a>
+              <a href="../userelements/shoppingCart.htm" class="cart-icon ti-shopping-cart"></a>
               <span class="cart-count"></span>
             </div>
           </ul>
@@ -95,33 +96,35 @@
                 }
             </script>
             <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
+              <button class="button" onclick="checkOrder();">Mua Ngay</button>
+              <button class="button" onclick="checkAddCart();">Thêm Vào Giỏ Hàng</button>
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
-                <p>
-                    <h3>Đồ Chơi Mô Hình Earthspark Warrior Thrash TRANSFORMERS F6729/F6230</h3>
-                    Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.
+              <p><b>Mô Tả Sản Phẩm</b>
+                  <p>
+              <p>
+                  <h3>Đồ Chơi Mô Hình Earthspark Warrior Thrash TRANSFORMERS F6729/F6230</h3>
+                  Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.
 
-                    <br>
-                    
-                    Đồ chơi siêu robot Transformers gây ấn tượng với những đặc điểm nổi bật sau đây:
-                    <br>
-                    <ul style="margin-left: 30px;">
-                    <li>Sản phẩm phù hợp cho các bé nam có độ tuổi từ 6 tuổi trở lên.</li>
-                    <li>Sở hữu thiết kế mô phỏng theo các nhân vật trong phim, không sản xuất hàng loạt theo một khuôn đúc. Từ khuôn mặt, vóc dáng, màu da cho đến trang phục, phụ kiện đều rất tinh tế, đẹp mắt.</li>
-                    <li>Mô hình có thể lắp hình nhân vật robot hoặc xe chỉ trong vài bước lắp ráp. Điều này giúp tăng cường phát triển trí tuệ cũng như khả năng tư duy.</li>
-                    <li>Sản phẩm làm từ nhựa cao cấp hoàn toàn không có chất kích ứng gây hại cho bé.</li>
-                    <li>Các góc cạnh được bo tròn với bề mặt nhẵn tạo sự an toàn, không làm trầy xước da khi bé chơi</li>
-                    <li>Đồ chơi giúp bé sẽ được thỏa thích chơi đùa, trò chuyện hoặc chơi nhập vai cùng người bạn Transformers yêu thích của mình. Từ đó kích thích trí tưởng tượng và sáng tạo của trẻ bay cao bay xa.</li>
-                    </ul>
-                </p>
+                  <br>
+                  
+                  Đồ chơi siêu robot Transformers gây ấn tượng với những đặc điểm nổi bật sau đây:
+                  <br>
+                  <ul style="margin-left: 30px;">
+                  <li>Sản phẩm phù hợp cho các bé nam có độ tuổi từ 6 tuổi trở lên.</li>
+                  <li>Sở hữu thiết kế mô phỏng theo các nhân vật trong phim, không sản xuất hàng loạt theo một khuôn đúc. Từ khuôn mặt, vóc dáng, màu da cho đến trang phục, phụ kiện đều rất tinh tế, đẹp mắt.</li>
+                  <li>Mô hình có thể lắp hình nhân vật robot hoặc xe chỉ trong vài bước lắp ráp. Điều này giúp tăng cường phát triển trí tuệ cũng như khả năng tư duy.</li>
+                  <li>Sản phẩm làm từ nhựa cao cấp hoàn toàn không có chất kích ứng gây hại cho bé.</li>
+                  <li>Các góc cạnh được bo tròn với bề mặt nhẵn tạo sự an toàn, không làm trầy xước da khi bé chơi</li>
+                  <li>Đồ chơi giúp bé sẽ được thỏa thích chơi đùa, trò chuyện hoặc chơi nhập vai cùng người bạn Transformers yêu thích của mình. Từ đó kích thích trí tưởng tượng và sáng tạo của trẻ bay cao bay xa.</li>
+                  </ul>
+              </p>
+            </div>
+            <div style="float: right;margin: 20px 30px;"><a href="../../index.htm"><button style="font-size: 17px;"><i class="ti-arrow-left"></i>Quay lại</button></a></div>
             </div>
         </div>
-        </div>
-        <footer style="margin-top: 5%;">
+        <footer>
             <ul style="margin-left: 3%;" class="footer">
                 <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
                 <li class="footer-data"><img src="../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>

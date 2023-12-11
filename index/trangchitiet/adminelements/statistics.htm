@@ -10,7 +10,7 @@
         <script src="admin.js"></script>
     </head>
     <body>
-      <header>
+      <header style="width: 100%;">
         <div id="header">
           <!-- Begin nav -->
           <ul class="menubar" id="nav">
@@ -18,13 +18,13 @@
             <!-- Thêm phần tìm kiếm -->
   
             <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left : 1170px">
-              <i class="user-icon ti-user">Admin</i>
-            </div>
-  
+            
             <!-- Thêm phần giỏ hàng -->
           </ul>
           <!-- End nav -->
+        </div>
+        <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+          <i class="user-icon ti-user">Admin</i>
         </div>
       </header>
       <div>
@@ -33,7 +33,7 @@
         <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
             border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics');return false;">
             <label for="pname"><b>Tên sản phẩm: </b></label>
-            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;" required>
+            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;">
             <label for="ptype" style="margin-left: 20px;"><b>Loại sản phẩm: </b></label>
             <select name="ptype" onchange="document.getElementById('ptyperesult').innerText = this.value;">
               <option value="" selected disabled hidden>Choose here</option>
@@ -74,26 +74,26 @@
       
                 <span id="status">     
                   <span id="receipt-inform">     
-                    Name: Lê Đức Anh    <br/>
-                    Phone: 0909090909  <br/>
-                    Address: 333 Võ Văn Kiệt, Quận 5, Thành phố Hồ Chí Minh<br/>
+                    Tên: Lê Đức Anh    <br/>
+                    SĐT: 0909090909  <br/>
+                    Địa chỉ: 333 Võ Văn Kiệt, Quận 5, Thành phố Hồ Chí Minh<br/>
                   </span>
-                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363 1,598,000 VNĐ</span>
                 </span>
               </div>
 
               <div id="receipt2" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #002
-                  <a href="../receipt/receipt2.htm">Xem thông tin đơn hàng</a>
+                  <!-- <a href="../receipt/receipt2.htm">Xem thông tin đơn hàng</a> -->
                 </span>
       
                 <span id="status">     
                   <span id="receipt-inform">     
-                    Name: Nguyễn Thành Việt    <br/>
-                      Phone: 0937898989  <br/>
-                      Address: 898 Linh Đông, Thành phố Thủ Đức <br/>
+                    Tên: Nguyễn Thành Việt    <br/>
+                      SĐT: 0937898989  <br/>
+                      Địa chỉ: 898 Linh Đông, Thành phố Thủ Đức <br/>
                   </span>
-                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363 799,000</span>
                 </span>
               </div>
 
@@ -104,35 +104,35 @@
       
                 <span id="status">     
                   <span id="receipt-inform">     
-                    Name: Trương Lê Gia Hưng    <br/>
-                    Phone: 0911311322  <br/>
-                    Address: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
+                    Tên: Trương Lê Gia Hưng    <br/>
+                    SĐT: 0911311322  <br/>
+                    Địa chỉ: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
                   </span>
-                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363 1,598,000</span>
                 </span>
               </div>
 
               <div id="receipt5" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #005
-                  <a href="../receipt/receipt5.htm">Xem thông tin đơn hàng</a>
+                  <!-- <a href="../receipt/receipt5.htm">Xem thông tin đơn hàng</a> -->
                 </span>
       
                 <span id="status">     
                   <span id="receipt-inform">     
-                    Name: Phạm Ngọc Triều  <br/>
-                    Phone: 0916665668   <br/>
-                    Address: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
+                    Tên: Phạm Ngọc Triều  <br/>
+                    SĐT: 0916665668   <br/>
+                    Địa chỉ: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
                   </span>
-                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363</span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363 799,000</span>
                 </span>
               </div>
 
-              <span id="total"><i class="ti-money"></i>Tổng cộng: &#8363 </span>
+              <span id="total"><i class="ti-money"></i>Tổng cộng: &#8363 4,794,000</span>
 
             </div>
 
           </div>
-
+          <a href="../../indexadmin.htm" style="float: right;margin-right: 20px;margin-top: 10px;margin-bottom: 10px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
         </div>
 
       </div>

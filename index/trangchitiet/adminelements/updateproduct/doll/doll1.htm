@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../../../index.css" type="text/css">
         <link rel="stylesheet" href="../../../chitiet.css" type="text/css">
         <link rel="stylesheet" href="../../../../themify-icons-font/themify-icons/themify-icons.css">
+        <script src="../update.js"></script>
         <style>
             i.ti-pencil{
                 border: 1px solid black;
@@ -18,22 +19,17 @@
         </style>
     </head>
     <body>
-      <header>
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../updateproduct.htm">home</a></li>
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            <div class="user-container" style="margin-left: 1170px;">
-              <i class="user-icon ti-user">Admin</i>
+        <header style="width: 100%;">
+            <div id="header">
+              <!-- Begin nav -->
+              <ul class="menubar" id="nav">
+                <li><a href="../../updateproduct.htm">home</a></li>
+            </ul>
             </div>
-           
-
-          </ul>
-          <!-- End nav -->
-        </div>
-      </header> 
+            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
+                <i class="user-icon ti-user">Admin</i>
+            </div>
+        </header>  
         <div style="display: flex;margin-top: 40px;">
         <div class="img-product">
             <img class="img-chitiet" src="../../../../productImage/doll/doll1.jpg">
@@ -52,44 +48,45 @@
                 </div>
             </div>
         </div>
-    
+
         <div>
-        <div style="max-width: fit-content;">
-            <div class="product-name"><b>Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY</b>
-                <i class="ti-pencil"></i>
+
+            <div class="edit">
+                <div>
+                    <i class="ti-pencil" onclick="update('body')"></i>
+                    <i class="ti-save" onclick="save('body')"></i>
+                </div>
             </div>
-            <div class="product-price"><b>1,369,000 VNĐ</b>
-                <i class="ti-pencil"></i>
-            </div>
-            <div style="display: flex;margin-left: 30px;">
-                <button class="button-amount decrease"><i class="ti-minus"></i></button>
-                <input class="amount" type="text"value="1" readonly>
-                <button class="button-amount increase"><i class="ti-plus"></i></button>
-            </div>
-            <div style="margin: 20px 0">
-            <button class="button">Mua Ngay</button>
-            <button class="button">Thêm Vào Giỏ Hàng</button>
-            </div>
-        </div>
-            <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b>
-                    <i class="ti-pencil"></i>
+
+            <div id="body" contenteditable="false">
+                <div style="max-width: fit-content;">
+                <div class="product-name"><b>Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY</b>
+                    </div>
+                <div class="product-price"><b>1,369,000 VNĐ</b>
+                    </div>
+                </div>
+                
+                <div style="line-height: 30px;"> <!--Describe-->
+                    <p><b>Mô Tả Sản Phẩm</b>
+                        <p>
                     <p>
-                <p>
-                <h3>Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY</h3>
-                  
-                Bộ đồ chơi Bánh Mini Cupcake Bread Barbershop BB32773 cho bé tự do sáng tạo nên những người bạn cupcake độc đáo bằng cách thay đổi chi tiết và phụ kiện.
-                <br>
-                - Chỉ với 6 bộ đồ chơi Bánh Mini Cupcake đã tạo ra được hơn 200 kiểu cupcake khác nhau.
-                <br>
-                - Sản phẩm đồ chơi Bánh Mini Cupcake
-                <br>
-                - Công chúa Blueberry và Lemon Cream gồm 1 búp bê cao 6cm, 2 kiểu tóc, 2 chiếc váy cupcake, 3 phụ kiện đi kèm, 1 phụ kiện bí mật, 1 đế bánh cupcake.
-          
-              
-                </p>
+                    <h3>Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY</h3>
+                    
+                    Bộ đồ chơi Bánh Mini Cupcake Bread Barbershop BB32773 cho bé tự do sáng tạo nên những người bạn cupcake độc đáo bằng cách thay đổi chi tiết và phụ kiện.
+                    <br>
+                    - Chỉ với 6 bộ đồ chơi Bánh Mini Cupcake đã tạo ra được hơn 200 kiểu cupcake khác nhau.
+                    <br>
+                    - Sản phẩm đồ chơi Bánh Mini Cupcake
+                    <br>
+                    - Công chúa Blueberry và Lemon Cream gồm 1 búp bê cao 6cm, 2 kiểu tóc, 2 chiếc váy cupcake, 3 phụ kiện đi kèm, 1 phụ kiện bí mật, 1 đế bánh cupcake.
+            
+                
+                    </p>
+                </div>
             </div>
+            <a href="../../updateproduct.htm" style="float: right;margin-right: 45px;margin-top: 20px;margin-bottom: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-arrow-left" style="margin-right: 5px;"></i>Quay lại</button></a>
         </div>
+
         </div>
         <footer>
             <ul style="margin-left: 3%;" class="footer">
