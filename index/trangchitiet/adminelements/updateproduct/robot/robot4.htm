@@ -15,7 +15,6 @@
         <ul class="menubar" id="nav">
           <li><a href="../../updateproduct.htm">home</a></li>
       </ul>
-      </div>
       <div class="user-container" style="margin-left: auto;margin-right: 30px;">
         <div class="admin-popup">
           <!-- <i class="user-icon ti-user">Admin</i> -->
@@ -34,25 +33,29 @@
           
         </div>
       </div>
+      </div>
   </header>
   <div style="display: flex;margin-top: 40px;">
-  <div class="img-product">
-      <img class="img-chitiet" src="../../../../productImage/robot/robot4.jpg">
+    <div class="img-product">
+      <div><img id="delete" class="img-chitiet" src="../../../../productImage/robot/robot4.jpg"></div>
       <div class="add-img">
-        <div class="element delete" onclick="confirm('Bạn có chắc chắn muốn xóa hình ảnh này không !!!')">
-            <img src="../../../../productImage/robot/robot4.jpg">
-            <div class="ti-trash"></div>
-        </div>
-        <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-            <div class="bgadd"></div>
-            <div class="ti-plus"></div>
-        </div>
-        <div class="element add" onclick="alert('Thêm ảnh thành công !!!')">
-            <div class="bgadd"></div>
-            <div class="ti-plus"></div>
-        </div>
-    </div>
-
+          <div id="img-delete" class="element delete" onclick="deleteIMG();">
+              <img id="need-delete" src="../../../../productImage/robot/robot4.jpg" style="display: block;">
+              <div id="nothing" class="nothing"></div>
+              <div id="trash" class="ti-trash"></div>
+              <input id="images" type="file" accept="images/*" style="display: none;">
+          </div>
+          <div id="img-add" class="element add" onclick="document.getElementById('images1').click();">
+              <div class="bgadd"></div>
+              <div class="ti-plus"></div>
+              <input id="images1" type="file" accept="images/*" style="display: none;">
+          </div>
+          <div class="element add" onclick="document.getElementById('images2').click();">
+              <div class="bgadd"></div>
+              <div class="ti-plus"></div>
+              <input id="images2" type="file" accept="images/*" style="display: none;">
+          </div>
+      </div>
   </div>
 
   <div>

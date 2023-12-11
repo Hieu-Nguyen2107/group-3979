@@ -2,13 +2,16 @@
     width: 350px;
     height: 350px;
     margin-left: 0;
-    border: 2px solid black;
-    border-radius: 10px;
+    margin: 3px;
 }
 .img-product{
     margin: 0 50px;
     display: flex;
     flex-direction: column;
+}
+.img-product > div:nth-child(1){
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .add-img{
     margin-top: 5px;
@@ -48,6 +51,9 @@ div.element > div.ti-plus{
     color: red;
     font-size: 20px;
     margin: 24px;
+}
+div#img-delete{
+    display: block;
 }
 div.delete:hover div.ti-trash{
     display: block;
