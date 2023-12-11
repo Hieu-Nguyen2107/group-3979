@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
     <script src="function.js"></script>
   </head>
-  <body onload="changeName();">
+  <body onload="changeName();changeLinkIndex2();">
     <header>
       <div id="header">
         <!-- Begin nav -->
@@ -60,7 +60,7 @@
 
           <!-- Thêm phần đăng nhập/đăng ký -->
           <div class="user-container">
-            <a href="login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
+            <a id="login-link" href="login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
             <a id="linkLogOut2" href="register.htm" class="register-link" onclick="checkLogOut2()"><span id="dangxuat">Đăng ký</span></span></a>
             <i class="user-icon ti-user"></i>
           </div>

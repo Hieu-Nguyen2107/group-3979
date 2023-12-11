@@ -20,6 +20,14 @@ function checkLogOut2() {
     //window.location.href = "../../index.htm";
   }
 }
+function checkLogOut3() {
+  if (isLogin) {
+    alert("Đăng xuất thành công");
+    localStorage.removeItem("token");
+    document.getElementById("linkLogOut2").href = "../../../index.htm";
+    //window.location.href = "../../index.htm";
+  }
+}
 function Login() {
   localStorage.setItem("token", "user");
   isLogin = true;
@@ -72,5 +80,15 @@ function changeLinkReceiptHistory(){
     document.getElementById("login-link").href = "../accountinform.htm";
   }else{
     document.getElementById("login-link").href = "../login.htm";
+  }
+}
+function check(){
+  if(!isLogin){
+    alert("Bạn cần phải đăng nhập !!!");
+    return false;
+  }else{
+    alert("Thanh toán thành công");
+    location = "../../index.htm";
+    return true;
   }
 }
