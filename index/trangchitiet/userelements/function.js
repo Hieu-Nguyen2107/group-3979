@@ -88,7 +88,6 @@ function check(){
     return false;
   }else{
     alert("Thanh toán thành công");
-    location = "../../index.htm";
     return true;
   }
 }
