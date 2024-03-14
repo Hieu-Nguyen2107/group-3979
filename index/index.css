@@ -24,9 +24,9 @@ body {
   right: 0;
   height: 60px;
   background-color: black;
-  display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  /* display: flex;
+  flex-wrap: nowrap; */
   width: 100%;
 }
 @media screen and (max-width: 1700px) {
@@ -35,17 +35,16 @@ body {
     left: 0;
     right: 0;
     height: 60px;
-    width: 100%;
     background-color: black;
     align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
+    /* display: flex;
+    flex-wrap: nowrap; */
   }
   #nav {
     height: 60px;
   }
 }
-@media screen and (min-width: 100%) {
+/* @media screen and (min-width: 100%) {
   header {
     top: 0;
     left: 0;
@@ -60,11 +59,12 @@ body {
   #nav {
     height: 60px;
   }
-}
+} */
 
 #nav {
   display: flex;
   list-style-type: none;
+  flex-wrap: nowrap;
 }
 ul#nav >li {
   text-wrap: nowrap;
@@ -123,8 +123,11 @@ ul#nav >li {
 
 .search-container {
   line-height: 60px;
-  margin-left: 150px;
+  margin-left: 5%;
   padding-right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
 #search-input {
@@ -171,7 +174,7 @@ ul#nav >li {
 
 .user-container {
   line-height: 60px;
-  margin-left: 100px;
+  margin-left: 20%;
   text-wrap: nowrap;
 }
 div.admin-popup{
@@ -237,7 +240,7 @@ div.admin-popup:hover div.popup{
 
 .cart-container {
   line-height: 60px;
-  margin-left: 50px;
+  margin-left: 20%;
 }
 
 .cart-icon {
@@ -246,24 +249,39 @@ div.admin-popup:hover div.popup{
   line-height: 60px;
   margin-left: 60px;
 }
+@media screen and (max-width: 1700px){
+  footer {
+      
+      display: block;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      /* background-color: black; */
+      overflow-x: hidden;
+      align-items: flex-start;
+      padding-top: 10px;
+      margin-top: auto;
+      overflow-y: hidden;
+      
+  }
+}
+footer { 
+  background-color: black;
+  align-items: flex-start;
+  padding-top: 10px;
+  margin-top: auto;
+  overflow-y: hidden;
+  
+}
 
-footer {
-    position: relative; 
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    background-color: black;
-    overflow-x: hidden;
-    align-items: flex-start;
-    padding-top: 10px;
-    margin-top: auto;
-    overflow-y: hidden;
+#footer {
+  display: flex;
 }
 
 ul.footer {
     /* display: inline-block; */
     text-align: left;
     margin-left: 20px;
+    text-wrap: nowrap;
 }
 
 .footer-data {

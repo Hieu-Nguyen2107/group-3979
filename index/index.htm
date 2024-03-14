@@ -13,7 +13,7 @@
         <header>
             <div id="header">
               <!-- Begin nav -->
-              <ul class="menubar" id="nav">
+              <ul id="nav">
                 <li><a href="index.htm">home</a></li>
                 <li>
                   <a href="">
@@ -34,27 +34,31 @@
                     <a href="trangchitiet/phanloaisanpham/timkiem1.htm">
                       <button type="button" id="search-button">Tìm kiếm</button>
                     </a>
+                    <div class="search-advanced-container">
+                        <a href="trangchitiet/userelements/advancedsearch.htm">
+                            <button id="search-advanced-button">Tìm kiếm nâng cao</button>
+                        </a>
+                    </div>
                   </div>
                 </li>
-      
-                <div class="search-advanced-container">
-                  <a href="trangchitiet/userelements/advancedsearch.htm">
-                    <button id="search-advanced-button">Tìm kiếm nâng cao</button>
-                  </a>
-                </div>
+                
       
                 <!-- Thêm phần đăng nhập/đăng ký -->
-                <div class="user-container">
-                  <a id="login-link" href="trangchitiet/userelements/login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
-                  <a id="linkLogOut" href="trangchitiet/userelements/register.htm" class="register-link" onclick="checkLogOut()"><span id="dangxuat">Đăng ký</span></span></a>
-                  <i class="user-icon ti-user"></i>
-                </div>
+                <li>
+                    <div class="user-container">
+                        <a id="login-link" href="trangchitiet/userelements/login.htm" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
+                        <a id="linkLogOut" href="trangchitiet/userelements/register.htm" class="register-link" onclick="checkLogOut()"><span id="dangxuat">Đăng ký</span></span></a>
+                        <i class="user-icon ti-user"></i>
+                    </div>
+                </li>
       
                 <!-- Thêm phần giỏ hàng -->
-                   <div class="cart-container">
-                  <a href="trangchitiet/userelements/shoppingCart.htm" class="cart-icon ti-shopping-cart"></a>
-                  <span class="cart-count"></span>
-                </div>
+                <li>
+                    <div class="cart-container">
+                        <a href="trangchitiet/userelements/shoppingCart.htm" class="cart-icon ti-shopping-cart"></a>
+                        <span class="cart-count"></span>
+                    </div>
+                </li>
               </ul>
               <!-- End nav -->
             </div>
@@ -130,24 +134,33 @@
         <a href="trangchitiet/userelements/index2.htm"><button class="page">2</button></a>
         </div>
     </div>
-    <div style="display: block;margin-top: auto;">
+    <div style="display: block;width: 100%;">
         <footer>
-                      
-            <ul style="margin-left: 3%;" class="footer">
-                <li class="footer-data"><img src="phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
-                <li class="footer-data"><img src="emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
-                <li class="footer-data"><img src="addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
-                <li class="footer-data"><img src="timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
+            <ul id="footer">
+                <li>
+                <ul style="margin-left: 3%;" class="footer">
+                    <li class="footer-data"><img src="phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
+                    <li class="footer-data"><img src="emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
+                    <li class="footer-data"><img src="addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
+                    <li class="footer-data"><img src="timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
+                </ul>
+                </li>
+                <li style="margin-left: 10%;">
+                <div>
+                <p class="footer-data" style="margin-bottom: 5%;"><img src="connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
+                <div style="display: flex;">
+                    <img src="fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+                    <img src="instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+                    <img src="youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
+                </div>
+                </div>
+                </li>
+                <li style="margin-left: 10%;">
+                <div>
+                    <img src="bocongthuong.png">
+                </div>
+                </li>
             </ul>
-            <div style="margin-left: 10%;">
-            <p class="footer-data" style="margin-bottom: 5%;"><img src="connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
-            <div style="display: flex;">
-                <img src="fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-                <img src="instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-                <img src="youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            </div>
-            </div>
-            <img src="bocongthuong.png" style="margin-left: 10%;">
         </footer>
     </div>
     </body>
