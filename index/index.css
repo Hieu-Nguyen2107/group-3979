@@ -29,7 +29,8 @@ body {
   flex-wrap: nowrap; */
   width: 100%;
 }
-@media screen and (max-width: 1400px) {
+/* <= 1400px */
+@media screen and (max-width: 1400px) { 
   header {
     top: 0;
     left: 0;
