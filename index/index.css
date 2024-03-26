@@ -301,6 +301,7 @@ div.admin-popup:hover div.popup{
 
 @media screen and (max-width: 1400px){
   footer {
+    display: flex ;
     background-color: black;
     align-items: flex-start;
     padding-top: 10px;
@@ -326,6 +327,7 @@ div.admin-popup:hover div.popup{
 @media screen and (min-width: 1400px) {
   
   footer { 
+    display: flex;
     background-color: black;
     align-items: flex-start;
     padding-top: 10px;
