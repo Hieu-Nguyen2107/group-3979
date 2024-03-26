@@ -15,7 +15,7 @@
     <?php include "../headerChitiet.php"; ?>
 
     <div class="inform">
-      <form action="loginProcess.php" method="POST">
+      <form action= "loginProcess.php" method="POST">
         <div class="inner-inform">
           <input
             type="text"

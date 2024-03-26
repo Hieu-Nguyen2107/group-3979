@@ -7,9 +7,8 @@
         <link rel="stylesheet" href="themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="trangchitiet/chitiet.css">
         <link rel="shortcut icon" type="image/png" href="logo.jpg">
-        <script src="trangchitiet/userelements/function.js"></script>
     </head>
-    <body onload="changeName();changeLinkIndex();">
+    <body>
     <?php include "headerIndex.php"; ?>
     <img class="img-adver" src="adverImange/img1.jpg">
     <div class="body">

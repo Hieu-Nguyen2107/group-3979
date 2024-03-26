@@ -34,24 +34,44 @@
         <!-- Thêm phần đăng nhập/đăng ký -->
         <li>
             <div class="user-container">
-                    <?php
-                        if (!isset($_COOKIE["user"])){
-                            echo '<a id="login-link" href="trangchitiet/userelements/login.php" class="login-link"><span id="taikhoan">'.
-                                "Đăng nhập". 
-                                "</span></a>". 
-                                '<a id="linkLogOut" href="trangchitiet/userelements/register.php" class="register-link" onclick="checkLogOut()"><span id="dangxuat">'.
-                                "Đăng ký".
-                                "</span></a>" ;
-                            
-                        }else{
-                            echo '<a id="login-link" href="trangchitiet/userelements/accountinform.php" class="login-link"><span id="taikhoan">'.
-                                $_COOKIE["user"].
-                                "</span></a>".
-                                '<a id="linkLogOut" href="../../index.php" class="register-link" onclick="checkLogOut()"><span id="dangxuat">'.
-                                "Đăng xuất".
-                                "</span></a>" ;
-                        }
-                    ?>
+                <a id="login-link" 
+                <?php
+                    if(!isset($_COOKIE["user"]))
+                    {
+                        echo 'href="trangchitiet/userelements/login.php"' ;
+                    }else{
+                        echo 'href="trangchitiet/userelements/accountinform.php"' ;
+                    }
+                ?>
+                class="login-link"><span id="taikhoan">
+                <?php
+                    if(!isset($_COOKIE["user"]))
+                    {
+                        echo "Đăng nhập" ;
+                    }else{
+                        echo"". $_COOKIE["user"] ;
+                    }
+                ?>
+                </span></a>
+                <a id="linkLogOut" 
+                <?php
+                    if (!isset($_COOKIE["user"])){
+                        echo 'href="trangchitiet/userelements/register.php"' ;
+                    }else{
+                        echo 'href="trangchitiet/userelements/loginProcess.php"' ;
+                    }
+                ?>
+                class="register-link" onclick="checkLogOut()"><span id="dangxuat">
+                <?php
+                    if(!isset($_COOKIE["user"]))
+                    {
+                        echo 'Đăng ký' ;
+                    }else{
+                        echo 'Đăng xuất' ;
+                }
+                ?>
+                </span></a>
+
                 <i class="user-icon ti-user"></i>
             </div>
         </li>
