@@ -86,6 +86,7 @@
             name="email"
             placeholder=" Email"
           /><br />
+          <input type="text" id="name" name="name" placeholder="Họ và tên" /> <br/>
           <input
             type="text"
             id="username"
