@@ -1,8 +1,24 @@
 <?php
+    include "../connection.php" ;
+    session_start();
+    $_SESSION['error']="";
+
     if (!isset($_COOKIE["user"])){
         $cookie_name = "user" ;
         $cookie_value = $_POST['username'] ;
-        setcookie($cookie_name,$cookie_value,time() + (86400 * 30), "/") ;
+        $cookie_pass = $_POST['pass'] ;
+        $sql = "SELECT * FROM customer WHERE Name = '$cookie_value' AND Password = '$cookie_pass'; " ;
+        $result = mysqli_query($conn,$sql) ;
+        if (mysqli_num_rows($result) == 0)
+        {
+            $_SESSION['error']="Đăng nhập không thành công";
+            header ("Location: login.php") ;
+            exit;
+        }
+        else{
+            $row = mysqli_fetch_assoc($result) ;
+            setcookie($cookie_name,$row['NameAccount'],time() + (86400 * 30), "/") ;
+        }
         header ("Location:../../index.php") ;
         exit ;
     }else{

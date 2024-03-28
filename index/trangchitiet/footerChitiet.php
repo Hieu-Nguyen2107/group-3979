@@ -10,7 +10,7 @@
         </li>
         <li style="margin-left: 10%;">
         <div>
-        <p class="footer-data" style="margin-bottom: 5%;"><img src="connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
+        <p class="footer-data" style="margin-bottom: 5%;"><img src="../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
         <div style="display: flex;">
             <img src="../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
             <img src="../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">

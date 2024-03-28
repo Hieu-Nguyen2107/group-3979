@@ -355,9 +355,6 @@ div.admin-popup:hover div.popup {
 #footer {
   display: flex;
 }
-#footer > li {
-  width: 100px;
-}
 
 .clearfix::after {
   content: "";

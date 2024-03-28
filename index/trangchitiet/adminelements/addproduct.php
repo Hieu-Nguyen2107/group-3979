@@ -41,7 +41,13 @@
         <h1 style="margin: 15px 20px;text-align: center;">Thêm Sản Phẩm</h1>
         <form action="" style="line-height: 25px;margin: 20px 40px;" onsubmit="return check();">
             <label for="producttype">Loại sản phẩm:</label><br/>
-            <input type="text" id="ptype" name="ptype" placeholder="Loại sản phẩm"><br/>
+            <select>
+              <option value="robot">Robot</option>
+              <option value="doll">Búp bê</option>
+              <option value="lego">Đồ chơi lắp ghép</option>
+              <option value="dcvd">Đồ chơi vận động</option>
+            </select>
+            <br/>
             <label for="productname">Tên sản phẩm:</label><br/>
             <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm"><br/>
             <label for="productprice">Giá tiền sản phẩm:</label><br/>

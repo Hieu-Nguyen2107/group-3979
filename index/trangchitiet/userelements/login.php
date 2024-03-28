@@ -28,7 +28,12 @@
             id="pass"
             name="pass"
             placeholder=" Mật khẩu"
-          /><br />
+          /><br /><?php
+          session_start();
+          if(isset($_SESSION['error']))
+          echo'<div class="login-failed">'.$_SESSION['error'].'</div>
+          ';
+          ?>
           <input type="submit" value="Đăng Nhập" onclick="Login()" />
         </div>
       </form>
