@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--Phai co phan trang va phan loai san pham-->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>3979 Toys</title>
+    <link rel="stylesheet" href="../../index.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../themify-icons-font/themify-icons/themify-icons.css"
+    />
+    <link rel="stylesheet" href="shoppingCart.css" />
+    <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
+    <script src="function.js"></script>
+  </head>
+  <body onload="changeName();changeLinkIndex2();">
+    <header>
+      <div id="header">
+        <!-- Begin nav -->
+        <ul class="menubar" id="nav">
+          <li><a href="../../index.php">home</a></li>
+          <li>
+            <a href="">
+              product
+              <i class="nav-arrow-down ti-angle-down"></i>
+            </a>
+            <ul class="subnav">
+              <li>
+                <a href="../phanloaisanpham/robot.php">ROBOT</a>
+              </li>
+              <li>
+                <a href="../phanloaisanpham/doll.php">BÚP BÊ</a>
+              </li>
+              <li>
+                <a href="../phanloaisanpham/lego.php"
+                  >ĐỒ CHƠI LẮP GHÉP</a
+                >
+              </li>
+              <li>
+                <a href="../phanloaisanpham/dcvd.php"
+                  >ĐỒ CHƠI VẬN ĐỘNG</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Thêm phần tìm kiếm -->
+          <li>
+            <div class="search-container">
+              <input type="text" id="search-input" placeholder="Tìm kiếm..." />
+              <a href="../phanloaisanpham/timkiem1.php">
+                <button type="button" id="search-button">Tìm kiếm</button>
+              </a>
+            </div>
+          </li>
+          <!--Thêm phần tìm kiếm nâng cao-->
+          <div class="search-advanced-container">
+            <a href="advancedsearch.php">
+              <button id="search-advanced-button">Tìm kiếm nâng cao</button>
+            </a>
+          </div>
+
+         <!-- Thêm phần đăng nhập/đăng ký -->
+         <div class="user-container">
+          <a id="login-link" href="login.php" class="login-link"><span id="taikhoan"> Đăng nhập</span></a>
+          <a id="linkLogOut2" href="register.php" class="register-link" onclick="checkLogOut2()"><span id="dangxuat">Đăng ký</span></span></a>
+          <i class="user-icon ti-user"></i>
+        </div>
+
+          <!-- Thêm phần giỏ hàng -->
+          <div class="cart-container">
+            <a href="" class="cart-icon ti-shopping-cart"></a>
+            <span class="cart-count"></span>
+          </div>
+        </ul>
+        <!-- End nav -->
+      </div>
+    </header>
+
+    <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Sản Phẩm</th>
+          <th>Số Lượng</th>
+          <th>Tổng</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                class="img-chitiet"
+                src="../../productImage/robot/robot1.jpg"
+              />
+              <div>
+              <p>Robot chú chó tinh nghịch</p>
+              <small>Giá: 649,000 VNĐ</small>
+              <br />
+              <a href="../../trangchitiet/robot/robot1.php">Chi tiết</a>
+              <br> <br>
+              <i class="ti-trash" onclick="confirm('Bạn có chắc chắn muốn xóa không !!!')" style="color: red;"></i>
+            </div>
+          </td>
+          <td><input type="number" value="1" min="1"/></td>
+          <td>649,000 VNĐ</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                class="img-chitiet"
+                src="../../productImage/doll/doll2.jpg"
+              />
+              <div>
+                <p>Bánh Mì Barber Bread</p>
+                <small>Giá: 72,000 VNĐ</small>
+                <br />
+                <a href="../../trangchitiet/doll/doll2.php">Chi tiết</a>
+                <br> <br>
+                <i class="ti-trash" onclick="confirm('Bạn có chắc chắn muốn xóa không !!!')" style="color: red;"></i>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" min="1"/></td>
+          <td>72,000 VNĐ</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                class="img-chitiet"
+                src="../../productImage/doll/doll3.jpg"
+              />
+              <div>
+                <p>MLP Quả trứng kỳ diệu</p>
+                <small>Giá: 69,000 VNĐ</small>
+                <br />
+                <a href="../../trangchitiet/doll/doll3.php">Chi tiết</a>
+                <br> <br>
+                <i class="ti-trash" onclick="confirm('Bạn có chắc chắn muốn xóa không !!!')" style="color: red;"></i>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" min="1"/></td>
+          <td>69,000 VNĐ</td>
+        </tr>
+      </table>
+
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Tổng</td>
+            <td>790,000 VNĐ</td>
+          </tr>
+          <tr>
+            <td>Thuế</td>
+            <td>50,000 VNĐ</td>
+          </tr>
+          <tr>
+            <td>Tổng Cộng</td>
+            <td>840,000 VNĐ</td>
+          </tr>
+        </table>
+      </div>
+      <form action="../../index.php" onsubmit="return check();">
+      <div class="location">
+        <p><b>Chọn địa chỉ giao hàng</b></p>
+        <br>
+        <input type="checkbox" name="vehicle1" value="Địa chỉ" /> 56D/57, P.Trung Mỹ Tây, Q.12  <br />
+        <br />
+        <input type="text" name="txtTen" placeholder="Nhập địa chỉ giao hàng" /> <br />
+        <br />
+        <input
+          type="submit"
+          value="Thanh toán"
+          onclick=""
+        />
+        
+        <br />
+        <br />
+      </div>
+      </form>
+    </div>
+    <div style="display: block;margin-top: auto;">
+      <footer>
+        <ul style="margin-left: 3%" class="footer">
+          <li class="footer-data">
+            <img src="../../phoneicon.png" style="width: 20px" /> Hotline:
+            0939.797979 - 0979.393939
+          </li>
+          <li class="footer-data">
+            <img src="../../emailicon.png" style="width: 20px" /> Email:
+            3979team@gmail.com
+          </li>
+          <li class="footer-data">
+            <img src="../../addressicon.png" style="width: 20px" /> Địa chỉ: 728
+            Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM
+          </li>
+          <li class="footer-data">
+            <img src="../../timeicon.png" style="width: 20px" /> Thời gian hoạt
+            động: 10:00 - 21:00
+          </li>
+          <li class="footer-data"></li>
+        </ul>
+        <div style="margin-left: 10%">
+          <p class="footer-data" style="margin-bottom: 5%">
+            <img src="../../connecticon.png" style="width: 20px" /> Kết nối với
+            chúng tôi qua các nền tảng sau:
+          </p>
+          <img
+            src="../../fbicon.png"
+            style="width: 70px; height: 70px; margin-left: 8%"
+          />
+          <img
+            src="../../instaicon.png"
+            style="width: 70px; height: 70px; margin-left: 8%"
+          />
+          <img
+            src="../../youtubeicon.png"
+            style="width: 70px; height: 70px; margin-left: 8%"
+          />
+        </div>
+        <img src="../../bocongthuong.png" style="margin-left: 10%" />
+      </footer>
+    </div>
+  </body>
+</html>
