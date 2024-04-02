@@ -81,8 +81,6 @@
         <a href="trangchitiet/userelements/index2.php"><button class="page">2</button></a>
         </div>
     </div>
-    <div style="display: block;width: 100%;">
-        <?php include "footerIndex.php"; ?>
-    </div>
+    <?php include "footerIndex.php"; ?>
     </body>
 </html>
