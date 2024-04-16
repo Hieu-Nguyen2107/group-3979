@@ -46,28 +46,28 @@
         <div class="list-header"><b>ĐỒ CHƠI VẬN ĐỘNG</b></div>
         <div class="product-list">
             <a class="product" href="../../trangchitiet/dcvd/dcvd1.php">
-                <img src="../../productImage/dochoivandong/dcvd1.jpg">
+                <img src="../../productImage/dochoivandong/dochoivandong1.jpg">
                 <div class="product-detail">
                     <div class="name">Máy đập hành tinh chuột chũi CHAMPION GAMES</div>
                     <div class="price">459,000 VNĐ</div>
                 </div>
             </a>
             <a class="product" href="../../trangchitiet/dcvd/dcvd2.php">
-                <img src="../../productImage/dochoivandong/dcvd2.jpg">
+                <img src="../../productImage/dochoivandong/dochoivandong2.jpg">
                 <div class="product-detail">
                     <div class="name">Trò chơi trận chiến không gian CHAMPION GAMES</div>
                     <div class="price">359,000 VNĐ</div>
                 </div>
             </a>
             <a class="product" href="../../trangchitiet/dcvd/dcvd3.php">
-                <img src="../../productImage/dochoivandong/dcvd3.jpg">
+                <img src="../../productImage/dochoivandong/dochoivandong3.jpg">
                 <div class="product-detail">
                     <div class="name">Máy gắp thú kích thước lớn có đèn và nhạc CHAMPION GAMES</div>
                     <div class="price">699,000 VNĐ</div>
                 </div>
             </a>
             <a class="product" href="../../trangchitiet/dcvd/dcvd4.php">
-                <img src="../../productImage/dochoivandong/dcvd4.jpg">
+                <img src="../../productImage/dochoivandong/dochoivandong4.jpg">
                 <div class="product-detail">
                     <div class="name">Đồ chơi giải cứu chim cánh cụt CHAMPION GAMES</div>
                     <div class="price">89,000 VNĐ</div>

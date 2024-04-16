@@ -12,28 +12,28 @@
         $price = $_POST['pprice'] ;
         //  add file image
         $target_dir = "../../productImage/" .$type. "/" ;
-        $target_file = $target_dir . basename($_FILES['pimage']['name']) ;
+        $sql = "SELECT COUNT(*) as c FROM product WHERE TypeName = '$type' " ;
+        $count = mysqli_query($conn,$sql) ;
+        $row = mysqli_fetch_assoc($count) ; 
+        $target_file = $target_dir . $type. $row['c']+1 . '.jpg' ;
         $uploadOk = 1 ;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
 
         if (move_uploaded_file($_FILES["pimage"]["tmp_name"], $target_file))
-            echo basename( $_FILES["pimage"]["name"] ) ."was uploaded" ;
+            echo basename( $target_file ) ."was uploaded" ;
         else
             echo "Error" ;
 
         //  ket thuc add file
-        $img = basename( $_FILES["pimage"]["name"], ".jpg" ) ;
+        $img = "productImage/" .$type. "/" . $type. $row['c']+1 . '.jpg' ;
         $des = $_POST['pdescribe'] ;
 
         $sql = "INSERT INTO product VALUES('$type','$name','$price','$img','$des') " ;
 
         mysqli_query($conn,$sql) ;
 
-        $sql = "INSERT INTO producttype VALUES ('$type')" ;
-
-        mysqli_query($conn,$sql) ;
         }
-        header ("Location: addProduct.php") ;
+        // header ("Location: addProduct.php") ;
         exit ;
     }
 
