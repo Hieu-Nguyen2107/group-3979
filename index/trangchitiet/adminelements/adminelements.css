@@ -8,27 +8,31 @@ form > input.submit , .reset{
 }
 div.icon{
     position: absolute;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 10px;
 }
-button.ti-trash{
+a.ti-trash{
+    cursor: pointer;
+    padding: 2px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
     color: red;
+    text-decoration: none;
+}
+a.ti-settings{
     cursor: pointer;
-    width: 25px;
-    height: 25px;
+    padding: 2px;
     background-color: white;
     border: 1px solid black;
     border-radius: 2px;
+    text-decoration: none;
+    color: #000;
 }
-button.ti-settings{
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 2px;
+a.ti-trash:hover{
+    background-color: pink;
 }
-button.ti-trash:hover{
+a.ti-settings:hover{
     background-color: pink;
 }
 div.body-user{

@@ -14,7 +14,7 @@
     $sql = "SELECT * FROM producttype" ;
     $res = mysqli_query($conn,$sql) ;
     while ($show = mysqli_fetch_assoc($res)){
-        echo "<div class='list-header'><b>" .$show['TypeName']. "</b></div> 
+        echo "<div class='list-header'><b>" .$show['ValueType']. "</b></div> 
             <div  class = 'product-list'>" ;
         $type = $show['TypeName'] ;
         $sql = "SELECT * FROM product WHERE TypeName = '$type' "  ;
@@ -22,15 +22,15 @@
         $count = 1 ;
         while ($row = mysqli_fetch_assoc($resP))
         {
-            echo '<a class="product" href="trangchitiet/' .$row['TypeName']. '/' .$show['TypeName'].$count. '.php">    <!--DONE-->
+            echo '<div class="product">    <!--DONE-->
                     <img src="../../' .$row['ImageUrl'] .'">
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>
                         <div class="price">' .$row['Price']. ' VNĐ</div>
-                        <div class="icon"><button class="ti-trash"></button>
-                            <button class="ti-settings" onclick="location.href=' .'updateproduct/' .$row['TypeName']. '/' .$show['TypeName'].$count. '.php"></button></div>
+                        <div class="icon"><a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'"></a>
+                            <a class="ti-settings" href="updateproduct/' .$show['TypeName'] .'/'. $show['TypeName']. $count. '.php"></a></div>
                     </div>
-                </a>' ;
+                </div>' ;
             $count++ ;
         }
         echo "</div>" ;

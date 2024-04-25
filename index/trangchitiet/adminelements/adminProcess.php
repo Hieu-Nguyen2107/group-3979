@@ -19,22 +19,34 @@
         $uploadOk = 1 ;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
 
-        if (move_uploaded_file($_FILES["pimage"]["tmp_name"], $target_file))
-            echo basename( $target_file ) ."was uploaded" ;
-        else
-            echo "Error" ;
-
-        //  ket thuc add file
         $img = "productImage/" .$type. "/" . $type. $row['c']+1 . '.jpg' ;
         $des = $_POST['pdescribe'] ;
 
         $sql = "INSERT INTO product VALUES('$type','$name','$price','$img','$des') " ;
 
-        mysqli_query($conn,$sql) ;
-
+        if (mysqli_query($conn,$sql)) {
+            if (move_uploaded_file($_FILES["pimage"]["tmp_name"], $target_file))
+                echo basename( $target_file ) ."was uploaded" ;
+            else
+                echo "Error" ;
         }
+        else
+            echo "Error" ;
+        }
+        mysqli_close($conn) ;
         header ("Location: addProduct.php") ;
         exit ;
+    }
+    if (isset($_GET['deleteP'])){
+    
+        $name = $_GET['productName'] ;
+        echo($name) ;
+        $sql = "DELETE FROM product WHERE ProductName = '$name' " ;
+        mysqli_query($conn,$sql) ;
+        mysqli_close($conn) ;
+        header ("Location: deleteProduct.php") ;
+        exit ;
+
     }
 
     if (isset($_POST['submitAddU'])){
@@ -62,6 +74,4 @@
         mysqli_query($conn,$sql) ;
     }
 
-    mysqli_close($conn) ;
-    header ("Location: addProduct.php") ;
 ?>
