@@ -10,7 +10,7 @@
         die("Connection error: " .$conn->connect_error) ;
     }
 
-    $sql = "SELECT * FROM producttype WHERE TypeName = 'robot' OR TypeName = 'doll'" ;
+    $sql = "SELECT * FROM producttype WHERE TypeName = 'dochoivandong' OR TypeName = 'lego'" ;
     $res = mysqli_query($conn,$sql) ;
     while ($show = mysqli_fetch_assoc($res)){
         echo "<div class='list-header'><b>" .$show['ValueType']. "</b></div> 
@@ -22,7 +22,7 @@
         while ($row = mysqli_fetch_assoc($resP))
         {
             echo '<a class="product" href="trangchitiet/' .$row['TypeName']. '/' .$show['TypeName'].$count. '.php">    <!--DONE-->
-                    <img src="' .$row['ImageUrl'] .'">
+                    <img src="../../' .$row['ImageUrl'] .'">
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>
                         <div class="price">' .$row['Price']. ' VNĐ</div>
