@@ -16,8 +16,7 @@
             <div><button onclick="showmenu('product-manage-menu');">Quản lý sản phẩm</button></div>
             <div id="product-manage-menu">
               <div><a href="trangchitiet/adminelements/addproduct.php"><button>Thêm Sản Phẩm</button></a></div> <!--DONE-->
-              <div><a href="trangchitiet/adminelements/deleteproduct.php"><button>Xóa Sản Phẩm</button></a></div> <!--DONE-->
-              <div><a href="trangchitiet/adminelements/updateproduct.php"><button>Sửa Sản Phẩm</button></a></div> <!--DONE-->
+              <div><a href="trangchitiet/adminelements/deleteproduct.php"><button>Xóa/Sửa Sản Phẩm</button></a></div> <!--DONE-->
             </div>
             </div>
             <script>

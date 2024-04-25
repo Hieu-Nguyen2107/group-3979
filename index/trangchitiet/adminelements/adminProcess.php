@@ -33,7 +33,7 @@
         mysqli_query($conn,$sql) ;
 
         }
-        // header ("Location: addProduct.php") ;
+        header ("Location: addProduct.php") ;
         exit ;
     }
 
@@ -63,4 +63,5 @@
     }
 
     mysqli_close($conn) ;
+    header ("Location: addProduct.php") ;
 ?>
