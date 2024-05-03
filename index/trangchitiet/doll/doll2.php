@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Bánh Mì Barber Bread BREAD BARBERSHOP BB32773</h3>
                 

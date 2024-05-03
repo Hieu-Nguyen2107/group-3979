@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3>Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY</h3>
                   

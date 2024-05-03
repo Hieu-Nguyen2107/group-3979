@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Đồ Chơi Trò Chơi Trận Chiến Không Gian CHAMPION GAMES HG1012001</h3>
                

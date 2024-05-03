@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3>Đồ Chơi Máy Gắp Thú Kích Thước Lớn Có Đèn Và Nhạc CHAMPION GAMES CPG762</h3>
                 

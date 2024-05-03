@@ -33,6 +33,7 @@
           if(isset($_SESSION['error']))
           echo'<div class="login-failed">'.$_SESSION['error'].'</div>
           ';
+          unset($_SESSION['error']) ;
           ?>
           <input type="submit" value="Đăng Nhập" onclick="Login()" />
         </div>

@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Đồ Chơi MLP Quả Trứng Kỳ Diệu MY LITTLE PONY A8330T</h3>
                 

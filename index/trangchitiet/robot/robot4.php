@@ -103,26 +103,11 @@
   </div>
       <div style="line-height: 30px;"> <!--Describe-->
         <p><b>Mô Tả Sản Phẩm</b>
-          <p>
+        </p>
         <p>
             <h3>Đồ Chơi Robot Biến Hình Xe Xúc VECTO VT34</h3>
             Robot biến hình thành Xe xúc từ VECTO – Món đồ chơi biến hình siêu thú vị dành cho các bé trai, và giúp bé rèn luyện vận động tinh cực bổ ích.
 
-            <br>
-            + Bé dùng tay để tự biến đổi đồ chơi từ dạng robot thành Xe xúc và ngược lại
-            <br>
-            + Sưu tập trọn bộ 5 robot để ghép chúng lại thành 1 robot lớn siêu ngầu:              
-          <br>
-          1/ Robot biến hình Xe cứu hỏa thang nâng
-            <br>
-          2/ Robot biến hình Xe xúc
-          <br>
-          3/ Robot biến hình thành Xe thang nâng
-          <br>
-          4/ Robot biến hình thành Xe cần cẩu
-          <br>    
-          5/ Robot biến hình thành Xe vận chuyển tên lửa
-          <br>   
           <b>THÔNG TIN VỀ SẢN PHẨM:</b>
           <br>   
           Kích thước hộp hàng: 38.0 x 8.0 x 26.0 cm
@@ -134,20 +119,6 @@
           Xuất xứ thương hiệu: Việt Nam
           <br>   
           Chất liệu: Nhựa (An toàn tuyệt đối với bé)
-          <br>   
-          <b>VECTO - THẾ GIỚI ĐỒ CHƠI BÉ TRAI CỰC ĐỈNH</b>
-          <br>   
-          VECTO là thương hiệu đồ chơi dành riêng cho các bé trai, với các dòng đồ chơi trải dài từ điều khiển từ xa đến lắp ráp. Với mong muốn giúp các bé trai có sự phát triển toàn diện từ trí não đến thể chất, Vecto đã phát triển đa dạng các loại đồ chơi nhằm mang đến cho bé nhiều lựa chọn nhất có thể, một số dòng đồ chơi nổi bật:
-          <br>   
-          - ROBOT ĐIỀU KHIỂN – PHÁT TRIỂN TƯ DUY SÁNG TẠO
-          <br>   
-          - XE ĐIỀU KHIỂN – PHÁT TRIỂN TƯ DUY PHƯƠNG HƯỚNG
-          <br>   
-          - ĐỒ CHƠI BAY – PHÁT TRIỂN TƯ DUY LOGIC
-          <br>   
-          - ĐỒ CHƠI LẮP RÁP DIY – PHÁT TRIỂN KỸ NĂNG VẬN ĐỘNG TINH
-          <br>   
-          Và còn nhiều dòng đồ chơi khác từ VECTO đang đợi bé khám phá.
           <br>   
           
             

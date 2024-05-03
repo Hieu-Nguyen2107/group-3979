@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Đồ Chơi Lắp Ráp Học Viện Ma Thuật Và Pháp Thuật Hogwarts LEGO HARRY POTTER 76419 (2660 chi tiết)</h3>
                 

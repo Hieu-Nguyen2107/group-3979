@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Đồ Chơi Lắp Ráp Phi Thuyền X-Wing Starfighter™ LEGO STAR WARS 75355 (1953 chi tiết)</h3>
                 

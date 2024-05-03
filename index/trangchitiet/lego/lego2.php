@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3>   Đồ Chơi Lắp Ráp Vườn Bách Thảo LEGO FRIENDS 41757 (1072 chi tiết)</h3>
                 

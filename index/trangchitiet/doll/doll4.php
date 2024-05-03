@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Đồ Chơi HATCHIMALS Pixies Cánh Thần Tiên 6059069 - Giao hàng ngẫu nhiên</h3>
                 

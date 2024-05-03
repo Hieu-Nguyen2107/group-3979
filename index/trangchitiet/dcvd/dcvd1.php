@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3>Đồ Chơi Máy Đập Hành Tinh Chuột Chũi CHAMPION GAMES HG1503066</h3>
                 

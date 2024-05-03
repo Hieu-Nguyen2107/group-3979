@@ -124,7 +124,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3> Đồ Chơi Giải Cứu Chim Cánh Cụt CHAMPION GAMES 555-8</h3>
                 

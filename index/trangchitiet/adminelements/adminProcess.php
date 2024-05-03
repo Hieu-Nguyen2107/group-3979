@@ -2,6 +2,7 @@
 <?php
     include "../connection.php" ;
 
+    //  them san pham
     if (isset($_POST['submitAddP'])){
         if ( empty($_POST['pname']) || empty($_POST['pprice']) ){
             header ("Location: addProduct.php") ;
@@ -37,10 +38,11 @@
         header ("Location: addProduct.php") ;
         exit ;
     }
+
+    //  xoa san pham
     if (isset($_GET['deleteP'])){
     
         $name = $_GET['productName'] ;
-        echo($name) ;
         $sql = "DELETE FROM product WHERE ProductName = '$name' " ;
         mysqli_query($conn,$sql) ;
         mysqli_close($conn) ;
@@ -48,6 +50,8 @@
         exit ;
 
     }
+
+    //  sua san pham
 
     if (isset($_POST['submitAddU'])){
         $name = $_POST['name'] ;

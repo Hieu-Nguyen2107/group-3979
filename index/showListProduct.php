@@ -21,7 +21,7 @@
         $count = 1 ;
         while ($row = mysqli_fetch_assoc($resP))
         {
-            echo '<a class="product" href="trangchitiet/' .$row['TypeName']. '/' .$show['TypeName'].$count. '.php">    <!--DONE-->
+            echo '<a class="product" href="trangchitiet/trangchitiet.php?productName=' .$row['ProductName']. '">    <!--DONE-->
                     <img src="' .$row['ImageUrl'] .'">
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>

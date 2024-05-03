@@ -102,7 +102,7 @@
       </div>
   </div>
       <div style="line-height: 30px;"> <!--Describe-->
-          <p><b>Mô Tả Sản Phẩm</b><p>
+          <p><b>Mô Tả Sản Phẩm</b></p>
           <p>
               <h3>Đồ Chơi Mô Hình Earthspark Warrior Megatron TRANSFORMERS F6727/F6230</h3>
               Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.
