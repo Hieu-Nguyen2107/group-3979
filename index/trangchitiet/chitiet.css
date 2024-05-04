@@ -39,7 +39,7 @@ div.bgadd{
     background-color: white;
     position: absolute;
 }
-div.element > div.ti-trash{
+div.element > a.ti-trash{
     position: absolute;
     color: red;
     font-size: 25px;
@@ -55,7 +55,7 @@ div.element > div.ti-plus{
 div#img-delete{
     display: block;
 }
-div.delete:hover div.ti-trash{
+div.delete:hover a.ti-trash{
     display: block;
 }
 div.add:hover div.bgadd{
@@ -65,8 +65,11 @@ div.element:hover > img{
     opacity: 0.5;
 }
 .product-name{
+    display: flex;
+    flex-direction: row;
     text-transform: uppercase;
     text-align: left;
+    align-items: center;
 }
 .product-price{
     color: red;
@@ -131,7 +134,4 @@ i.ti-save:hover{
 }
 i.ti-pencil , i.ti-save{
     font-size: 30px;
-}
-.login-failed{
-    
 }

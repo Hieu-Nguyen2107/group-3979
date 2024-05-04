@@ -23,12 +23,17 @@
         while ($row = mysqli_fetch_assoc($resP))
         {
             echo '<div class="product">    <!--DONE-->
-                    <img src="../../' .$row['ImageUrl'] .'">
+                    <div class="img">' ;
+                    if (!empty($row['ImageUrl']))
+                        echo '<img src="../../' .$row['ImageUrl'] .'">' ;
+                    else
+                        echo '<img src="empty2.png">' ;
+            echo'        </div>
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>
                         <div class="price">' .$row['Price']. ' VNĐ</div>
                         <div class="icon"><a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'"></a>
-                            <a class="ti-settings" href="updateproduct/' .$show['TypeName'] .'/'. $show['TypeName']. $count. '.php"></a></div>
+                            <a class="ti-settings" href="updateproduct.php?productName=' .$row['ProductName']. '"></a></div>
                     </div>
                 </div>' ;
             $count++ ;

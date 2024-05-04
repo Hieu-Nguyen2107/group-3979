@@ -102,7 +102,6 @@
             </div>
         </div>
             <div style="line-height: 30px;"> <!--Describe-->
-                <p><b>Mô Tả Sản Phẩm</b><p>
                 <p>
                 <h3>   Đồ Chơi Lắp Ráp Phiên Chợ Vương Quốc Rosa LEGO DISNEY PRINCESS 43223 (154 chi tiết)</h3>
                 

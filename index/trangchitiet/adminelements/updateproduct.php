@@ -5,6 +5,7 @@
         <title>Update Product 3979 Toys</title>
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
+        <link rel="stylesheet" href="../chitiet.css" type="text/css" >
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
         <style>
@@ -16,196 +17,51 @@
         </style>
     </head>
     <body>
-        <header style="width: 100%;">
-            <div id="header">
-              <ul class="menubar" id="nav">
-                <li><a href="../../indexadmin.php">home</a></li>
-            </ul>
-            <div class="user-container" style="margin-left: auto;margin-right: 30px;">
-                <div class="admin-popup">
-                  <!-- <i class="user-icon ti-user">Admin</i> -->
-                  <div>
-                    <img src="avauser/moi.jpg"><span>Moi</span>
-                  </div>
-                  <!-- <div class="popup">
-                    <div>
-                      <div><i class="ti-user"></i>
-                        <span>Admin</span>
+        <?php include "headerAdmin.php" ;
+            include "../connection.php" ; 
+            $name = $_GET['productName'] ;
+            $sql = "SELECT * FROM product WHERE ProductName = '$name'" ;
+            $p = mysqli_query($conn,$sql) ;
+            while ($row = mysqli_fetch_assoc($p)){
+                echo '<div style="display: flex;margin-top: 40px;">
+                <div class="img-product">
+                    <div><img id="delete" class="img-chitiet" src="../../' .$row['ImageUrl']. '"></div>
+                    <div class="add-img">
+                        <div id="img-delete" class="element delete">
+                            <img id="need-delete" src="../../' .$row['ImageUrl']. '" style="display: block;">
+                            <a id="nothing" class="nothing" href="adminProcess.php?deleteImageProduct=delete&productName=' .$name. '"></a>
+                            <a id="trash" class="ti-trash" href="adminProcess.php?deleteImageProduct=delete&productName=' .$name. '"></a>
+                            
                         </div>
-                      <span>Tên: Đông Quân</span>
-                      <span>Tuổi: 19</span>
-                    </div>
-                  </div> -->
-                  
-                </div>
-              </div>
-            </div>
-          </header>
-        <h1 style="margin: 30px 15px;text-align: center;">Sửa Thông Tin Sản Phẩm</h1>
-        <div class="body">
-            <div class="list-header"><b>ROBOT</b></div>
-            <div  class="product-list">
-                <div class="product">    <!--DONE-->
-                    <img src="../../productImage/robot/robot1.jpg">
-                    <div class="product-detail">
-                        <div class="name">Robot chú chó tinh nghịch</div>
-                        <div class="price">649,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/robot/robot1.php"><button class="ti-settings"></button></a></div>
+                        <div id="img-add" class="element add" onclick="">
+                            <div class="bgadd"></div>
+                            <div class="ti-plus"></div>
+                            <input id="images1" type="file" accept="images/*" style="display: none;">
+                        </div>
+                        <div class="element add" onclick="">
+                            <div class="bgadd"></div>
+                            <div class="ti-plus"></div>
+                            <input id="images2" type="file" accept="images/*" style="display: none;">
+                        </div>
                     </div>
                 </div>
-                <div class="product">    <!--DONE-->
-                    <img src="../../productImage/robot/robot2.jpg">
-                    <div class="product-detail">
-                        <div class="name">Mô hình Earthspark Warrior Thrash</div>
-                        <div class="price">799,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/robot/robot2.php"><button class="ti-settings"></button></a></div>
-                    </div>
+                <div>
+                  <div style="max-width: fit-content;">
+                      <div class="product-name"><b>' .$row['ProductName']. '</b><i class="ti-pencil"></i></div>
+                      <div class="product-price"><b>' .$row['Price']. ' VNĐ</b></div>
+                  </div>
+                  <div style="line-height: 30px;"> <!--Describe-->
+                  <p><b>Mô Tả Sản Phẩm</b><br/>
+                    ' .$row['Describe']. '</p>
                 </div>
-                <div class="product">    <!--DONE-->
-                    <img src="../../productImage/robot/robot3.jpg">
-                    <div class="product-detail">
-                        <div class="name">Mô hình Earthspark Warrior Megatron</div>
-                        <div class="price">799,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/robot/robot3.php"><button class="ti-settings"></button></a></div>
-                    </div>
+                  <div style="float: right;margin: 20px 30px;"><a href="deleteproduct.php"><button style="font-size: 17px;"><i class="ti-arrow-left"></i>Quay lại</button></a></div>
                 </div>
-                <div class="product">
-                    <img src="../../productImage/robot/robot4.jpg">
-                    <div class="product-detail">
-                        <div class="name">Đồ chơi Robot biến hình Xe xúc VECTO VT34</div>
-                        <div class="price">129,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/robot/robot4.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="list-header"><b>BÚP BÊ</b></div>
-            <div class="product-list">
-                <div class="product">
-                    <img src="../../productImage/doll/doll1.jpg">
-                    <div class="product-detail">
-                        <div class="name">Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY</div>
-                        <div class="price">1,369,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/doll/doll1.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/doll/doll2.jpg">
-                    <div class="product-detail">
-                        <div class="name">Bánh Mì Barber Bread</div>
-                        <div class="price">72,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/doll/doll2.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/doll/doll3.jpg">
-                    <div class="product-detail">
-                        <div class="name">MLP Quả trứng kỳ diệu</div>
-                        <div class="price">69,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/doll/doll3.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/doll/doll4.jpg">
-                    <div class="product-detail">
-                        <div class="name">Hatchimals Pixes cánh thần tiên</div>
-                        <div class="price">244,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/doll/doll4.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="list-header"><b>ĐỒ CHƠI LẮP GHÉP</b></div>
-            <div class="product-list">
-                <div class="product">
-                    <img src="../../productImage/lego/lego1.jpg">
-                    <div class="product-detail">
-                        <div class="name">Đồ chơi lắp ráp Phi thuyền X-Wing Starfighter™ LEGO STAR WARS</div>
-                        <div class="price">7,559,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/lego/lego1.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/lego/lego2.jpg">
-                    <div class="product-detail">
-                        <div class="name">Đồ chơi lắp ráp Vườn bách thảo LEGO FRIENDS</div>
-                        <div class="price">2,599,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/lego/lego2.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/lego/lego3.jpg">
-                    <div class="product-detail">
-                        <div class="name">Đồ chơi lắp ráp Phiên chợ Vương quốc Rosa LEGO DISNEY PRINCESS</div>
-                        <div class="price">629,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/lego/lego3.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/lego/lego4.jpg">
-                    <div class="product-detail">
-                        <div class="name">Đồ chơi lắp ráp Học viện Ma thuật và Pháp thuật Hogwarts LEGO HARRY POTTER</div>
-                        <div class="price">5,299,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/lego/lego4.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="list-header"><b>ĐỒ CHƠI VẬN ĐỘNG</b></div>
-            <div class="product-list">
-                <div class="product">
-                    <img src="../../productImage/dochoivandong/dcvd1.jpg">
-                    <div class="product-detail">
-                        <div class="name">Máy đập hành tinh chuột chũi CHAMPION GAMES</div>
-                        <div class="price">459,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/dcvd/dcvd1.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/dochoivandong/dcvd2.jpg">
-                    <div class="product-detail">
-                        <div class="name">Trò chơi trận chiến không gian CHAMPION GAMES</div>
-                        <div class="price">359,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/dcvd/dcvd2.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/dochoivandong/dcvd3.jpg">
-                    <div class="product-detail">
-                        <div class="name">Máy gắp thú kích thước lớn có đèn và nhạc CHAMPION GAMES</div>
-                        <div class="price">699,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/dcvd/dcvd3.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="../../productImage/dochoivandong/dcvd4.jpg">
-                    <div class="product-detail">
-                        <div class="name">Đồ chơi giải cứu chim cánh cụt CHAMPION GAMES</div>
-                        <div class="price">89,000 VNĐ</div>
-                        <div class="icon"><a href="updateproduct/dcvd/dcvd4.php"><button class="ti-settings"></button></a></div>
-                    </div>
-                </div>
-            </div>
-            <a href="../../indexadmin.php" style="float: right;margin-right: 45px;margin-top: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
-        </div>
-        
+                </div>' ;
+            }
+            mysqli_close($conn) ;
+        ?>
         <div style="display: block;margin-top: auto;">
-            <footer>
-                        
-                <ul style="margin-left: 3%;" class="footer">
-                    <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
-                    <li class="footer-data"><img src="../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
-                    <li class="footer-data"><img src="../../addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
-                    <li class="footer-data"><img src="../../timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
-                </ul>
-                <div style="margin-left: 10%;">
-                <p class="footer-data" style="margin-bottom: 5%;"><img src="../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
-                <img src="../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-                <img src="../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-                <img src="../../youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-                </div>
-                <img src="../../bocongthuong.png" style="margin-left: 10%;">
-            </footer>
+            <?php include "footerAdmin.php" ; ?>
         </div>
     </body>
 </html>

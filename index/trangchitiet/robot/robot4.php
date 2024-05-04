@@ -120,8 +120,6 @@
           <br>   
           Chất liệu: Nhựa (An toàn tuyệt đối với bé)
           <br>   
-          
-            
         </p>
     </div>
       <div style="float: right;margin: 20px 30px;"><a href="../../index.php"><button style="font-size: 17px;"><i class="ti-arrow-left"></i>Quay lại</button></a></div>

@@ -46,12 +46,20 @@
         $sql = "DELETE FROM product WHERE ProductName = '$name' " ;
         mysqli_query($conn,$sql) ;
         mysqli_close($conn) ;
-        header ("Location: deleteProduct.php") ;
+        header ("Location: deleteproduct.php") ;
         exit ;
 
     }
 
     //  sua san pham
+    if (isset($_GET['deleteImageProduct'])){
+        $name = $_GET['productName'] ;
+        $sql = "UPDATE product SET ImageUrl='' WHERE ProductName='$name'" ;
+        mysqli_query($conn,$sql) ;
+        mysqli_close($conn) ;
+        header ("Location: updateproduct.php?productName=$name") ;
+        exit ;
+    }
 
     if (isset($_POST['submitAddU'])){
         $name = $_POST['name'] ;
