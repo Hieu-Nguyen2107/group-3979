@@ -27,6 +27,9 @@
                 margin-right: 10px;
                 margin-bottom: 10px;
             }
+            input#submit{
+                text-transform: uppercase ;
+            }
         </style>
     </head>
     <body>
@@ -46,12 +49,33 @@
                     echo '<div class="user-row">' ;
                 }
                 echo '<div class="user">
-                    <img src="' .$row['AvatarUrl']. '">
+                    <img src="' ;
+                    if (empty($row['AvatarUrl']))
+                        echo 'empty5.jpg' ;
+                    else
+                        echo $row['AvatarUrl'] ;
+                echo     '">
                     <div class="information-user">
-                        <span class="nameAcc">- Tên tài khoản: ' .$row['NameAccount']. '</span>
-                        <span class="name">- Tên: ' .$row['Name']. '</span>
-                        <span class="address">- Địa chỉ: ' .$row['Address']. '</span>
-                        <span class="email">- Email: ' .$row['Email']. '</span>
+                        <form action="adminProcess.php?modifyUser=a&oldAcc=' .$row['NameAccount']. '" method="POST">
+                            <lable for="nameAcc">- Tên tài khoản: </lable>
+                            <input type="text" name="nameAcc" value="' .$row['NameAccount']. '">
+                            <input id="submit" type="submit" name="changeNameAcc" value="save" >
+                        </form>
+                        <form action="adminProcess.php?modifyUser=a&name=' .$row['NameAccount']. '" method="POST">
+                            <lable for="username">- Họ và tên: </lable>
+                            <input type="text" name="username" value="' .$row['Name']. '">
+                            <input id="submit" type="submit" name="changeUsername" value="save" >
+                        </form>
+                        <form action="adminProcess.php?modifyUser=a&name=' .$row['NameAccount']. '" method="POST">
+                            <lable for="address">- Địa chỉ: </lable>
+                            <input style="width:250px;" type="text" name="address" value="' .$row['Address']. '">
+                            <input id="submit" type="submit" name="changeAddress" value="save" >
+                        </form>
+                        <form action="adminProcess.php?modifyUser=a&name=' .$row['NameAccount']. '" method="POST">
+                            <lable for="email">- Email: </lable>
+                            <input type="text" name="email" value="' .$row['Email']. '">
+                            <input id="submit" type="submit" name="changeEmail" value="save" >
+                        </form>
                         <span class="statusAcc">- Trạng thái tài khoản: ';
                         if ($row['Status'] == 1)
                             echo 'Mở khóa' ;
@@ -74,71 +98,6 @@
 
             echo '</div>' ;
         ?>
-        <!-- <h1 style="margin: 15px 20px;text-align: center;">Thông Tin Người Dùng</h1>
-        <div class="body-user">
-
-            <div class="user-row">  
-                <div class="user">
-                    <img src="avauser/anh.jpg ">
-                    <div class="information-user">
-                        <span class="name">- Tên: Lê Đức Anh</span>
-                        <span class="age">- Tuổi: 23</span>
-                        <span class="email">- Email: fuckboiz@gmail.com</span>
-                        <span class="status">- Trạng thái tài khoản: Mở khoá</span>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="avauser/viet+.jpg">
-                    <div class="information-user">
-                        <span class="name"> - Tên: Nguyễn Thành Việt</span>
-                        <span class="age"> - Tuổi: 19</span>
-                        <span class="email">- Email: vietplus369@gmail.com</span>
-                        <span class="status">- Trạng thái tài khoản: Mở khoá</span>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="avauser/ronaldovn.jpg">
-                    <div class="information-user">
-                        <span class="name"> - Tên: Nguyễn Thành Đạt </span>
-                        <span class="age"> - Tuổi: 20</span>
-                        <span class="email"> - Email: jj2803@gmail.com</span>
-                        <span class="status"> - Trạng thái tài khoản: Mở khoá</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="user-row">  
-                <div class="user">
-                    <img src="avauser/moi.jpg">
-                    <div class="information-user">
-                        <span class="name">- Tên: Trương Lê Gia Hưng</span>
-                        <span class="age">- Tuổi: 15</span>
-                        <span class="email">- Email: trlgh@gmail.com</span>
-                        <span class="status">- Trạng thái tài khoản: Khoá</span>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="avauser/quan.jpg">
-                    <div class="information-user">
-                        <span class="name">- Tên: Trần Minh Quân</span>
-                        <span class="age">- Tuổi: 18</span>
-                        <span class="email">- Email: pongpink0802@gmail.com</span>
-                        <span class="status">- Trạng thái tài khoản: Khoá</span>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="avauser/trieu.jpg">
-                    <div class="information-user">
-                        <span class="name">- Tên: Phạm Ngọc Triều</span>
-                        <span class="age">- Tuổi: 30</span>
-                        <span class="email">- Email: trieutrieu@gmail.com</span>
-                        <span class="status">- Trạng thái tài khoản: Khoá</span>
-                    </div>
-                </div>
-            </div>
-
-            <a href="../../indexadmin.php" style="float: right;margin-right: 45px;margin-top: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
-        </div> -->
         <?php include "footerAdmin.php" ; ?>
     </body>
 </html>

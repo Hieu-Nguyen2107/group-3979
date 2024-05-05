@@ -20,12 +20,15 @@
             <!-- Email user -->
             <label for="useremail"><b>Email</b></label><br/>
             <input type="text" id="useremail" name="useremail" placeholder="Email"><br/>
+            <!-- Địa chỉ -->
+            <label for="address"><b>Địa chỉ</b></label><br/>
+            <input type="text" id="address" name="address" placeholder="Address"><br/>
             <!-- Tên tài khoản user -->
             <label for="username"><b>Tên tài khoản</b></label><br/>
             <input type="text" id="username" name="username" placeholder="Email"><br/>
             <!-- Password user -->
             <label for="userpass"><b>Password</b></label><br/>
-            <input type="text" id="userpass" name="userpass" placeholder="Email"><br/>
+            <input type="text" id="userpass" name="userpass" placeholder="Password"><br/>
             <!-- Avatar user -->
             <label for="avatar"><b>Hình ảnh</b></label><br/>
             <input type="file" id="avatar" name="avatar" accept="img/png, img/jpeg"><br/>

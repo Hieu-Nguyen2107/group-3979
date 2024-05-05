@@ -34,12 +34,13 @@
             else
                 echo "Error" ;
         }
-        else
+        else{
             echo "Error" ;
         }
         mysqli_close($conn) ;
         header ("Location: addProduct.php") ;
         exit ;
+        }
     }
 
     //  xoa san pham
@@ -100,22 +101,29 @@
         $password = $_POST['userpass'] ;
         //  add file image
         $target_dir = "avauser/" ;
-        $target_file = $target_dir . basename($_FILES['avatar']['name']) ;
+        $target_file = $target_dir . $username .'.jpg' ;
         $uploadOk = 1 ;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
 
-        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file))
-            echo basename( $_FILES["avatar"]["name"] ) ."was uploaded" ;
+        if (!empty($_POST['avatar']))
+            $avatar = "avauser" . $username . '.jpg' ;
         else
+            $avatar = "" ;
+        $sql = $sql = "INSERT INTO customer VALUES('$email','$account','$name','$password','$avatar',1)" ;
+
+        if (mysqli_query($conn,$sql)) {
+            if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file))
+                echo basename( $target_file ) ."was uploaded" ;
+            else
+                echo "Error" ;
+        }
+        else{
             echo "Error" ;
+        }
+        mysqli_close($conn) ;
+        header ("Location: adduser.php") ;
+        exit ;
 
-        //  ket thuc add file
-
-        $avatar = basename( $_FILES["avatar"]["name"], ".jpg" ) ;   //  file name
-
-        $sql = "INSERT INTO customer VALUES('$email','$account','$name','$password','$avatar',1)" ;
-
-        mysqli_query($conn,$sql) ;
     }
 
     //  khoa nguoi dung
@@ -132,6 +140,38 @@
             mysqli_query($conn,$sql) ;
         }
         header ("Location: checkUser.php") ;
+        exit ;
+    }
+
+    //  sua thong tin nguoi dung
+    if (isset($_GET['modifyUser'])){
+        $name = $_GET['name'] ;
+        if (isset($_POST['changeNameAcc'])){
+            $namea = $_POST['nameAcc'] ;
+            $oname = $_GET['oldAcc'] ;
+            $sql = "UPDATE customer SET NameAccount='$namea' WHERE NameAccount='$oname' " ;
+            mysqli_query($conn,$sql) ;
+            mysqli_close($conn) ;
+        }
+        if (isset($_POST['changeUsername'])){
+            $username = $_POST['username'] ;
+            $sql = "UPDATE customer SET customer.Name='$username' WHERE NameAccount='$name' " ;
+            mysqli_query($conn,$sql) ;
+            mysqli_close($conn) ;
+        }
+        if (isset($_POST['changeAddress'])){
+            $address = $_POST['address'] ;
+            $sql = "UPDATE customer SET customer.Address='$address' WHERE NameAccount='$name' " ;
+            mysqli_query($conn,$sql) ;
+            mysqli_close($conn) ;
+        }
+        if (isset($_POST['changeEmail'])){
+            $email = $_POST['email'] ;
+            $sql = "UPDATE customer SET customer.Email='$email' WHERE NameAccount='$name' " ;
+            mysqli_query($conn,$sql) ;
+            mysqli_close($conn) ;
+        }
+        header ("Location: checkuser.php") ;
         exit ;
     }
 ?>

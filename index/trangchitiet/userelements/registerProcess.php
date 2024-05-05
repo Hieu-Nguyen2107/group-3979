@@ -5,8 +5,9 @@ $email = $_POST['email'] ;
 $nameAccount = $_POST['name'] ;
 $username = $_POST['username'] ;
 $password = $_POST['pass'] ;
+$address = $_POST['addresss'] ;
 
-$sql = "INSERT INTO customer VALUES ('$email','$nameAccount','$username','$password','null',1)" ;
+$sql = "INSERT INTO customer VALUES ('$email','$nameAccount','$username','$password','null',1,'$address')" ;
 
 mysqli_query($conn,$sql) ;
 }

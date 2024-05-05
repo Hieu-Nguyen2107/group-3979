@@ -48,7 +48,7 @@ div.user{
     margin: 20px 20px;
     border: 2px solid black;
 }
-div.information-user{
+form.information-user{
     display: flex;
     font-size: 18px;
     font-style: inherit;
@@ -95,7 +95,7 @@ div.button-adduser > input#reset{
     margin-right: 15px;
 }
 
-form.add-user input#username ,  input#useremail{
+form.add-user input#username ,  input#useremail, input#address{
     width: 250px;
 }
 div.user-result-frame{
