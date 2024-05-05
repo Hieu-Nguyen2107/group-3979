@@ -29,33 +29,27 @@
                     <div class="add-img">
                         <div id="img-delete" class="element delete">
                             <img id="need-delete" src="../../' .$row['ImageUrl']. '" style="display: block;">
-                            <a id="nothing" class="nothing" href="adminProcess.php?deleteImageProduct=delete&productName=' .$name. '"></a>
                             <a id="trash" class="ti-trash" href="adminProcess.php?deleteImageProduct=delete&productName=' .$name. '"></a>
                             
-                        </div>
-                        <div id="img-add" class="element add" onclick="">
-                            <div class="bgadd"></div>
-                            <div class="ti-plus"></div>
-                            <input id="images1" type="file" accept="images/*" style="display: none;">
-                        </div>
-                        <div class="element add" onclick="">
-                            <div class="bgadd"></div>
-                            <div class="ti-plus"></div>
-                            <input id="images2" type="file" accept="images/*" style="display: none;">
                         </div>
                     </div>
                 </div>
                 <div>
                   <div style="max-width: fit-content;">
-                      <div class="product-name"><b>' .$row['ProductName']. '</b><i class="ti-pencil"></i></div>
-                      <div class="product-price"><b>' .$row['Price']. ' VNĐ</b></div>
+                      <div class="product-name"><b>' .$row['ProductName']. '</b></div>
+                      <form action="adminProcess.php?modifyProduct=m&oldName='.$row['ProductName'].'" method="POST"><lable for="pname">Tên sản phẩm:</lable><input type="text" name="pname" class="pname" value='.$row['ProductName'].'>&nbsp<input name="changeName" type="submit" value="Change"></form>
+                      <div class="product-price"><b>' .$row['Price']. '&nbspVNĐ</b></div>
+                      <form action="adminProcess.php?modifyProduct=m&name='.$row['ProductName'].'" method="POST"><lable for="pprice">Giá sản phẩm:</lable><input type="number" name="pprice" class="pprice" value='.$row['Price'].'>&nbsp<input name="changePrice" type="submit" value="Change"></form>
                   </div>
                   <div style="line-height: 30px;"> <!--Describe-->
-                  <p><b>Mô Tả Sản Phẩm</b><br/>
-                    ' .$row['Describe']. '</p>
-                </div>
+                  <b>Mô Tả Sản Phẩm</b>
+                    <form action="adminProcess.php?modifyProduct=m&name='.$row['ProductName'].'" method="POST">
+                        <textarea type="text" id="pdescribe" name="pdescribe" rows="25" cols="150">'.$row['Describe'].'</textarea><br/>
+                        <input name="changeDescribe" type="submit" value="Change">
+                    </form>
+                    </div>
                   <div style="float: right;margin: 20px 30px;"><a href="deleteproduct.php"><button style="font-size: 17px;"><i class="ti-arrow-left"></i>Quay lại</button></a></div>
-                </div>
+                    </div>
                 </div>' ;
             }
             mysqli_close($conn) ;

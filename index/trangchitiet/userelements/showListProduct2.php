@@ -22,7 +22,12 @@
         while ($row = mysqli_fetch_assoc($resP))
         {
             echo '<a class="product" href="trangchitiet/' .$row['TypeName']. '/' .$show['TypeName'].$count. '.php">    <!--DONE-->
-                    <img src="../../' .$row['ImageUrl'] .'">
+                    <div class="img">';
+                    if (!empty($row['ImageUrl']))
+                        echo '<img src="../../' .$row['ImageUrl'] .'">' ;
+                    else
+                        echo '<img src="../adminelements/empty5.jpg">' ;
+            echo'        </div>
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>
                         <div class="price">' .$row['Price']. ' VNĐ</div>

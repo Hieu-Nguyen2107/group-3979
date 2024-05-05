@@ -7,44 +7,77 @@
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
+        <style>
+            i.ti-lock{
+                font-size: 35px;
+                color: red;
+            }
+            i.ti-unlock{
+                font-size: 35px;
+                color: rgb(37, 207, 37);
+            }
+            a.locknunlock{
+                cursor: pointer;
+                width: fit-content;
+                background-color: white;
+                padding: 5px 3px;
+                border-radius: 4px;
+                margin-top: auto;
+                margin-left: auto;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        </style>
     </head>
     <body>
-      <header style="width: 100%;">
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../indexadmin.php">home</a></li>
-            <!-- Thêm phần tìm kiếm -->
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            
-            <!-- Thêm phần giỏ hàng -->
-        </ul>
-        <!-- End nav -->
-        <div class="user-container" style="margin-left: auto;margin-right: 30px;">
-            <div class="admin-popup">
-              <!-- <i class="user-icon ti-user">Admin</i> -->
-              <div>
-                <img src="avauser/moi.jpg"><span>Moi</span>
-              </div>
-              <!-- <div class="popup">
-                <div>
-                  <div><i class="ti-user"></i>
-                    <span>Admin</span>
+        <?php include "headerCoSearch.php" ; ?>
+        <?php 
+            echo '<h1 style="margin: 15px 20px;text-align: center;">Thông Tin Người Dùng</h1>' ;
+            echo '<div class="body-user"> ' ;
+
+            include "../connection.php" ;
+            $sql = "SELECT * FROM customer" ;
+            $result = mysqli_query($conn,$sql) ;
+            $i = 3 ;
+            while ($row = mysqli_fetch_assoc($result)){
+                if ($i == 0)
+                    $i = 3 ;
+                if ($i == 3){
+                    echo '<div class="user-row">' ;
+                }
+                echo '<div class="user">
+                    <img src="' .$row['AvatarUrl']. '">
+                    <div class="information-user">
+                        <span class="nameAcc">- Tên tài khoản: ' .$row['NameAccount']. '</span>
+                        <span class="name">- Tên: ' .$row['Name']. '</span>
+                        <span class="address">- Địa chỉ: ' .$row['Address']. '</span>
+                        <span class="email">- Email: ' .$row['Email']. '</span>
+                        <span class="statusAcc">- Trạng thái tài khoản: ';
+                        if ($row['Status'] == 1)
+                            echo 'Mở khóa' ;
+                        else
+                            echo 'Khóa' ;
+                echo        '</span>
                     </div>
-                  <span>Tên: Đông Quân</span>
-                  <span>Tuổi: 19</span>
-                </div>
-              </div> -->
-              
-            </div>
-          </div>
-        </div>
-      </header>
-        <h1 style="margin: 15px 20px;text-align: center;">Thông Tin Người Dùng</h1>
+                    <a class="locknunlock" href="adminProcess.php?lockUser=l&acc=' .$row['NameAccount']. '"><i id = "icon3" class="';
+                    if ($row['Status'] == 1)
+                        echo "ti-unlock" ;
+                    else
+                        echo "ti-lock" ;
+                echo '"></i></a>
+                    </div>' ;
+                if ($i == 1){
+                    echo '</div>' ;
+                }
+                $i-- ;
+            }
+
+            echo '</div>' ;
+        ?>
+        <!-- <h1 style="margin: 15px 20px;text-align: center;">Thông Tin Người Dùng</h1>
         <div class="body-user">
 
-            <div class="user-row">  <!--ROW 1-->
+            <div class="user-row">  
                 <div class="user">
                     <img src="avauser/anh.jpg ">
                     <div class="information-user">
@@ -74,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="user-row">  <!--ROW 2-->
+            <div class="user-row">  
                 <div class="user">
                     <img src="avauser/moi.jpg">
                     <div class="information-user">
@@ -105,22 +138,7 @@
             </div>
 
             <a href="../../indexadmin.php" style="float: right;margin-right: 45px;margin-top: 20px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
-        </div>
-        <footer>
-                        
-            <ul style="margin-left: 3%;" class="footer">
-                <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
-                <li class="footer-data"><img src="../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
-                <li class="footer-data"><img src="../../addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
-                <li class="footer-data"><img src="../../timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
-            </ul>
-            <div style="margin-left: 10%;">
-            <p class="footer-data" style="margin-bottom: 5%;"><img src="../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
-            <img src="../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            <img src="../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            <img src="../../youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            </div>
-            <img src="../../bocongthuong.png" style="margin-left: 10%;">
-        </footer>
+        </div> -->
+        <?php include "footerAdmin.php" ; ?>
     </body>
 </html>

@@ -27,7 +27,7 @@
                     if (!empty($row['ImageUrl']))
                         echo '<img src="../../' .$row['ImageUrl'] .'">' ;
                     else
-                        echo '<img src="empty2.png">' ;
+                        echo '<img src="empty5.jpg">' ;
             echo'        </div>
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>

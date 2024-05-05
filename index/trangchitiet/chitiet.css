@@ -72,6 +72,9 @@ div.element:hover > img{
     align-items: center;
 }
 .product-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color: red;
     text-wrap: nowrap;
     margin-top: 10px;
@@ -124,12 +127,13 @@ i.ti-pencil{
 i.ti-pencil:hover{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-i.ti-save{
+.ti-save{
     border-radius: 3px;
     cursor: pointer;
     color: black;
+    font-size: 30px;
 }
-i.ti-save:hover{
+.ti-save:hover{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 i.ti-pencil , i.ti-save{
