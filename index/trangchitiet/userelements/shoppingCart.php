@@ -17,6 +17,10 @@
       session_start() ;
       include "../connection.php" ;
       if (isset($_SESSION["products"])){
+        $acc = $_COOKIE["account"] ;
+        $sql = "SELECT * FROM customer WHERE NameAccount = '$acc'" ;
+        $result = mysqli_query($conn,$sql) ;
+        $cus = mysqli_fetch_assoc($result) ;
         $cart = $_SESSION["products"] ;
         $total = 0 ;
         echo '<div class="small-container cart-page">
@@ -61,18 +65,17 @@
               </tr>
             </table>
           </div>
-          <form action="../../index.php" onsubmit="">
+          <form action="" method="POST">
           <div class="location">
             <p><b>Chọn địa chỉ giao hàng</b></p>
             <br>
-            <input type="checkbox" name="address" value="''" /> 56D/57, P.Trung Mỹ Tây, Q.12  <br />
+            <input type="checkbox" name="address" value="' .$cus["Address"]. '" /> ' .$cus["Address"]. '  <br />
             <br />
             <input type="text" name="txtTen" placeholder="Nhập địa chỉ giao hàng" /> <br />
             <br />
             <input
               type="submit"
               value="Thanh toán"
-              onclick=""
             />
             
             <br />

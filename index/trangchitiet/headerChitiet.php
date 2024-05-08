@@ -38,7 +38,7 @@
         </li>
         <!--Thêm phần tìm kiếm nâng cao-->
         <div class="search-advanced-container">
-        <a href="../userelements/advancedsearch.php">
+        <a href="advancedsearch.php">
             <button id="search-advanced-button">Tìm kiếm nâng cao</button>
         </a>
         </div>
@@ -49,9 +49,9 @@
             <?php
                 if(!isset($_COOKIE["user"]))
                 {
-                    echo 'href="trangchitiet/userelements/login.php"' ;
+                    echo 'href="login.php"' ;
                 }else{
-                    echo 'href="trangchitiet/userelements/accountinform.php"' ;
+                    echo 'href="accountinform.php"' ;
                 }
             ?>
             class="login-link"><span id="taikhoan">
@@ -67,9 +67,9 @@
             <a id="linkLogOut" 
             <?php
                 if (!isset($_COOKIE["user"])){
-                    echo 'href="trangchitiet/userelements/register.php"' ;
+                    echo 'href="register.php"' ;
                 }else{
-                    echo 'href="trangchitiet/userelements/loginProcess.php"' ;
+                    echo 'href="loginProcess.php"' ;
                 }
             ?>
             class="register-link" onclick="checkLogOut()"><span id="dangxuat">
@@ -88,7 +88,7 @@
 
         <!-- Thêm phần giỏ hàng -->
         <div class="cart-container">
-        <a href="../userelements/shoppingCart.php" class="cart-icon ti-shopping-cart"></a>
+        <a href="shoppingCart.php" class="cart-icon ti-shopping-cart"></a>
         <span class="cart-count"></span>
         </div>
     </ul>
