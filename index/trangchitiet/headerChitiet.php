@@ -45,15 +45,46 @@
 
         <!-- Thêm phần đăng nhập/đăng ký -->
         <div class="user-container">
-        <a
-            href="../userelements/login.php"
-            class="login-link"
-        >
-            <span id="taikhoan">Đăng nhập</span>
-        </a>
-        <a href="../userelements/register.php" class="register-link">Đăng ký</a>
-        <i class="user-icon ti-user"></i>
-        </div>
+            <a id="login-link" 
+            <?php
+                if(!isset($_COOKIE["user"]))
+                {
+                    echo 'href="trangchitiet/userelements/login.php"' ;
+                }else{
+                    echo 'href="trangchitiet/userelements/accountinform.php"' ;
+                }
+            ?>
+            class="login-link"><span id="taikhoan">
+            <?php
+                if(!isset($_COOKIE["user"]))
+                {
+                    echo "Đăng nhập" ;
+                }else{
+                    echo"". $_COOKIE["user"] ;
+                }
+            ?>
+            </span></a>
+            <a id="linkLogOut" 
+            <?php
+                if (!isset($_COOKIE["user"])){
+                    echo 'href="trangchitiet/userelements/register.php"' ;
+                }else{
+                    echo 'href="trangchitiet/userelements/loginProcess.php"' ;
+                }
+            ?>
+            class="register-link" onclick="checkLogOut()"><span id="dangxuat">
+            <?php
+                if(!isset($_COOKIE["user"]))
+                {
+                    echo 'Đăng ký' ;
+                }else{
+                    echo 'Đăng xuất' ;
+            }
+            ?>
+            </span></a>
+
+            <i class="user-icon ti-user"></i>
+            </div>
 
         <!-- Thêm phần giỏ hàng -->
         <div class="cart-container">
