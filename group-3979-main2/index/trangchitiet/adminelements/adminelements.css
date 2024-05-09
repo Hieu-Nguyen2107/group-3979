@@ -1,0 +1,204 @@
+form > input#pname , #pprice , #ptype{
+    width: 200px;
+    height: 20px;
+}
+form > input.submit , .reset{
+    width: 100px;
+    margin: 5px 10px;
+}
+div.icon{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 10px;
+}
+a.ti-trash{
+    cursor: pointer;
+    padding: 2px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    color: red;
+    text-decoration: none;
+}
+a.ti-settings{
+    cursor: pointer;
+    padding: 2px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #000;
+}
+a.ti-trash:hover{
+    background-color: pink;
+}
+a.ti-settings:hover{
+    background-color: pink;
+}
+div.body-user{
+    display: flexbox;
+}
+div.user-row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+div.user{
+    display: flex;
+    background-color: rgb(200, 213, 216);
+    margin: 20px 20px;
+    border: 2px solid black;
+}
+div.information-user{
+    display: flex;
+    font-size: 18px;
+    font-style: inherit;
+    flex-direction: column;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+div.user > img{
+    width: 150px;
+    height: 170px;
+    border: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+form.add-user{
+    background-color: pink;
+    line-height: 25px;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 400px;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+div.button-adduser{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+div.button-adduser > input#submit{
+    
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 15px;
+}
+div.button-adduser > input#reset{
+    
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+form.add-user input#username ,  input#useremail{
+    width: 250px;
+}
+div.user-result-frame{
+    border-top: 2px solid #000;
+    position: relative;
+    display: none;
+}
+div.user-result{
+    margin-left: 40px;
+}
+
+div.user > div#ava-delete > img{
+    position: absolute;
+    width: 150px;
+    height: 170px;
+    border: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    display: block;
+}
+div#ava-delete{
+    position: relative;
+    min-width: 150px;
+    min-height: 170px;
+    background-color: azure;
+    cursor: pointer;
+}
+div#ava-delete > i.ti-pencil{
+    position: absolute;
+    z-index: 2;
+    font-size: 50px;
+    margin: 43px;
+    margin-top: 50px;
+    display: none;
+}
+div#ava-delete:hover i.ti-pencil{
+    display: block;
+}
+div#ava-delete:hover img{
+    opacity: 0.6;
+}
+div.body-manageuserreceipt{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+div.frame-userreceipt{
+    display: flex;
+    flex-direction: column;
+}
+div#frame-userreceipt{
+    display: none;
+}
+div.receipt{
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    border-radius: 4px;
+    margin: 20px 20px;
+}
+span#status{
+    display: flex;
+}
+span#receipt-status , span#receipt-total{
+    margin-left: auto;
+    align-self: center;
+    margin-right: 7px;
+}
+span#receipt-status > span{
+    cursor: pointer;
+}
+span#code{
+    background-color: rgb(243, 156, 199);
+    color: white;
+    border-bottom: 2px solid black;
+    display: flex;
+    padding: 5px 5px;
+}
+span#code > a{
+    text-decoration: underline;
+    color: #000;
+    margin-left: auto;
+    margin-right: 5px;   
+}
+span#receipt-inform{
+    margin: 9px;
+}
+div#body-frame{
+    display: block;
+}
+div.body-statistics{
+    display: none;
+}
+div.container-statistics{
+    display: flex;
+    flex-direction: column;
+}
+span#total{
+    margin-left: auto;
+    margin-right: 30px;
+}
+span#result{
+    margin: 20px 0px 10px 20px;
+    line-height: 20px;
+}

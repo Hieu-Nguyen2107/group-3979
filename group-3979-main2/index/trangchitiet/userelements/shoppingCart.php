@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--Phai co phan trang va phan loai san pham-->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>3979 Toys</title>
+    <link rel="stylesheet" href="../../index.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../themify-icons-font/themify-icons/themify-icons.css"
+    />
+    <link rel="stylesheet" href="shoppingCart.css" />
+    <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
+    <script src="function.js"></script>
+  </head>
+  <body onload="changeName();changeLinkIndex2();">
+    <?php
+      include "../../headerIndex.php";
+    ?>
+    
+    <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Sản Phẩm</th>
+          <th>Số Lượng</th>
+          <th>Tổng</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                class="img-chitiet"
+                src="../../productImage/robot/robot1.jpg"
+              />
+              <div>
+              <p>Robot chú chó tinh nghịch</p>
+              <small>Giá: 649,000 VNĐ</small>
+              <br />
+              <a href="../../trangchitiet/robot/robot1.php">Chi tiết</a>
+              <br> <br>
+              <i class="ti-trash" onclick="confirm('Bạn có chắc chắn muốn xóa không !!!')" style="color: red;"></i>
+            </div>
+          </td>
+          <td><input type="number" value="1" min="1"/></td>
+          <td>649,000 VNĐ</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                class="img-chitiet"
+                src="../../productImage/doll/doll2.jpg"
+              />
+              <div>
+                <p>Bánh Mì Barber Bread</p>
+                <small>Giá: 72,000 VNĐ</small>
+                <br />
+                <a href="../../trangchitiet/doll/doll2.php">Chi tiết</a>
+                <br> <br>
+                <i class="ti-trash" onclick="confirm('Bạn có chắc chắn muốn xóa không !!!')" style="color: red;"></i>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" min="1"/></td>
+          <td>72,000 VNĐ</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                class="img-chitiet"
+                src="../../productImage/doll/doll3.jpg"
+              />
+              <div>
+                <p>MLP Quả trứng kỳ diệu</p>
+                <small>Giá: 69,000 VNĐ</small>
+                <br />
+                <a href="../../trangchitiet/doll/doll3.php">Chi tiết</a>
+                <br> <br>
+                <i class="ti-trash" onclick="confirm('Bạn có chắc chắn muốn xóa không !!!')" style="color: red;"></i>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" min="1"/></td>
+          <td>69,000 VNĐ</td>
+        </tr>
+      </table>
+
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Tổng</td>
+            <td>790,000 VNĐ</td>
+          </tr>
+          <tr>
+            <td>Thuế</td>
+            <td>50,000 VNĐ</td>
+          </tr>
+          <tr>
+            <td>Tổng Cộng</td>
+            <td>840,000 VNĐ</td>
+          </tr>
+        </table>
+      </div>
+      <form action="../../index.php" onsubmit="return check();">
+      <div class="location">
+        <p><b>Chọn địa chỉ giao hàng</b></p>
+        <br>
+        <input type="checkbox" name="vehicle1" value="Địa chỉ" /> 56D/57, P.Trung Mỹ Tây, Q.12  <br />
+        <br />
+        <input type="text" name="txtTen" placeholder="Nhập địa chỉ giao hàng" /> <br />
+        <br />
+        <input
+          type="submit"
+          value="Thanh toán"
+          onclick=""
+        />
+        
+        <br />
+        <br />
+      </div>
+      </form>
+    </div>
+    <div style="display: block;margin-top: auto;">
+    <?php 
+      include "../../footerIndex.php";
+    ?>
+    </div>
+  </body>
+</html>

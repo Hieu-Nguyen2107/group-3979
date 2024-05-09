@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 03, 2024 lúc 06:13 PM
+-- Thời gian đã tạo: Th5 09, 2024 lúc 03:49 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -33,16 +33,21 @@ CREATE TABLE `customer` (
   `Name` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `AvatarUrl` varchar(255) NOT NULL,
-  `Status` int(11) NOT NULL DEFAULT 1
+  `Status` int(11) NOT NULL DEFAULT 1,
+  `Address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `customer`
 --
 
-INSERT INTO `customer` (`Email`, `NameAccount`, `Name`, `Password`, `AvatarUrl`, `Status`) VALUES
-('quandong2608@gmail.com', 'Dong Quan', 'dqdq2608', '12345@12345', '', 1),
-('dongquan817@gmail.com', 'quann', 'quan', '123123', '', 1);
+INSERT INTO `customer` (`Email`, `NameAccount`, `Name`, `Password`, `AvatarUrl`, `Status`, `Address`) VALUES
+('trlgh@gmail.com', 'giahung345', 'Trương Lê Gia Hưng', 'giahung345', 'avauser/moi.jpg', 1, 'Thành Thái, Quận 10'),
+('ducanh111@gmail.com', 'leducanh123', 'Lê Đức Anh', 'leducanh123', 'avauser/anh.jpg', 1, ''),
+('pongpink0802@gmail.com', 'minhquan678', 'Trần Minh Quân', 'minhquan678', 'avauser/quan.jpg', 1, ''),
+('trieutrieu@gmail.com', 'ngoctrieu789', 'Phạm Ngọc Triều', 'ngoctrieu789', 'avauser/trieu.jpg', 1, ''),
+('jj2803@gmail.com', 'nguyenthanhdat123', 'Nguyễn Thành Đạt', 'nguyenthanhdat123', 'avauser/ronaldovn.jpg', 1, ''),
+('vietplus369@gmail.com', 'nguyenthanhviet123', 'Nguyễn Thành Việt', 'nguyenthanhviet123', 'avauser/viet+.jpg', 1, '');
 
 -- --------------------------------------------------------
 
@@ -75,6 +80,7 @@ INSERT INTO `product` (`TypeName`, `ProductName`, `Price`, `ImageUrl`, `Describe
 ('lego', 'Đồ chơi lắp ráp Phi thuyền X-Wing Starfighter™ LEGO STAR WARS', '7,599,000', 'productImage/lego/lego1.jpg', ''),
 ('lego', 'Đồ chơi lắp ráp Phiên chợ Vương quốc Rosa LEGO DISNEY PRINCESS', '629,000', 'productImage/lego/lego3.jpg', ''),
 ('lego', 'Đồ chơi lắp ráp Vườn bách thảo LEGO FRIENDS', '2,599,000', 'productImage/lego/lego2.jpg', ''),
+('robot', 'atoo', '10', '', 'tytytyt'),
 ('robot', 'Mô hình Earthspark Warrior Megatron', '799,000', 'productImage/robot/robot3.jpg', '<p>\r\n              <h3>Đồ Chơi Mô Hình Earthspark Warrior Megatron TRANSFORMERS F6727/F6230</h3>\r\n              Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.\r\n\r\n              <br>\r\n              Đồ chơi siêu robot Transformers gây ấn tượng với những đặc điểm nổi bật sau đây:\r\n              <br>\r\n              <ul style=\"margin-left: 30px;\">\r\n              <li>Sản phẩm phù hợp cho các bé nam có độ tuổi từ 6 tuổi trở lên.</li>\r\n              <li>Sở hữu thiết kế mô phỏng theo các nhân vật trong phim, không sản xuất hàng loạt theo một khuôn đúc. Từ khuôn mặt, vóc dáng, màu da cho đến trang phục, phụ kiện đều rất tinh tế, đẹp mắt.</li>\r\n              <li>Mô hình có thể lắp hình nhân vật robot hoặc xe chỉ trong vài bước lắp ráp. Điều này giúp tăng cường phát triển trí tuệ cũng như khả năng tư duy.</li>\r\n              <li>Sản phẩm làm từ nhựa cao cấp hoàn toàn không có chất kích ứng gây hại cho bé.</li>\r\n              <li>Các góc cạnh được bo tròn với bề mặt nhẵn tạo sự an toàn, không làm trầy xước da khi bé chơi</li>\r\n              <li>Đồ chơi giúp bé sẽ được thỏa thích chơi đùa, trò chuyện hoặc chơi nhập vai cùng người bạn Transformers yêu thích của mình. Từ đó kích thích trí tưởng tượng và sáng tạo của trẻ bay cao bay xa.</li>\r\n              </ul>\r\n          </p>'),
 ('robot', 'Mô hình Earthspark Warrior Thrash', '799,000', 'productImage/robot/robot2.jpg', '\r\n              <p>\r\n                  <h3>Đồ Chơi Mô Hình Earthspark Warrior Thrash TRANSFORMERS F6729/F6230</h3>\r\n                  Đồ chơi Transformers mô hình Earthspark F6229 mô phỏng theo hoạt hình nổi tiếng được chuyển thể từ Transfomers và vẫn được đông đảo mọi người xem và theo dõi. Cho đến nay toàn bộ vũ trụ Transformers, các nhân vật đều được tạo hình robot và có thể lắp ráp thay đổi y như các nhân vật trong truyện tranh, phim ảnh.\r\n\r\n                  <br>\r\n                  \r\n                  Đồ chơi siêu robot Transformers gây ấn tượng với những đặc điểm nổi bật sau đây:\r\n                  <br>\r\n                  <ul style=\"margin-left: 30px;\">\r\n                  <li>Sản phẩm phù hợp cho các bé nam có độ tuổi từ 6 tuổi trở lên.</li>\r\n                  <li>Sở hữu thiết kế mô phỏng theo các nhân vật trong phim, không sản xuất hàng loạt theo một khuôn đúc. Từ khuôn mặt, vóc dáng, màu da cho đến trang phục, phụ kiện đều rất tinh tế, đẹp mắt.</li>\r\n                  <li>Mô hình có thể lắp hình nhân vật robot hoặc xe chỉ trong vài bước lắp ráp. Điều này giúp tăng cường phát triển trí tuệ cũng như khả năng tư duy.</li>\r\n                  <li>Sản phẩm làm từ nhựa cao cấp hoàn toàn không có chất kích ứng gây hại cho bé.</li>\r\n                  <li>Các góc cạnh được bo tròn với bề mặt nhẵn tạo sự an toàn, không làm trầy xước da khi bé chơi</li>\r\n                  <li>Đồ chơi giúp bé sẽ được thỏa thích chơi đùa, trò chuyện hoặc chơi nhập vai cùng người bạn Transformers yêu thích của mình. Từ đó kích thích trí tưởng tượng và sáng tạo của trẻ bay cao bay xa.</li>\r\n                  </ul>\r\n</p>'),
 ('robot', 'Robot chú chó tinh nghịch', '649,000', 'productImage/robot/robot1.jpg', '\r\n                    <p>\r\n                    <h3>Đồ Chơi VECTO Robot Chú Chó Tinh Nghịch - Nô Đùa Cùng Bé VT18012</h3>\r\n                    \r\n                    Dễ thương và lém lỉnh, tinh nghịch nhưng đầy tháo vát. Robot chú chó tinh nghịch đã đến rồi đây. Các bé và ba mẹ đã sẵn sàng rước chú về chưa nè?\r\n                        <br>\r\n                    - Khả năng sủa giống hệt chó thật\r\n                        <br>\r\n                    - Nhảy múa theo nhạc cực Cool\r\n                        <br>\r\n                    - Chức năng lập trình một chuỗi động tác độc đáo\r\n                        <br>\r\n                    - Điều khiển linh hoạt tới, lui, trái , phải\r\n                        <br>\r\n                    Ngoài các chức năng nổi trội trên với thiết kế vẻ mặt cực kỳ dễ thương nhưng không kém phần nghịch ngợm sẽ giúp cho các giây phút vui chơi của bé vô cùng hào hứng.\r\n</p>\r\n'),
@@ -111,13 +117,6 @@ CREATE TABLE `receipt` (
   `ReceiptID` varchar(255) NOT NULL,
   `NameAccount` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `receipt`
---
-
-INSERT INTO `receipt` (`ReceiptID`, `NameAccount`) VALUES
-('A001', 'Dong Quan');
 
 -- --------------------------------------------------------
 
