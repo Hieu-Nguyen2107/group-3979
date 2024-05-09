@@ -1,3 +1,19 @@
+<?php 
+  session_start() ;
+  function deleteFromCart(){
+    $pName = $_GET["pName"] ;
+    $pIndex = array_search($pName, array_column($_SESSION["products"],0)) ;
+    array_splice($_SESSION["products"],$pIndex,1) ;
+  }
+
+  if (isset($_GET["deleteP"])){
+    if ($_GET["deleteP"]){
+      deleteFromCart() ;
+      header ("Location: shoppingCart.php") ;
+      exit ;
+    }
+  }
+?>
 <!DOCTYPE html>
 <!--Phai co phan trang va phan loai san pham-->
 <html>
@@ -14,9 +30,10 @@
   <body>
   <?php include "../headerChitiet.php" ; ?>
     <?php 
-      session_start() ;
+      
       include "../connection.php" ;
-      if (isset($_SESSION["products"])){
+      if (isset($_COOKIE["account"])){
+        if (isset($_SESSION["products"])){
         $acc = $_COOKIE["account"] ;
         $sql = "SELECT * FROM customer WHERE NameAccount = '$acc'" ;
         $result = mysqli_query($conn,$sql) ;
@@ -48,7 +65,7 @@
                   <br />
                   <a href="../../trangchitiet/robot/robot1.php">Chi tiết</a>
                   <br> <br>
-                  <i class="ti-trash" onclick="" style="color: red;"></i>
+                  <form action="shoppingCart.php?deleteP=true&pName=' .$row["ProductName"]. '" method="POST"><input type="button" onclick="this.form.submit()" value="Xóa"></form>
                 </div>
               </td>
               <td><form action="shoppingProcess.php?pName='.$row["ProductName"].'" method="POST"><input name="plusCart" type="number" value="' .$i[1]. '" min="1" onchange="this.form.submit()"/></form></td>
@@ -65,11 +82,56 @@
               </tr>
             </table>
           </div>
-          <form action="" method="POST">
+          <form action="../receiptdetail.php" method="POST">
           <div class="location">
             <p><b>Chọn địa chỉ giao hàng</b></p>
             <br>
             <input type="checkbox" name="address" value="' .$cus["Address"]. '" /> ' .$cus["Address"]. '  <br />
+            <br />
+            <input type="text" name="txtTena" plceholder="Nhập địa chỉ giao hàng" /> <br />
+            <br />
+            <input
+              type="submit"
+              value="Thanh toán"
+            />
+            
+            <br />
+            <br />
+          </div>
+          </form>
+        </div> ' ;
+      }else{
+        echo '<div class="small-container cart-page">
+        <table>
+          <tr>
+            <th>Sản Phẩm</th>
+            <th>Số Lượng</th>
+            <th>Tổng</th>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+        <div class="total-price">
+            <table>
+              <tr>
+                <td>Tổng</td>
+                <td>0 VNĐ</td>
+              </tr>
+              <tr>
+                <td>Thuế</td>
+                <td>0 VNĐ</td>
+              </tr>
+              <tr>
+                <td>Tổng Cộng</td>
+                <td>0 VNĐ</td>
+              </tr>
+            </table>
+          </div>
+          <form action="login.php" method="POST">
+          <div class="location">
+            <p><b>Chọn địa chỉ giao hàng</b></p>
+            <br>
+            <input type="checkbox" name="vehicle1" value="" /> Địa chỉ có sẵn <br />
             <br />
             <input type="text" name="txtTen" placeholder="Nhập địa chỉ giao hàng" /> <br />
             <br />
@@ -82,7 +144,8 @@
             <br />
           </div>
           </form>
-        </div> ' ;
+        </div>' ;
+      }
     }else{
       echo '<div class="small-container cart-page">
         <table>

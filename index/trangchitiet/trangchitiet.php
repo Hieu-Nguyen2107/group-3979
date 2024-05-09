@@ -23,7 +23,7 @@
                   <div style="max-width: fit-content;">
                       <div class="product-name"><b>' .$row['ProductName']. '</b></div>
                       <div class="product-price"><b>' .$row['Price']. ' VNĐ</b></div>
-                      <form action="userelements/shoppingProcess.php?pName=' .$row['ProductName']. '" method="POST">
+                      <form action="userelements/shoppingProcess.php?pName=' .$row['ProductName']. '&addCart=true" method="POST">
                           <input name="amount" class="amount" type="number" value="1" min="1">
                           <input type="submit" value="Mua Ngay" class="button"/>
                           <input type="submit" value="Thêm Vào Giỏ Hàng" class="button"/>

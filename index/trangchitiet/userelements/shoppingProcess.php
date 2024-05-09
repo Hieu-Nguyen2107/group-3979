@@ -1,4 +1,5 @@
 <?php 
+
     if (!isset($_COOKIE["user"])){
         header("Location: login.php") ;
         exit ;
@@ -22,5 +23,7 @@
             $_SESSION["products"][] = $product ;
         }
         header ("Location: shoppingCart.php") ;
+        exit ;
     }
+
 ?>
