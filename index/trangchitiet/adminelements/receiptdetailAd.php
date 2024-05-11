@@ -1,51 +1,24 @@
 <?php 
-    session_start() ;
-    function submitShow(){
-        include "connection.php" ;
-        $account = $_GET["acc"] ;
-        $sql = "SELECT COUNT(*) as c FROM receipt " ;
-        $result = mysqli_query($conn,$sql) ;
-        $count = mysqli_fetch_assoc($result) ;
-        $count["c"] += 1 ;
-        $sql2 = "INSERT INTO receipt (ReceiptID, NameAccount) VALUES ('" .$count["c"]. "', '$account') ;" ;
-        mysqli_query($conn,$sql2) ;
-        $cart = $_SESSION["products"] ;
-        foreach ($cart as $i){
-            $sql3 = "SELECT TypeName FROM product WHERE ProductName = '$i[0]'" ;
-            $result = mysqli_query($conn,$sql3) ;
-            $row = mysqli_fetch_assoc($result) ;
-            $sql4 = "INSERT INTO receiptdetail VALUES ('" .$count["c"]. "','".$i[0]."','".$row["TypeName"]."','".$i[1]."')" ;
-            mysqli_query($conn,$sql4) ;
-        }
-        session_unset() ;
-        setcookie("receiptID",$count['c'],time() + (86400 * 30), "/") ;
-        header ("Location: receiptdetail.php") ;
-        exit ;
-    }
-
-    if (isset($_POST["submitCart"])){
-        submitShow() ;
-    }
-    if (isset($_GET["history"])){
-        if ($_GET["history"])
-            setcookie("receiptID",$_GET["receiptid"],time() + (86400 * 30), "/") ;
-        header ("Location: receiptdetail.php") ;
-        exit ;
-    }
+if (isset($_GET["manage"])){
+    if ($_GET["manage"])
+        setcookie("receiptID",$_GET["receiptid"],time() + (86400 * 30), "/") ;
+    header ("Location: receiptdetailAd.php") ;
+    exit ;
+}
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Add Product 3979 Toys</title>
-        <link rel="stylesheet" href="../index.css" type="text/css">
-        <link rel="stylesheet" href="../themify-icons-font/themify-icons/themify-icons.css">
-        <link rel="stylesheet" href="receipt/receipt.css" type="text/css">
+        <link rel="stylesheet" href="../../index.css" type="text/css">
+        <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
+        <link rel="stylesheet" href="../receipt/receipt.css" type="text/css">
         <script src="../function.js"></script></head>
         <body>
-        <?php include "headerTrangCT.php" ; ?>
+        <?php include "headerAdmin.php" ; ?>
         <?php 
-        include "connection.php" ;
+        include "../connection.php" ;
         echo '<div class="body-receipt">
         <h1 style="text-align: center;margin: 20px 10px;">Thông Tin Đơn Hàng #' .$_COOKIE["receiptID"]. '</h1>' ;
         $sql = "SELECT * FROM receipt WHERE ReceiptID = '" .$_COOKIE["receiptID"]. "'" ;
@@ -72,7 +45,7 @@
             $result2 = mysqli_query($conn,$sql) ;
             $product = mysqli_fetch_assoc($result2) ;
             echo '<div id="product">
-            <img src="../' .$product["ImageUrl"]. '">
+            <img src="../../' .$product["ImageUrl"]. '">
             <div id="name">
                 ' .$product["ProductName"]. '
             </div>
@@ -90,11 +63,11 @@
             <span id="total-price">&#8363 ' .$total. '000 VNĐ</span>
         </div>
         </div>
-        <a class="back-button" href="userelements/accountinform.php"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>
+        <a class="back-button" href="manageuserreceipt.php"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>
         </div>' ;
         ?>
       <div style="display: block;margin-top: auto;">
-        <?php include "footerTrangCT.php" ; ?>
+        <?php include "footerAdmin.php" ; ?>
       </div>
     </body>
 </html>

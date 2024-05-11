@@ -188,7 +188,6 @@ div#body-frame{
     display: block;
 }
 div.body-statistics{
-    display: none;
 }
 div.container-statistics{
     display: flex;

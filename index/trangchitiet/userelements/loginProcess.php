@@ -32,6 +32,8 @@
     }else{
         setcookie("user", "", time() - 3600, "/") ;
         unset($_COOKIE["user"]) ;
+        setcookie("account", "", time() - 3600, "/") ;
+        unset($_COOKIE["account"]) ;
         session_unset() ;
         header ("Location:../../index.php") ;
     }

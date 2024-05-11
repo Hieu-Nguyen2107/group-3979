@@ -63,7 +63,7 @@
                   <p>' .$row["ProductName"]. '</p>
                   <small>Giá: ' .$row["Price"]. ' VNĐ</small>
                   <br />
-                  <a href="../../trangchitiet/robot/robot1.php">Chi tiết</a>
+                  <a href="../trangchitiet.php?productName=' .$row["ProductName"]. '">Chi tiết</a>
                   <br> <br>
                   <form action="shoppingCart.php?deleteP=true&pName=' .$row["ProductName"]. '" method="POST"><input type="button" onclick="this.form.submit()" value="Xóa"></form>
                 </div>
@@ -82,7 +82,7 @@
               </tr>
             </table>
           </div>
-          <form action="../receiptdetail.php" method="POST">
+          <form action="../receiptdetail.php?acc=' .$cus["NameAccount"]. '" method="POST">
           <div class="location">
             <p><b>Chọn địa chỉ giao hàng</b></p>
             <br>
@@ -91,6 +91,7 @@
             <input type="text" name="txtTena" plceholder="Nhập địa chỉ giao hàng" /> <br />
             <br />
             <input
+              name="submitCart"
               type="submit"
               value="Thanh toán"
             />
@@ -192,6 +193,7 @@
           </form>
         </div>' ;
     }
+
     ?>
     <!-- <div class="small-container cart-page">
       <table>

@@ -8,50 +8,18 @@
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
         <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
-        <script src="admin.js"></script>
     </head>
     <body>
-      <header style="width: 100%;">
-        <div id="header">
-          <!-- Begin nav -->
-          <ul class="menubar" id="nav">
-            <li><a href="../../indexadmin.php">home</a></li>
-            <!-- Thêm phần tìm kiếm -->
-  
-            <!-- Thêm phần đăng nhập/đăng ký -->
-            
-            <!-- Thêm phần giỏ hàng -->
-          </ul>
-          <!-- End nav -->
-          <div class="user-container" style="margin-left: auto;margin-right: 30px;">
-            <div class="admin-popup">
-              <!-- <i class="user-icon ti-user">Admin</i> -->
-              <div>
-                <img src="avauser/moi.jpg"><span>Moi</span>
-              </div>
-              <!-- <div class="popup">
-                <div>
-                  <div><i class="ti-user"></i>
-                    <span>Admin</span>
-                    </div>
-                  <span>Tên: Đông Quân</span>
-                  <span>Tuổi: 19</span>
-                </div>
-              </div> -->
-              
-            </div>
-          </div>
-        </div>
-      </header>
+      <?php include "headerCoSearch.php" ; ?>
       <div>
 
         <h1 style="margin: 30px 15px;text-align: center;">Tình Hình Kinh Doanh</h1>
-        <form style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
-            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;" onsubmit="showbody('body-frame','body-statistics');return false;">
+        <form action="statistics.php" method="POST" style="margin-top: 15px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;background-color: pink;
+            border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;">
             <label for="pname"><b>Tên sản phẩm: </b></label>
-            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm" onchange="document.getElementById('pnameresult').innerText = this.value;">
+            <input type="text" id="pname" name="pname" placeholder="Tên sản phẩm">
             <label for="ptype" style="margin-left: 20px;"><b>Loại sản phẩm: </b></label>
-            <select name="ptype" onchange="document.getElementById('ptyperesult').innerText = this.value;">
+            <select name="ptype">
               <option value="" selected disabled hidden>Choose here</option>
               <option value="ROBOT">ROBOT</option>
               <option value="BÚP BÊ">BÚP BÊ</option>
@@ -60,15 +28,75 @@
             </select>
             <label for="time" style="margin-left: 20px;"><b>Khoảng thời gian: </b></label>
             <input type="number" id="num" name="num" placeholder="1" min="1" max="100" style="width: 60px;">
-            <select name="timetype" onchange="document.getElementById('timeresult').innerText = document.getElementById('num').value + ' ' + this.value">
+            <select name="timetype">
               <option value="" selected disabled hidden>Ngày , Tháng , Năm</option>
               <option value="Ngày">Ngày</option>
               <option value="Tháng">Tháng</option>
               <option value="Năm">Năm</option>
             </select>
-            <input type="submit" value="Tìm">
+            <input name="submitStatis" type="submit" value="Tìm">
         </form>
-        <div id="body-frame">
+        <?php 
+        echo '<div id="body-frame">' ;
+
+        if (isset($_POST["submitStatis"])){
+          echo ' <div class="body-statistics">
+
+          <div class="container-statistics">
+
+            <span id="result">
+              
+              <b>
+              Tên sản phẩm: <span id="pnameresult">' .$_POST["pname"]. '</span> <br/> 
+              Loại sản phẩm: <span id="ptyperesult">' .$_POST["ptype"]. '</span> <br/> 
+              Khoảng thời gian: <span id="timeresult">' .$_POST["num"]. '&nbsp' .$_POST["timetype"]. '</span> <br/> 
+              </b>
+            </span>' ;
+
+            include "../connection.php" ;
+            $total = 0 ;
+            $sql = "SELECT * FROM receiptdetail WHERE ProductName = '" .$_POST["pname"]. "'" ;
+            $result = mysqli_query($conn,$sql) ;
+            $sql = "SELECT * FROM product WHERE ProductName = '" .$_POST["pname"]. "'" ;
+            $result2 = mysqli_query($conn,$sql) ;
+            $pro = mysqli_fetch_assoc($result2) ;
+            while ( $row = mysqli_fetch_assoc($result) )
+            {
+              $sql = "SELECT * FROM receipt WHERE ReceiptID = '" .$row["ReceiptID"]. "'" ;
+              $result2 = mysqli_query($conn,$sql) ;
+              $rec = mysqli_fetch_assoc($result2) ;
+              $sql = "SELECT * FROM customer WHERE NameAccount = '" .$rec["NameAccount"]. "'" ;
+              $result2 = mysqli_query($conn,$sql) ;
+              $cus = mysqli_fetch_assoc($result2) ;
+              echo '<div class="receipt">
+                <span id="code">MÃ ĐƠN HÀNG #' .$row["ReceiptID"]. '
+                  <!-- <a href="../receipt/receipt1.php">Xem thông tin đơn hàng</a> -->
+                </span>
+      
+                <span id="status">     
+                  <span id="receipt-inform">     
+                    Tên: ' .$cus["Name"]. '    <br/>
+                    Email: ' .$cus["Email"]. '  <br/>
+                    Địa chỉ: ' .$cus["Address"]. '<br/>
+                  </span>
+                  <span id="receipt-total">Tổng giá tiền của sản phẩm: &#8363 ' .(int) $pro["Price"] * $row["Amount"]. '000 VNĐ</span>
+                </span>
+              </div>' ;
+              $total += (int) $pro["Price"] * $row["Amount"] ;
+            }
+
+            echo '<span id="total"><i class="ti-money"></i>Tổng cộng: &#8363 ' .$total. '000</span>
+
+          </div>
+
+          <a href="../../indexadmin.php" style="float: right;margin-right: 20px;margin-top: 10px;margin-bottom: 10px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
+        </div>' ;
+        }
+
+        echo '</div>' ;
+        ?>
+        <!-- Mô hình nhân vật SMP CHAINSAW MAN - DENJI BANDAI CANDY -->
+        <!-- <div id="body-frame">
 
           <div class="body-statistics"> 
 
@@ -85,7 +113,7 @@
 
               <div id="receipt1" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #001
-                  <!-- <a href="../receipt/receipt1.php">Xem thông tin đơn hàng</a> -->
+                  <a href="../receipt/receipt1.php">Xem thông tin đơn hàng</a>
                 </span>
       
                 <span id="status">     
@@ -100,7 +128,7 @@
 
               <div id="receipt2" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #002
-                  <!-- <a href="../receipt/receipt2.php">Xem thông tin đơn hàng</a> -->
+                  <a href="../receipt/receipt2.php">Xem thông tin đơn hàng</a>
                 </span>
       
                 <span id="status">     
@@ -115,7 +143,7 @@
 
               <div id="receipt4" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #004
-                  <!-- <a href="../receipt/receipt4.php">Xem thông tin đơn hàng</a> -->
+                  <a href="../receipt/receipt4.php">Xem thông tin đơn hàng</a>
                 </span>
       
                 <span id="status">     
@@ -130,7 +158,7 @@
 
               <div id="receipt5" class="receipt">
                 <span id="code">MÃ ĐƠN HÀNG #005
-                  <!-- <a href="../receipt/receipt5.php">Xem thông tin đơn hàng</a> -->
+                  <a href="../receipt/receipt5.php">Xem thông tin đơn hàng</a>
                 </span>
       
                 <span id="status">     
@@ -149,26 +177,11 @@
 
           </div>
           <a href="../../indexadmin.php" style="float: right;margin-right: 20px;margin-top: 10px;margin-bottom: 10px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
-        </div>
+        </div> -->
 
       </div>
       <div style="display: block;margin-top: auto;">
-        <footer>
-                        
-            <ul style="margin-left: 3%;" class="footer">
-                <li class="footer-data"><img src="../../phoneicon.png" style="width:20px;"> Hotline: 0939.797979 - 0979.393939 </li>
-                <li class="footer-data"><img src="../../emailicon.png" style="width:20px;"> Email: 3979team@gmail.com</li>
-                <li class="footer-data"><img src="../../addressicon.png" style="width:20px;"> Địa chỉ: 728 Lê Trọng Tấn, Phường Sơn Kì, Quận Tân Phú, TP.HCM  </li>
-                <li class="footer-data"><img src="../../timeicon.png" style="width:20px;"> Thời gian hoạt động: 10:00 - 21:00</li>
-            </ul>
-            <div style="margin-left: 10%;">
-            <p class="footer-data" style="margin-bottom: 5%;"><img src="../../connecticon.png" style="width:20px;"> Kết nối với chúng tôi qua các nền tảng sau:</p>
-            <img src="../../fbicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            <img src="../../instaicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            <img src="../../youtubeicon.png" style="width: 70px; height: 70px; margin-left: 8%;">
-            </div>
-            <img src="../../bocongthuong.png" style="margin-left: 10%;">
-        </footer>
+        <?php include "footerAdmin.php" ; ?>
       </div>
     </body>
 </html>

@@ -30,7 +30,7 @@
       <?php include "headerCoSearch.php" ; ?>
       <div class="body-manageuserreceipt">
         <h1 style="text-align: center;margin-top: 20px;margin-bottom: 25px;">Quản Lý Đơn Hàng</h1>
-        <form name="frm" onsubmit="showbody();return false;">
+        <form name="frm">
           <span style="margin-left: 10px;"><b>Khoảng thời gian: </b></span>
           <input type="number" id="time" name="time" min="1" placeholder="1" style="width: 50px;">
           <select name="slt">
@@ -46,85 +46,37 @@
             document.getElementById("frame-userreceipt").style.display = "block";
           }
         </script>
-        <div id="frame-userreceipt">
-          <div class="frame-userreceipt">
-            <div id="receipt1" class="receipt">
-              <span id="code">MÃ ĐƠN HÀNG #001
-                <a href="../receipt/receipt1.php">Xem thông tin đơn hàng</a>
-              </span>
+        <?php 
+        echo '<div class="frame-userreceipt">' ;
 
-              <span id="status">     
-                <span id="receipt-inform">     
-                  Tên: Lê Đức Anh    <br/>
-                  SĐT: 0909090909  <br/>
-                  Địa chỉ: 333 Võ Văn Kiệt, Quận 5, Thành phố Hồ Chí Minh<br/>
-                </span>
-                <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt1','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt1','notprocessed')">Chưa xử lý</span></span>
-              </span>
-            </div>
+        include "../connection.php" ;
+        $sql = "SELECT * FROM receipt" ;
+        $result = mysqli_query($conn,$sql) ;
+        while ( $row = mysqli_fetch_assoc($result) ){
+        $sql = "SELECT * FROM customer WHERE NameAccount = '" .$row["NameAccount"]. "'" ;
+        $result2 = mysqli_query($conn,$sql) ;
+        $cus = mysqli_fetch_assoc($result2) ;
+        echo'
+        <div class="receipt">
+          <span id="code">MÃ ĐƠN HÀNG #' .$row["ReceiptID"]. '
+            <a href="receiptdetailAd.php?manage=true&receiptid=' .$row["ReceiptID"]. '">Xem thông tin đơn hàng</a>
+          </span>
 
-            <div id="receipt2" class="receipt">
-              <span id="code">MÃ ĐƠN HÀNG #002
-                <a href="../receipt/receipt2.php">Xem thông tin đơn hàng</a>
-              </span>
+          <span id="status">     
+            <span id="receipt-inform">     
+              Tên: ' .$cus["Name"]. '    <br/>
+              Email: ' .$cus["Email"]. '  <br/>
+              Địa chỉ: ' .$cus["Address"]. '<br/>
+            </span>
+            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed">Đang đóng gói</span> / <span id="notprocessed"">Đang vận chuyển</span> / <span id="notprocessed"">Đã giao</span></span>
+          </span>
+        </div>' ;
+        }
 
-              <span id="status">     
-                <span id="receipt-inform">     
-                  Tên: Nguyễn Thành Việt    <br/>
-                    SĐT: 0937898989  <br/>
-                    Địa chỉ: 898 Linh Đông, Thành phố Thủ Đức <br/>
-                </span>
-                <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt2','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt2','notprocessed')">Chưa xử lý</span></span>
-              </span>
-            </div>
-
-            <div id="receipt3" class="receipt">
-              <span id="code">MÃ ĐƠN HÀNG #003
-                <a href="../receipt/receipt3.php">Xem thông tin đơn hàng</a>
-              </span>
-
-              <span id="status">     
-                <span id="receipt-inform">     
-                  Tên: Trần Minh Quân   <br/>
-                  SĐT: 0956789101  <br/>
-                  Địa chỉ: 345 Tên Lửa, Quận Bình Tân, Thành phố Hồ Chí Minh <br/>
-                </span>
-                <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt3','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt3','notprocessed')">Chưa xử lý</span></span>
-              </span>
-            </div>
-
-            <div id="receipt4" class="receipt">
-              <span id="code">MÃ ĐƠN HÀNG #004
-                <a href="../receipt/receipt4.php">Xem thông tin đơn hàng</a>
-              </span>
-
-              <span id="status">     
-                <span id="receipt-inform">     
-                  Tên: Trương Lê Gia Hưng    <br/>
-                  SĐT: 0911311322  <br/>
-                  Địa chỉ: 666 Đồng Nai, Quận 10, Thành phố Hồ Chí Minh <br/>
-                </span>
-                <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt4','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt4','notprocessed')">Chưa xử lý</span></span>
-              </span>
-            </div>
-
-            <div id="receipt5" class="receipt">
-              <span id="code">MÃ ĐƠN HÀNG #005
-                <a href="../receipt/receipt5.php">Xem thông tin đơn hàng</a>
-              </span>
-
-              <span id="status">     
-                <span id="receipt-inform">     
-                  Tên: Phạm Ngọc Triều  <br/>
-                  SĐT: 0916665668   <br/>
-                  Địa chỉ: 545 Hậu Giang, Quận 6, Thành phố Hồ Chí Minh <br/>
-                </span>
-                <span id="receipt-status">Trạng thái đơn hàng: <span id="processed" onclick="check('receipt5','processed')">Đã xử lý</span> / <span id="notprocessed" onclick="check('receipt5','notprocessed')">Chưa xử lý</span></span>
-              </span>
-            </div>
-          </div>
-        </div>
+        echo '</div>
         <a href="../../indexadmin.php" style="margin-left: auto;margin-right: 15px;margin-top: 10px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
+        ' ;
+        ?>
       </div>
       <div style="display: block;margin-top: auto;">
         <?php include "footerAdmin.php" ?>
