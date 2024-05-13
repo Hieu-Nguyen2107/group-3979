@@ -134,11 +134,11 @@
         $uploadOk = 1 ;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
 
-        if (!empty($_POST['avatar']))
-            $avatar = "avauser" . $username . '.jpg' ;
+        if (!empty($_FILES["avatar"]["tmp_name"]))
+            $avatar = "avauser/" . $username . '.jpg' ;
         else
             $avatar = "" ;
-        $sql = $sql = "INSERT INTO customer VALUES('$email','$account','$name','$password','$avatar',1)" ;
+        $sql = "INSERT INTO customer VALUES('$email','$account','$name','$password','$avatar',1)" ;
 
         if (mysqli_query($conn,$sql)) {
             if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file))
@@ -153,6 +153,49 @@
         header ("Location: adduser.php") ;
         exit ;
 
+    }
+
+    //  xoa avatar nguoi dung
+    if (isset($_GET['deleteAvatar'])){
+        $name = $_GET['NameAccount'] ;
+        $sql = "UPDATE customer SET AvatarUrl='' WHERE NameAccount='$name'" ;
+        mysqli_query($conn,$sql) ;
+        mysqli_close($conn) ;
+        header ("Location: checkuser.php") ;
+        exit ;
+    }
+
+
+    //  them avatar nguoi dung
+    if (isset($_GET['addAvatar'])){
+        $name = $_POST["acc"] ;
+        $sql = "SELECT * FROM customer WHERE NameAccount='$name'" ;
+        $result = mysqli_query($conn,$sql) ;
+        $row = mysqli_fetch_assoc($result) ; 
+
+        $target_dir = "avauser/" ;
+        $target_file = $target_dir . $name .'.jpg' ;
+        $uploadOk = 1 ;
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
+
+        if (!empty($_FILES["avatarUpload"]["tmp_name"]))
+            $avatar = "avauser/" . $name . '.jpg' ;
+        else
+            $avatar = "" ;
+        $sql = "UPDATE customer SET AvatarUrl='$avatar' WHERE NameAccount='$name' " ;
+
+        if (mysqli_query($conn,$sql)) {
+            if (move_uploaded_file($_FILES["avatarUpload"]["tmp_name"], $target_file))
+                echo basename( $target_file ) ."was uploaded" ;
+            else
+                echo "Error" ;
+        }
+        else{
+            echo "Error" ;
+        }
+        mysqli_close($conn) ;
+        header ("Location: checkuser.php") ;
+        exit ;
     }
 
     //  khoa nguoi dung

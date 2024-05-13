@@ -49,12 +49,29 @@
                     echo '<div class="user-row">' ;
                 }
                 echo '<div class="user">
+                <div id="ava-delete">
                     <img src="' ;
                     if (empty($row['AvatarUrl']))
                         echo 'empty5.jpg' ;
                     else
                         echo $row['AvatarUrl'] ;
-                echo     '">
+                echo     '">' ;
+
+                if (empty($row['AvatarUrl']))
+                        echo '<form id="addAva" action="adminProcess.php?addAvatar=add" method="POST" enctype = "multipart/form-data">
+                        <input type="button" value="Them" onclick="uploadFile();"/>
+                        <script>
+                        function uploadFile(){
+                            file = document.getElementById("avatarUpload") ;
+                            file.click() ;
+                        }
+                        </script>
+                        <input type="hidden" name="acc" value="' .$row['NameAccount']. '" />
+                        <input value="Go" id="avatarUpload" onchange="this.form.submit();" name="avatarUpload" type="file" style="display:none" />
+                        </form>' ;
+                    else
+                        echo '<a href="adminProcess.php?deleteAvatar=delete&NameAccount=' .$row['NameAccount']. '" class="ti-trash"></a>' ;
+                echo '</div>
                     <div class="information-user">
                         <form action="adminProcess.php?modifyUser=a&oldAcc=' .$row['NameAccount']. '" method="POST">
                             <lable for="nameAcc">- Tên tài khoản: </lable>

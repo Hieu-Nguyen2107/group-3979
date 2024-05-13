@@ -110,7 +110,7 @@ div.user-result{
 div.user > div#ava-delete > img{
     position: absolute;
     width: 150px;
-    height: 170px;
+    height: 196px;
     border: 2px solid black;
     border-top: none;
     border-left: none;
@@ -124,15 +124,29 @@ div#ava-delete{
     background-color: azure;
     cursor: pointer;
 }
-div#ava-delete > i.ti-pencil{
+div#ava-delete > a.ti-trash{
     position: absolute;
     z-index: 2;
     font-size: 50px;
     margin: 43px;
     margin-top: 50px;
     display: none;
+    text-decoration: none;
+    color: red;
 }
-div#ava-delete:hover i.ti-pencil{
+form#addAva{
+    position: absolute;
+    color: red;
+    font-size: 25px;
+    margin: 60px;
+    display: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+div#ava-delete:hover form#addAva{
+    display: block;
+}
+div#ava-delete:hover a.ti-trash{
     display: block;
 }
 div#ava-delete:hover img{
