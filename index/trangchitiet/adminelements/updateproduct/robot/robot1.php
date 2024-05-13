@@ -47,7 +47,7 @@
                         <div id="trash" class="ti-trash"></div>
                         <input id="images" type="file" accept="images/*" style="display: none;">
                     </div>
-                    <div id="img-add" class="element add" onclick="document.getElementById('images1').click();">
+                    <div id="img-add" class="element add">
                         <div class="bgadd"></div>
                         <div class="ti-plus"></div>
                         <input id="images1" type="file" accept="images/*" style="display: none;">

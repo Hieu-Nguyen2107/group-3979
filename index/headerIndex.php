@@ -18,10 +18,10 @@
         <!-- Thêm phần tìm kiếm -->
         <li>
             <div class="search-container">
-            <input type="text" id="search-input" placeholder="Tìm kiếm..." />
-            <a href="trangchitiet/phanloaisanpham/timkiem1.php">
-                <button type="button" id="search-button">Tìm kiếm</button>
-            </a>
+            <form method="post" action="dstimkiemcoban.php">
+            <input type="text" id="search-input" placeholder="Tìm kiếm..." name ="noidung" />
+            <button type="submit" name = "btn" id="search-button">Tìm kiếm</button>
+            </form>
             <div class="search-advanced-container">
                 <a href="trangchitiet/userelements/advancedsearch.php">
                     <button id="search-advanced-button">Tìm kiếm nâng cao</button>

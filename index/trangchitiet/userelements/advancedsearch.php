@@ -75,40 +75,40 @@
       </div>
     </header>
     <div class="inform">
-      <form action="../phanloaisanpham/timkiemnangcao1.php">
-        <div class="inner-inform">
-          <label for="pname">Tên Sản Phẩm</label><br />
-          <input
-            type="text"
-            id="pname"
-            name="pname"
-            placeholder="Nhập tên sản phẩm"
-          /><br />
-          <label for="ptype">Loại Sản Phẩm</label><br />
-          <select>
-            <option>ROBOT</option>
-            <option>DOLL</option>
-            <option>ĐỒ CHƠI LẮP GHÉP</option>
-            <option>ĐỒ CHƠI VẬN ĐỘNG</option>
-          </select>
-          <br />
-          <br />
-          <label for="price">Khoảng Giá</label><br />
-          <input type="number" id="min" name="min" min="0" placeholder="Từ" />
-          <span>-</span>
-          <input type="number" id="max" name="max" min="0" placeholder="Đến" />
-          <br />
-          <br />
-          <input
-            type="submit"
-            value="Tìm kiếm"
-            onclick="alert('Tìm kiếm thành công !!!')"
-          />
-          <span> &nbsp; </span>
-          <input type="reset" value="Reset" />
-        </div>
-      </form>
+  <form action="../../timkiemnangcao.php">
+    <div class="inner-inform">
+      <label for="pname">Tên Sản Phẩm</label><br />
+      <input
+        type="text"
+        id="pname"
+        name="pname"
+        placeholder="Nhập tên sản phẩm"
+      /><br />
+      <label for="ptype">Loại Sản Phẩm</label><br />
+      <select name="ptype">
+        <option value="ROBOT">ROBOT</option>
+        <option value="DOLL">DOLL</option>
+        <option value="ĐỒ CHƠI LẮP GHÉP">LEGO</option>
+        <option value="ĐỒ CHƠI VẬN ĐỘNG">ĐỒ CHƠI VẬN ĐỘNG</option>
+      </select>
+      <br />
+      <br />
+      <label for="price">Khoảng Giá</label><br />
+      <input type="number" id="min" name="min" min="0" placeholder="Từ" />
+      <span>-</span>
+      <input type="number" id="max" name="max" min="0" placeholder="Đến" />
+      <br />
+      <br />
+      <input
+        type="submit"
+        value="Tìm kiếm"
+        onclick="alert('Tìm kiếm thành công !!!')"
+      />
+      <span> &nbsp; </span>
+      <input type="reset" value="Reset" />
     </div>
+  </form>
+</div>
     <div style="display: block;margin-top: auto;">
       <footer>
         <ul style="margin-left: 3%" class="footer">

@@ -19,9 +19,9 @@
         $type = $show['TypeName'] ;
         $sql = "SELECT * FROM product WHERE TypeName = '$type' "  ;
         $resP = mysqli_query($conn,$sql) ;
-        $count = 1 ;
         while ($row = mysqli_fetch_assoc($resP))
         {
+            if ($row["Status"]){
             echo '<div class="product">    <!--DONE-->
                     <div class="img">' ;
                     if (!empty($row['ImageUrl']))
@@ -32,11 +32,12 @@
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>
                         <div class="price">' .$row['Price']. ' VNĐ</div>
-                        <div class="icon"><a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'"></a>
+                        <div class="icon">
+                            <a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'"></a>
                             <a class="ti-settings" href="updateproduct.php?productName=' .$row['ProductName']. '"></a></div>
                     </div>
                 </div>' ;
-            $count++ ;
+            }
         }
         echo "</div>" ;
     }

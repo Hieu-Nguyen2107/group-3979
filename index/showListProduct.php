@@ -18,9 +18,9 @@
         $type = $show['TypeName'] ;
         $sql = "SELECT * FROM product WHERE TypeName = '$type' "  ;
         $resP = mysqli_query($conn,$sql) ;
-        $count = 1 ;
         while ($row = mysqli_fetch_assoc($resP))
         {
+            if ($row["Status"]){
             echo '<a class="product" href="trangchitiet/trangchitiet.php?productName=' .$row['ProductName']. '">    <!--DONE-->
                     <div class="img">';
                     if (!empty($row['ImageUrl']))
@@ -33,7 +33,7 @@
                         <div class="price">' .$row['Price']. ' VNĐ</div>
                     </div>
                 </a>' ;
-            $count++ ;
+            }
         }
         echo "</div>" ;
     }

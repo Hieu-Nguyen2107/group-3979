@@ -46,16 +46,22 @@ div.element > a.ti-trash{
     margin: 21px;
     display: none;
 }
-div.element > div.ti-plus{
+.ti-plus{
     position: absolute;
     color: red;
-    font-size: 20px;
-    margin: 24px;
+    font-size: 25px;
+    margin: 21px;
+    display: none;
+    text-decoration: none;
+    cursor: pointer;
 }
 div#img-delete{
     display: block;
 }
 div.delete:hover a.ti-trash{
+    display: block;
+}
+div.add:hover .ti-plus{
     display: block;
 }
 div.add:hover div.bgadd{

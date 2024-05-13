@@ -12,21 +12,18 @@
         $name = $_POST['pname'] ;
         $price = $_POST['pprice'] ;
         //  add file image
-        $target_dir = "../../productImage/" .$type. "/" ;
-        $sql = "SELECT COUNT(*) as c FROM product WHERE TypeName = '$type' " ;
-        $count = mysqli_query($conn,$sql) ;
-        $row = mysqli_fetch_assoc($count) ; 
-        $target_file = $target_dir . $type. $row['c']+1 . '.jpg' ;
+        $target_dir = "../../productImage/" .$type. "/" ; 
+        $target_file = $target_dir . basename($_FILES["pimage"]["name"]) ;
         $uploadOk = 1 ;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
         
-        if (!empty($_POST['pimage']))
-            $img = "productImage/" .$type. "/" . $type. $row['c']+1 . '.jpg' ;
+        if (!empty($_FILES["pimage"]["name"]))
+            $img = "productImage/" . $type . "/" . $_FILES["pimage"]["name"] ;
         else
             $img = "" ;
         $des = $_POST['pdescribe'] ;
 
-        $sql = "INSERT INTO product VALUES('$type','$name','$price','$img','$des') " ;
+        $sql = "INSERT INTO product VALUES('$type','$name','$price','$img','$des',1) " ;
 
         if (mysqli_query($conn,$sql)) {
             if (move_uploaded_file($_FILES["pimage"]["tmp_name"], $target_file))
@@ -47,7 +44,7 @@
     if (isset($_GET['deleteP'])){
     
         $name = $_GET['productName'] ;
-        $sql = "DELETE FROM product WHERE ProductName = '$name' " ;
+        $sql = "UPDATE product SET product.Status = 0 WHERE ProductName = '$name' " ;
         mysqli_query($conn,$sql) ;
         mysqli_close($conn) ;
         header ("Location: deleteproduct.php") ;
@@ -60,6 +57,38 @@
         $name = $_GET['productName'] ;
         $sql = "UPDATE product SET ImageUrl='' WHERE ProductName='$name'" ;
         mysqli_query($conn,$sql) ;
+        mysqli_close($conn) ;
+        header ("Location: updateproduct.php?productName=$name") ;
+        exit ;
+    }
+    //  them hinh san pham
+    if (isset($_POST['addImageProduct'])){
+        $name = $_POST["pName"] ;
+        $sql = "SELECT * FROM product WHERE ProductName='$name'" ;
+        $result = mysqli_query($conn,$sql) ;
+        $row = mysqli_fetch_assoc($result) ; 
+        $type = $row["TypeName"] ;
+        $target_dir = "../../productImage/" .$type. "/" ; 
+        $target_file = $target_dir . basename($_FILES["fileUpload"]["name"]) ;
+        $uploadOk = 1 ;
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION) ;
+        
+        if (!empty($_FILES["fileUpload"]["name"]))
+            $img = "productImage/" . $type . "/" . $_FILES["fileUpload"]["name"] ;
+        else
+            $img = "" ;
+
+        $sql = "UPDATE product SET ImageUrl='$img' WHERE ProductName='$name' " ;
+
+        if (mysqli_query($conn,$sql)) {
+            if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file))
+                echo basename( $target_file ) ."was uploaded" ;
+            else
+                echo "Error" ;
+        }
+        else{
+            echo "Error" ;
+        }
         mysqli_close($conn) ;
         header ("Location: updateproduct.php?productName=$name") ;
         exit ;
