@@ -30,8 +30,8 @@
                       </form>
                   </div>
                   <div style="line-height: 30px;"> <!--Describe-->
-                  <p><b>Mô Tả Sản Phẩm</b><br/>
-                    ' .$row['Describe']. '</p>
+                  <p><b>Mô Tả Sản Phẩm</b><br/></p>
+                   <p> ' .$row['Describe']. '</p>
                 </div>
                   <div style="float: right;margin: 20px 30px;"><a href="../index.php"><button style="font-size: 17px;"><i class="ti-arrow-left"></i>Quay lại</button></a></div>
                 </div>

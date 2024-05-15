@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="index.css" type="text/css">
 <?php 
     $severname = "localhost" ;
     $username = "root" ;

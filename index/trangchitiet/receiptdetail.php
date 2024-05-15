@@ -1,26 +1,36 @@
 <?php 
     session_start() ;
     function submitShow(){
+        var_dump ($_POST["address"]) ;
+        var_dump ($_POST["method"]) ;
+        if (!isset($_POST["address"]) || !isset($_POST["method"]))
+        {
+            // header ("Location: userelements/shoppingCart.php");
+            // exit ;
+        }else{
         include "connection.php" ;
         $account = $_GET["acc"] ;
         $sql = "SELECT COUNT(*) as c FROM receipt " ;
         $result = mysqli_query($conn,$sql) ;
         $count = mysqli_fetch_assoc($result) ;
-        $count["c"] += 1 ;
-        $sql2 = "INSERT INTO receipt (ReceiptID, NameAccount) VALUES ('" .$count["c"]. "', '$account') ;" ;
+        $id = $count["c"] + 1 ;
+        $address = $_POST["address"] ;
+        $method = $_POST["method"] ;
+        $sql2 = "INSERT INTO receipt VALUES ('$id', '$account',0,'$method',CURRENT_TIMESTAMP,'$address') ;" ;
         mysqli_query($conn,$sql2) ;
         $cart = $_SESSION["products"] ;
         foreach ($cart as $i){
             $sql3 = "SELECT TypeName FROM product WHERE ProductName = '$i[0]'" ;
             $result = mysqli_query($conn,$sql3) ;
             $row = mysqli_fetch_assoc($result) ;
-            $sql4 = "INSERT INTO receiptdetail VALUES ('" .$count["c"]. "','".$i[0]."','".$row["TypeName"]."','".$i[1]."')" ;
+            $sql4 = "INSERT INTO receiptdetail VALUES ('$id','".$i[0]."','".$row["TypeName"]."','".$i[1]."')" ;
             mysqli_query($conn,$sql4) ;
         }
         session_unset() ;
-        setcookie("receiptID",$count['c'],time() + (86400 * 30), "/") ;
+        setcookie("receiptID",$id,time() + (86400 * 30), "/") ;
         header ("Location: receiptdetail.php") ;
         exit ;
+        }
     }
 
     if (isset($_POST["submitCart"])){
@@ -58,7 +68,7 @@
         <div><i class="ti-user"></i><b>Thông tin khách hàng</b></div>
         <div id="information">
             Tên: ' .$cus["Name"]. '    <br/>
-            Địa chỉ: ' .$cus["Address"]. '<br/>
+            Địa chỉ: ' .$row["Address"]. '<br/>
         </div>
         </div>' ;
 
@@ -79,7 +89,7 @@
             <div id="detail">
                 <span id="amount">x' .$row["Amount"]. '</span> <br/>
                 <span>&#8363 ' .$product["Price"]. ' VNĐ</span> <br/>
-                <span id="price-container"><b>Tổng cộng: &#8363 <span id="price">' .(int) $product["Price"] * $row["Amount"]. '000 VNĐ</span></b></span>
+                <span id="price-container"><b>Tổng cộng: &#8363 <span id="price">' .(int) $product["Price"] * $row["Amount"]. ' VNĐ</span></b></span>
             </div>
         </div>' ;
         $total += (int) $product["Price"] * $row["Amount"] ;
@@ -87,7 +97,7 @@
 
         echo '<div id="sum">
             <span id="logo"><b><i class="ti-money"></i>Thành tiền:</b></span>  <br/>
-            <span id="total-price">&#8363 ' .$total. '000 VNĐ</span>
+            <span id="total-price">&#8363 ' .$total. ' VNĐ</span>
         </div>
         </div>
         <a class="back-button" href="userelements/accountinform.php"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>

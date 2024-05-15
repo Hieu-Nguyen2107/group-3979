@@ -32,8 +32,8 @@
             <div class="user-manage">
             <div><button onclick="showmenu('user-manage-menu');">Quản lý người dùng</button></div>
             <div id="user-manage-menu">
-              <div><a href="trangchitiet/adminelements/checkuser.php"><button>Kiểm Tra Và Chỉnh Sửa Thông Tin Người Dùng</button></a></div><!--DONE-->
               <div><a href="trangchitiet/adminelements/adduser.php"><button>Thêm Người Dùng</button></a></div>  <!--DONE-->
+              <div><a href="trangchitiet/adminelements/checkuser.php"><button>Kiểm Tra Và Chỉnh Sửa Thông Tin Người Dùng</button></a></div><!--DONE-->
             </div>
             </div>
             <div><a href="trangchitiet/adminelements/manageuserreceipt.php"><button>Quản Lý Đơn Hàng Người Dùng</button></a></div><!--Xem chi tiết các đơn hàng, hiện thỉ trạng thái đơn hàng (đang đóng gói,đang vận chuyển, đã giao)-->

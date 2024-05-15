@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="../../index.css" type="text/css">
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
-        <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
     </head>
     <body>
         <?php include "headerCoSearch.php" ; ?>

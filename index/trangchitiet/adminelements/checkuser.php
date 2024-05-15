@@ -33,7 +33,7 @@
         </style>
     </head>
     <body>
-        <?php include "headerCoSearch.php" ; ?>
+        <?php include "headerAdmin.php" ; ?>
         <?php 
             echo '<h1 style="margin: 15px 20px;text-align: center;">Thông Tin Người Dùng</h1>' ;
             echo '<div class="body-user"> ' ;

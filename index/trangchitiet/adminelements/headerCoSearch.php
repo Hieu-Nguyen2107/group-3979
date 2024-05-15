@@ -2,17 +2,24 @@
     <div id="header">
         <ul class="menubar" id="nav">
         <li><a href="../../indexadmin.php">home</a></li>
-        <div class="search-container" style = "margin-left: 200px;">
-            <input type="text" id="search-input" placeholder="Tìm kiếm..." />
-            <a href="../phanloaisanpham/timkiem1.php">
-            <button type="button" id="search-button">Tìm kiếm</button>
-            </a>
+        <div class="search-container">
+            <form method="GET" action="timkiemsanpham.php">
+            <input type="text" id="search-input" placeholder="Tìm kiếm..." name ="noidung" />
+            <button type="submit" name = "btn" id="search-button">Tìm kiếm</button>
+            </form>
         </div>
         <div class="user-container" style="margin-left: auto;margin-right: 30px;">
         <div class="admin-popup">
             <!-- <i class="user-icon ti-user">Admin</i> -->
             <div>
-            <img src="avauser/moi.jpg"><span>Moi</span>
+            <?php
+            include "../connection.php" ;
+            $acc = $_COOKIE["admin"] ;
+            $sql = "SELECT * FROM customer WHERE NameAccount='$acc'" ;
+            $result = mysqli_query($conn,$sql) ;
+            $row = mysqli_fetch_assoc($result) ;
+            echo '<img src="' .$row["AvatarUrl"]. '"><span>Moi</span>' ;
+            ?>
             </div>
             <!-- <div class="popup">
             <div>

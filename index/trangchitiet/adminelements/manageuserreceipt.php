@@ -8,49 +8,49 @@
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
         <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
-        <script>
-          function check(receipt,status) {
-            if(!!sessionStorage)
-            {
-              let parent = document.getElementById(receipt);
-              var target;
-              if ( status == 'processed'){
-                parent.querySelector('#processed').style.textDecoration = "underline";
-                parent.querySelector('#notprocessed').style.textDecoration = "none";
-              }else{
-                parent.querySelector('#processed').style.textDecoration = "none";
-                parent.querySelector('#notprocessed').style.textDecoration = "underline";
-              }
-              sessionStorage.setItem(receipt,status);
-            }
-          }
-        </script>
     </head>
     <body>
-      <?php include "headerCoSearch.php" ; ?>
+      <?php include "headerAdmin.php" ; ?>
       <div class="body-manageuserreceipt">
         <h1 style="text-align: center;margin-top: 20px;margin-bottom: 25px;">Quản Lý Đơn Hàng</h1>
-        <form name="frm">
+        <form name="frm" action="" method="POST">
           <span style="margin-left: 10px;"><b>Khoảng thời gian: </b></span>
-          <input type="number" id="time" name="time" min="1" placeholder="1" style="width: 50px;">
-          <select name="slt">
-            <option value="" selected disabled hidden>Ngày , Tháng , Năm</option>
-            <option value="Ngày">Ngày</option>
-            <option value="Tháng">Tháng</option>
-            <option value="Năm">Năm</option>
+          <lable for="startDate">Từ</lable>
+          <input type="date" name="startDate" />
+          <lable for="endDate">Đến</lable>
+          <input type="date" name="endDate" />
+          <select name="statusReceipt">
+          <option value="" selected disabled hidden>Tình trạng đơn hàng</option>
+            <option value = "0">Đang vận chuyển</option>
+            <option value = "1">Đã giao</option>
+            <option value = "2">Đã hủy</option>
           </select>
-          <button class="ti-search" style="padding: 5px;"></button>
+          <input name="dateSubmit" type="submit" value="Find" />
         </form>
-        <script>
-          function showbody(){
-            document.getElementById("frame-userreceipt").style.display = "block";
-          }
-        </script>
         <?php 
+        include "../connection.php" ;
+        if (isset($_POST["valuestatus"]) && isset($_POST["id"]))
+        {
+          $value = $_POST["valuestatus"] ;
+          $id = $_POST["id"] ;
+
+          $sql = "UPDATE receipt SET receipt.Status='$value' WHERE ReceiptID='$id'" ;
+          mysqli_query($conn,$sql) ;
+        }
         echo '<div class="frame-userreceipt">' ;
 
-        include "../connection.php" ;
-        $sql = "SELECT * FROM receipt" ;
+        
+        if (isset($_POST["dateSubmit"]))
+        {
+          if (!isset($_POST["startDate"]) || !isset($_POST["endDate"]) || !isset($_POST["statusReceipt"]))
+          {
+            echo '<p>Vui lòng điền đầy đủ thông tin</p>' ;
+          }else{
+        $start = $_POST["startDate"] ;
+        $end = $_POST["endDate"] ;
+        $status = $_POST["statusReceipt"] ;
+
+        $sql = "SELECT * FROM receipt WHERE receipt.Status='$status' AND (DateReceipt BETWEEN '$start' AND '$end' ) " ;
         $result = mysqli_query($conn,$sql) ;
         while ( $row = mysqli_fetch_assoc($result) ){
         $sql = "SELECT * FROM customer WHERE NameAccount = '" .$row["NameAccount"]. "'" ;
@@ -66,17 +66,53 @@
             <span id="receipt-inform">     
               Tên: ' .$cus["Name"]. '    <br/>
               Email: ' .$cus["Email"]. '  <br/>
-              Địa chỉ: ' .$cus["Address"]. '<br/>
-            </span>
-            <span id="receipt-status">Trạng thái đơn hàng: <span id="processed">Đang đóng gói</span> / <span id="notprocessed"">Đang vận chuyển</span> / <span id="notprocessed"">Đã giao</span></span>
-          </span>
+              Địa chỉ: ' .$row["Address"]. '<br/>
+            </span>' ;
+            if ($row["Status"] == 0){
+              echo '
+                <span id="receipt-status">Trạng thái đơn hàng: 
+                <button id="packaging" onclick="changeStatus('.$row["ReceiptID"].',0)" style="background-color: pink">Đang vận chuyển</button> / 
+                <button id="delivering" onclick="changeStatus('.$row["ReceiptID"].',1)" >Đã giao</button> / 
+                <button id="delivered" onclick="changeStatus('.$row["ReceiptID"].',2)" >Đã hủy</button></span>
+                ' ;
+            }
+            if ($row["Status"] == 1){
+              echo '
+                <span id="receipt-status">Trạng thái đơn hàng: 
+                <button id="packaging" onclick="changeStatus('.$row["ReceiptID"].',0)" >Đang vận chuyển</button> / 
+                <button id="delivering" onclick="changeStatus('.$row["ReceiptID"].',1)" style="background-color: pink">Đã giao</button> / 
+                <button id="delivered" onclick="changeStatus('.$row["ReceiptID"].',2)" >Đã hủy</button></span>
+                ' ;
+            }
+            if ($row["Status"] == 2){
+              echo '
+                <span id="receipt-status">Trạng thái đơn hàng: 
+                <button id="packaging" onclick="changeStatus('.$row["ReceiptID"].',0)" >Đang vận chuyển</button> / 
+                <button id="delivering" onclick="changeStatus('.$row["ReceiptID"].',1)" >Đã giao</button> / 
+                <button id="delivered" onclick="changeStatus('.$row["ReceiptID"].',2)" style="background-color: pink">Đã hủy</button></span>
+                ' ;
+            }
+        echo'  </span>
         </div>' ;
+        }
+        }
         }
 
         echo '</div>
         <a href="../../indexadmin.php" style="margin-left: auto;margin-right: 15px;margin-top: 10px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>
         ' ;
         ?>
+        <form id="noname" action="" method="POST">
+          <input id="id" name="id" type="hidden">
+          <input id="valuestatus" name="valuestatus" type="hidden">
+        </form>
+        <script>
+          function changeStatus(hc,bt){
+            document.getElementById("id").value = hc ;
+            document.getElementById("valuestatus").value = bt ;
+            document.getElementById("noname").submit() ;
+          }
+        </script>
       </div>
       <div style="display: block;margin-top: auto;">
         <?php include "footerAdmin.php" ?>

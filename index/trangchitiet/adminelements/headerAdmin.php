@@ -6,7 +6,14 @@
         <div class="admin-popup">
             <!-- <i class="user-icon ti-user">Admin</i> -->
             <div>
-            <img src="avauser/moi.jpg"><span>Moi</span>
+            <?php
+            include "../connection.php" ;
+            $acc = $_COOKIE["admin"] ;
+        $sql = "SELECT * FROM customer WHERE NameAccount='$acc'" ;
+        $result = mysqli_query($conn,$sql) ;
+        $row = mysqli_fetch_assoc($result) ;
+        echo '<img src="' .$row["AvatarUrl"]. '"><span>Moi</span>' ;
+            ?>
             </div>
             <!-- <div class="popup">
             <div>

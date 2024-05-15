@@ -46,26 +46,11 @@ div.element > a.ti-trash{
     margin: 21px;
     display: none;
 }
-input.ti-plus{
-    position: absolute;
-    color: red;
-    font-size: 25px;
-    margin: 21px;
-    display: none;
-    text-decoration: none;
-    cursor: pointer;
-}
 div#img-delete{
     display: block;
 }
 div.delete:hover a.ti-trash{
     display: block;
-}
-div#ava-delete:hover input.ti-plus{
-    display: block;
-}
-div#ava-delete:hover form#addAva{
-    opacity: 0.5;
 }
 div.element:hover > img{
     opacity: 0.5;

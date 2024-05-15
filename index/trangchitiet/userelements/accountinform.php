@@ -28,7 +28,7 @@
             <span>Email: ' .$cus["Email"]. '</span>
         </div>
     </div>
-    <div class="receipt-history">
+    <div class="receipt-history" style="margin-bottom: 40px">
 
         <h3 style="margin-bottom: 20px;">Lịch sử đơn hàng</h3>
 
@@ -36,8 +36,7 @@
 
             <tr>
                 <td><b>Mã Đơn Hàng</b></td>
-                <td><b>Thời gian</b></td>
-                <td><b>Tổng cộng</b></td>
+                <td><b>Ngày đặt hàng</b></td>
                 <td><b>Phương thức</b></td>
                 <td><b>Trạng thái đơn hàng</b></td>
                 <td></td>
@@ -49,11 +48,18 @@
             {
               echo '<tr>
                 <td>#' .$row["ReceiptID"]. '</td>
-                <td>10/12/2023 14:57</td>
-                <td>&#8363 2,247,000</td>
-                <td>Chuyển khoản</td>
-                <td>Đang vận chuyển</td>
-                <td><a href="../receiptdetail.php?history=true&receiptid=' .$row["ReceiptID"]. '">Xem chi tiết đơn hàng</a></td>
+                <td>' .$row["DateReceipt"]. '</td>';
+              if ($row["Method"] == 0)
+                echo '<td>Tiền mặt</td>' ;
+              if ($row["Method"] == 1)
+                echo '<td>Chuyển khoản</td>' ;
+              if ($row["Status"] == 0)
+                echo '<td>Đang vận chuyển</td>' ;  
+              if ($row["Status"] == 1)
+                echo '<td>Đã giao</td>' ;  
+              if ($row["Status"] == 2)
+                echo '<td>Đã hủy</td>' ;  
+              echo'  <td><a href="../receiptdetail.php?history=true&receiptid=' .$row["ReceiptID"]. '">Xem chi tiết đơn hàng</a></td>
               </tr>' ;
             }
 

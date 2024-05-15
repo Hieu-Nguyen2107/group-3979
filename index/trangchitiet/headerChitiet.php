@@ -9,39 +9,26 @@
             <i class="nav-arrow-down ti-angle-down"></i>
         </a>
         <ul class="subnav">
-            <li>
-            <a href="../phanloaisanpham/robot.php">ROBOT</a>
-            </li>
-            <li>
-            <a href="../phanloaisanpham/doll.php">BÚP BÊ</a>
-            </li>
-            <li>
-            <a href="../phanloaisanpham/lego.php"
-                >ĐỒ CHƠI LẮP GHÉP</a
-            >
-            </li>
-            <li>
-            <a href="../phanloaisanpham/dcvd.php"
-                >ĐỒ CHƠI VẬN ĐỘNG</a
-            >
-            </li>
+            <li><a href="../../phanloai.php?typeSelect=robot">ROBOT</a></li>
+            <li><a href="../../phanloai.php?typeSelect=doll">BÚP BÊ</a></li>
+            <li><a href="../../phanloai.php?typeSelect=lego">ĐỒ CHƠI LẮP GHÉP</a></li>
+            <li><a href="../../phanloai.php?typeSelect=dochoivandong">ĐỒ CHƠI VẬN ĐỘNG</a></li>
         </ul>
         </li>
         <!-- Thêm phần tìm kiếm -->
         <li>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Tìm kiếm..." />
-            <a href="../phanloaisanpham/timkiem1.php">
-            <button type="button" id="search-button">Tìm kiếm</button>
-            </a>
-        </div>
+            <div class="search-container">
+            <form method="GET" action="../dstimkiemcoban.php">
+            <input type="text" id="search-input" placeholder="Tìm kiếm..." name ="noidung" />
+            <button type="submit" name = "btn" id="search-button">Tìm kiếm</button>
+            </form>
+            <div class="search-advanced-container">
+                <a href="userelements/advancedsearch.php">
+                    <button id="search-advanced-button">Tìm kiếm nâng cao</button>
+                </a>
+            </div>
+            </div>
         </li>
-        <!--Thêm phần tìm kiếm nâng cao-->
-        <div class="search-advanced-container">
-        <a href="advancedsearch.php">
-            <button id="search-advanced-button">Tìm kiếm nâng cao</button>
-        </a>
-        </div>
 
         <!-- Thêm phần đăng nhập/đăng ký -->
         <div class="user-container">

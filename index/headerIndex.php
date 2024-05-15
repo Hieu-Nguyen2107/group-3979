@@ -9,16 +9,16 @@
             <i class="nav-arrow-down ti-angle-down"></i>
             </a>
             <ul class="subnav">
-            <li><a href="trangchitiet/phanloaisanpham/robot.php">ROBOT</a></li>
-            <li><a href="trangchitiet/phanloaisanpham/doll.php">BÚP BÊ</a></li>
-            <li><a href="trangchitiet/phanloaisanpham/lego.php">ĐỒ CHƠI LẮP GHÉP</a></li>
-            <li><a href="trangchitiet/phanloaisanpham/dcvd.php">ĐỒ CHƠI VẬN ĐỘNG</a></li>
+            <li><a href="phanloai.php?typeSelect=robot">ROBOT</a></li>
+            <li><a href="phanloai.php?typeSelect=doll">BÚP BÊ</a></li>
+            <li><a href="phanloai.php?typeSelect=lego">ĐỒ CHƠI LẮP GHÉP</a></li>
+            <li><a href="phanloai.php?typeSelect=dochoivandong">ĐỒ CHƠI VẬN ĐỘNG</a></li>
             </ul>
         </li>
         <!-- Thêm phần tìm kiếm -->
         <li>
             <div class="search-container">
-            <form method="post" action="dstimkiemcoban.php">
+            <form method="GET" action="dstimkiemcoban.php">
             <input type="text" id="search-input" placeholder="Tìm kiếm..." name ="noidung" />
             <button type="submit" name = "btn" id="search-button">Tìm kiếm</button>
             </form>
