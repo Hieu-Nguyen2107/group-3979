@@ -33,7 +33,7 @@
           <div class="container-statistics">' ;
 
             include "../connection.php" ;
-            $sql = "SELECT * FROM receipt INNER JOIN customer ON receipt.NameAccount = customer.NameAccount WHERE DateReceipt BETWEEN '$start' AND '$end'" ;
+            $sql = "SELECT * FROM receipt INNER JOIN customer ON receipt.NameAccount = customer.NameAccount WHERE DateReceipt BETWEEN '$start' AND '$end' AND receipt.Status != 2" ;
             $result = mysqli_query($conn,$sql) ;
             $endTotal = 0 ;
             while ( $row = mysqli_fetch_assoc($result) )

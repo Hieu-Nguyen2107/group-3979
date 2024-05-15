@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Kết nối đến cơ sở dữ liệu và thực hiện truy vấn
     include "trangchitiet/connection.php";
 
-    $sql = "SELECT * FROM product WHERE 1=1";
+    $sql = "SELECT * FROM product WHERE 1=1 AND product.Status = 1";
 
     // Thêm điều kiện tìm kiếm cho Tên sản phẩm
     if (!empty($pname)) {
@@ -63,6 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!empty($ptype)) {
         if ($ptype == 'ĐỒ CHƠI VẬN ĐỘNG')
             $ptype = 'dochoivandong';
+        if ($ptype == 'ĐỒ CHƠI LẮP GHÉP')
+            $ptype = 'lego';
         $sql .= " AND TypeName = '$ptype'";
     }
 
@@ -88,12 +90,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $result = mysqli_query($conn, $sql);
 
     // Kiểm tra xem có bản ghi phù hợp hay không
+    echo '<div class="product-row">';
     echo'<h2>Kết quả tìm kiếm: </h2>';
+
     if (mysqli_num_rows($result) > 0) {
         // Hiển thị kết quả tìm kiếm
         while ($row = mysqli_fetch_array($result)) {
             // Xử lý và hiển thị thông tin sản phẩm
-            if ($row["Status"]){
 echo '<a class="product" href="trangchitiet/trangchitiet.php?productName=' . $row['ProductName'] . '">    <!--DONE-->
                     <div class="img">';
             if (!empty($row['ImageUrl']))
@@ -106,11 +109,11 @@ echo '<a class="product" href="trangchitiet/trangchitiet.php?productName=' . $ro
                         <div class="price">' . $row['Price'] . ' VNĐ</div>
                     </div>
                 </a>';
-            }
         }
     } else {
         echo "Không tìm thấy sản phẩm phù hợp.";
     }
+    echo '</div>' ;
 
     // Hiển thị phân trang
     echo '<div class="pagination">';

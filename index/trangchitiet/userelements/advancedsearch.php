@@ -40,7 +40,6 @@
       <input
         type="submit"
         value="Tìm kiếm"
-        onclick="alert('Tìm kiếm thành công !!!')"
       />
       <span> &nbsp; </span>
       <input type="reset" value="Reset" />

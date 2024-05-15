@@ -18,12 +18,12 @@
         <!-- Thêm phần tìm kiếm -->
         <li>
             <div class="search-container">
-            <form method="GET" action="../dstimkiemcoban.php">
+            <form method="GET" action="../../dstimkiemcoban.php">
             <input type="text" id="search-input" placeholder="Tìm kiếm..." name ="noidung" />
             <button type="submit" name = "btn" id="search-button">Tìm kiếm</button>
             </form>
             <div class="search-advanced-container">
-                <a href="userelements/advancedsearch.php">
+                <a href="advancedsearch.php">
                     <button id="search-advanced-button">Tìm kiếm nâng cao</button>
                 </a>
             </div>

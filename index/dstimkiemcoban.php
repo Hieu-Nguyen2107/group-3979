@@ -42,7 +42,7 @@ include "trangchitiet/connection.php";
 $noidung = isset($_GET['noidung']) ? $_GET['noidung'] : '';
 
 if (!empty($noidung)) {
-    $sql = "SELECT * FROM product WHERE ProductName LIKE '%$noidung%'";
+    $sql = "SELECT * FROM product WHERE ProductName LIKE '%$noidung%' AND product.Status = 1";
     $result = mysqli_query($conn, $sql);
 
     $totalProducts = mysqli_num_rows($result);
@@ -60,7 +60,6 @@ if (!empty($noidung)) {
     $foundProducts = false; // Biến kiểm tra có kết quả tìm kiếm hay không
     while ($row = mysqli_fetch_array($result)) {
         $foundProducts = true; // Đánh dấu có kết quả tìm kiếm
-        if ($row["Status"]){
         echo '<a class="product" href="trangchitiet/trangchitiet.php?productName=' . $row['ProductName'] . '">    <!--DONE-->
                 <div class="img">';
         if (!empty($row['ImageUrl']))
@@ -73,7 +72,6 @@ if (!empty($noidung)) {
                     <div class="price">' . $row['Price'] . ' VNĐ</div>
                 </div>
             </a>';
-        }
     }
     echo '</div>'; // Kết thúc hàng
 
