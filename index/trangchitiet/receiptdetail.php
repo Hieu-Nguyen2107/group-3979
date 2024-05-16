@@ -5,8 +5,8 @@
         var_dump ($_POST["method"]) ;
         if (!isset($_POST["address"]) || !isset($_POST["method"]))
         {
-            // header ("Location: userelements/shoppingCart.php");
-            // exit ;
+            header ("Location: userelements/shoppingCart.php");
+            exit ;
         }else{
         include "connection.php" ;
         $account = $_GET["acc"] ;
@@ -16,7 +16,8 @@
         $id = $count["c"] + 1 ;
         $address = $_POST["address"] ;
         $method = $_POST["method"] ;
-        $sql2 = "INSERT INTO receipt VALUES ('$id', '$account',0,'$method',CURRENT_TIMESTAMP,'$address') ;" ;
+        $total = $_POST["total"] ;
+        $sql2 = "INSERT INTO receipt VALUES ('$id', '$account',0,'$method',CURRENT_TIMESTAMP,'$address','$total') ;" ;
         mysqli_query($conn,$sql2) ;
         $cart = $_SESSION["products"] ;
         foreach ($cart as $i){

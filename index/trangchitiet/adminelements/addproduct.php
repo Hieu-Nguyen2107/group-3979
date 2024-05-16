@@ -25,14 +25,26 @@
             <label for="productprice">Giá tiền sản phẩm:</label><br/>
             <input type="text" id="pprice" name="pprice" placeholder="&#8363 Giá tiền sản phẩm"><br/>
             <label for="productimage">Hình ảnh sản phẩm:</label><br/>
-            <input type="file" id="pimage" name="pimage" accept="img/png, img/jpeg"><br/>
+            <input type="file" id="pimage" name="pimage" accept="img/png, img/jpeg" onchange = "displayImg(this)"><br/>
+            <img src="" id="previewImage" style ="width : 10%"> <br>
             <label for="productdescribe">Mô tả sản phẩm:</label><br/>
             <textarea type="text" id="pdescribe" name="pdescribe" rows="25" cols="150" placeholder="Mô tả sản phẩm"></textarea><br/>
             <input name = "submitAddP" class="submit" type="submit" value="Thêm">
-            <input class="reset" type="reset" value="Reset">
         </form>
         <div style="display: block;margin-top: auto;">
           <?php include "footerAdmin.php" ; ?>
         </div>
     </body>
+    <script>
+      function displayImg(input){
+        var file = input.files[0];
+        if(file){
+          var reader = new FileReader();
+          reader.onload = function (e){
+            document.getElementById("previewImage").src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
 </html>

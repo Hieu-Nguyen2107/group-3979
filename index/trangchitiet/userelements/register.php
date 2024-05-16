@@ -15,7 +15,7 @@
   <body>
     <div class="inform">
       <div class="inner-inform">
-          <form action="registerProcess.php" method="POST">
+          <form id="register" action="registerProcess.php" method="POST">
           <input
             type="text"
             id="email"

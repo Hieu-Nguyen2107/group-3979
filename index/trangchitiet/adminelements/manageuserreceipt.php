@@ -40,17 +40,17 @@
         echo '<div class="frame-userreceipt">' ;
 
         
-        if (isset($_POST["dateSubmit"]))
-        {
+
           if (!isset($_POST["startDate"]) || !isset($_POST["endDate"]) || !isset($_POST["statusReceipt"]))
           {
-            echo '<p>Vui lòng điền đầy đủ thông tin</p>' ;
+            $sql = "SELECT * FROM receipt " ;
           }else{
         $start = $_POST["startDate"] ;
         $end = $_POST["endDate"] ;
         $status = $_POST["statusReceipt"] ;
 
         $sql = "SELECT * FROM receipt WHERE receipt.Status='$status' AND (DateReceipt BETWEEN '$start' AND '$end' ) " ;
+        }
         $result = mysqli_query($conn,$sql) ;
         while ( $row = mysqli_fetch_assoc($result) ){
         $sql = "SELECT * FROM customer WHERE NameAccount = '" .$row["NameAccount"]. "'" ;
@@ -95,8 +95,8 @@
         echo'  </span>
         </div>' ;
         }
-        }
-        }
+        
+        
 
         echo '</div>
         <a href="../../indexadmin.php" style="margin-left: auto;margin-right: 15px;margin-top: 10px;"><button style="padding: 5px 15px;cursor: pointer;"><i class="ti-home" style="margin-right: 5px;"></i>Quay lại trang chủ</button></a>

@@ -2,14 +2,21 @@
 include "../connection.php" ;
 if (isset($_POST["sub"])){
 $email = $_POST['email'] ;
-$nameAccount = $_POST['name'] ;
-$username = $_POST['username'] ;
+$name = $_POST['name'] ;
+$acc = $_POST['username'] ;
 $password = $_POST['pass'] ;
-$address = $_POST['addresss'] ;
+$address = $_POST['address'] ;
 
-$sql = "INSERT INTO customer VALUES ('$email','$nameAccount','$username','$password','null',1,'$address')" ;
+$sql = "INSERT INTO customer VALUES ('$email','$acc','$name','$password','null',1,'$address')" ;
 
-mysqli_query($conn,$sql) ;
+if (mysqli_query($conn,$sql))
+{
+    header ("Location: ../../index.php") ;
+    exit ;
+}else{
+    header ("Location: register.php") ;
+    exit ;
+}
 }
 
 mysqli_close($conn) ;

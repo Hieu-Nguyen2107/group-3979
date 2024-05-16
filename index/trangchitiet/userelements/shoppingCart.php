@@ -114,6 +114,7 @@
             <lable for="method"><b>Phương thức thanh toán:</b></lable><br/><br/>
             <input type="radio" name="method" value="0"/> Tiền mặt <br/><br/>
             <input type="radio" name="method" value="1"/> Chuyển khoản <br/><br/>
+            <input name="total" type="hidden" value="' .$total. '" />
             <input
               name="submitCart"
               type="submit"

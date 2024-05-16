@@ -20,7 +20,6 @@
         $resP = mysqli_query($conn,$sql) ;
         while ($row = mysqli_fetch_assoc($resP))
         {
-            if ($row["Status"]){
             echo '<div class="product">    <!--DONE-->
                     <div class="img">' ;
                     if (!empty($row['ImageUrl']))
@@ -31,12 +30,17 @@
                     <div class="product-detail">
                         <div class="name">' .$row['ProductName']. '</div>
                         <div class="price">' .$row['Price']. ' VNĐ</div>
+                        <div class="status">Trạng thái:' ;
+                if ($row["Status"])
+                    echo 'Hiện' ;
+                else
+                    echo 'Ẩn' ;            
+            echo'</div>
                         <div class="icon">
-                            <a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'"></a>
+                            <a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'&status=' .$row["Status"]. '"></a>
                             <a class="ti-settings" href="updateproduct.php?productName=' .$row['ProductName']. '"></a></div>
                     </div>
                 </div>' ;
-            }
         }
         echo "</div>" ;
     }

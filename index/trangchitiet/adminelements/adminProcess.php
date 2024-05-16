@@ -40,11 +40,15 @@
         }
     }
 
-    //  xoa san pham
+    //  an san pham
     if (isset($_GET['deleteP'])){
     
         $name = $_GET['productName'] ;
-        $sql = "UPDATE product SET product.Status = 0 WHERE ProductName = '$name' " ;
+        $stat = $_GET['status'] ;
+        if ($stat)
+            $sql = "UPDATE product SET product.Status = 0 WHERE ProductName = '$name' " ;
+        else
+            $sql = "UPDATE product SET product.Status = 1 WHERE ProductName = '$name' " ;
         mysqli_query($conn,$sql) ;
         mysqli_close($conn) ;
         header ("Location: deleteproduct.php") ;

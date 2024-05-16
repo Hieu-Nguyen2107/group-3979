@@ -174,6 +174,15 @@ div.receipt{
 span#status{
     display: flex;
 }
+span#receipts{
+    align-self: center;
+    margin-left: 350px;
+}
+span#receipts > a{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
 span#receipt-status , span#receipt-total{
     margin-left: auto;
     align-self: center;

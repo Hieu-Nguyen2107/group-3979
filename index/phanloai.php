@@ -67,7 +67,7 @@
     $result = mysqli_query($conn, $sql);
 
     $totalProducts = mysqli_num_rows($result);
-    $productsPerPage = 4;
+    $productsPerPage = 2;
     $totalPages = ceil($totalProducts / $productsPerPage);
 
     $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;

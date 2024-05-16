@@ -44,9 +44,8 @@ include "../connection.php";
 $noidung = isset($_GET['noidung']) ? $_GET['noidung'] : '';
 
 if (!empty($noidung)) {
-    $sql = "SELECT * FROM product WHERE ProductName LIKE '%$noidung%' AND product.Status = 1";
+    $sql = "SELECT * FROM product WHERE ProductName LIKE '%$noidung%'";
     $result = mysqli_query($conn, $sql);
-
     $totalProducts = mysqli_num_rows($result);
     $productsPerPage = 4;
     $totalPages = ceil($totalProducts / $productsPerPage);
@@ -72,8 +71,14 @@ if (!empty($noidung)) {
             <div class="product-detail">
                 <div class="name">' .$row['ProductName']. '</div>
                 <div class="price">' .$row['Price']. ' VNĐ</div>
+                <div class="status">Trạng thái:' ;
+                if ($row["Status"])
+                    echo 'Hiện' ;
+                else
+                    echo 'Ẩn' ;   
+            echo '</div>
                 <div class="icon">
-                    <a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'"></a>
+                    <a class="ti-trash" href="adminProcess.php?deleteP=delete&productName='.$row['ProductName'].'&status=' .$row["Status"]. '"></a>
                     <a class="ti-settings" href="updateproduct.php?productName=' .$row['ProductName']. '"></a></div>
             </div>
         </div>' ;

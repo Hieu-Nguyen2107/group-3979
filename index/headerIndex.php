@@ -61,7 +61,7 @@
                         echo 'href="trangchitiet/userelements/loginProcess.php"' ;
                     }
                 ?>
-                class="register-link" onclick="checkLogOut()"><span id="dangxuat">
+                class="register-link"><span id="dangxuat">
                 <?php
                     if(!isset($_COOKIE["user"]))
                     {

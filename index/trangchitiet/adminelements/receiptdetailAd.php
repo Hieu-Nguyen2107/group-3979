@@ -2,7 +2,13 @@
 if (isset($_GET["manage"])){
     if ($_GET["manage"])
         setcookie("receiptID",$_GET["receiptid"],time() + (86400 * 30), "/") ;
-    header ("Location: receiptdetailAd.php") ;
+    header ("Location: receiptdetailAd.php?option=1") ;
+    exit ;
+}
+if (isset($_GET["statis"])){
+    if ($_GET["statis"])
+        setcookie("receiptID",$_GET["receiptid"],time() + (86400 * 30), "/") ;
+    header ("Location: receiptdetailAd.php?option=2") ;
     exit ;
 }
 ?>
@@ -62,9 +68,14 @@ if (isset($_GET["manage"])){
             <span id="logo"><b><i class="ti-money"></i>Thành tiền:</b></span>  <br/>
             <span id="total-price">&#8363 ' .$total. '000 VNĐ</span>
         </div>
-        </div>
-        <a class="back-button" href="manageuserreceipt.php"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>
         </div>' ;
+
+        if ($_GET["option"] == 1)
+            echo '<a class="back-button" href="manageuserreceipt.php"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>' ;
+        if ($_GET["option"] == 2)
+            echo '<a class="back-button" href="statistics.php"><button class="ti-arrow-left"><span style="margin-left: 4px;word-spacing: -3px;"><b>Quay lại</b></span></button></a>' ;
+
+        echo '</div>' ;
         ?>
       <div style="display: block;margin-top: auto;">
         <?php include "footerAdmin.php" ; ?>

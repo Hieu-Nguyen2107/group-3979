@@ -7,6 +7,8 @@
         session_start() ;
         $pName = $_GET["pName"] ;
         $amount = (int) $_POST["amount"] ;
+        if ($amount == 0)
+            $amount = 1 ;
         if(!isset($_SESSION["products"])){
             $_SESSION["products"] = [] ;
         }

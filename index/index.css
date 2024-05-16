@@ -423,6 +423,7 @@ div.img > img {
   font-size: 15px;
   font-family: Arial;
   height: 80px;
+  flex-direction: column;
 }
 
 .product-detail .name {
@@ -436,6 +437,10 @@ div.img > img {
   z-index: auto;
   bottom: 0;
   right: 0;
+}
+
+.product-detail .status {
+  margin-left: 10px;
 }
 
 .product:hover {

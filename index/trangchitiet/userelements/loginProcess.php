@@ -3,6 +3,34 @@
     session_start();
     $_SESSION['error']="";
 
+    if (isset($_POST["loginAdmin"]))
+    {
+        if (isset($_COOKIE["admin"])){
+        $acc = $_POST["admin"] ;
+        $pass = $_POST["passAdmin"] ;
+        $sql = " SELECT * FROM admin WHERE NameAccount = '$acc' AND admin.Password= '$pass' " ;
+        $result = mysqli_query($conn,$sql) ;
+        if (mysqli_num_rows($result) == 0)
+        {
+            $_SESSION['error']="Thông tin đăng nhập không hợp lệ";
+            header ("Location: ../../loginAdmin.php") ;
+            exit;
+        }
+        else{
+            
+            $row = mysqli_fetch_assoc($result) ;
+            setcookie("admin",$acc,time() + (86400 * 30), "/") ;
+        }
+        header ("Location:../../indexadmin.php") ;
+        exit ;
+        }else{
+            setcookie("admin", "", time() - 3600, "/") ;
+            unset($_COOKIE["user"]) ;
+            header ("Location: loginAdmin.php") ;
+            exit ;
+        }
+    }
+
     if (!isset($_COOKIE["user"])){
         $cookie_name = "user" ;
         $cookie_value = $_POST['username'] ;

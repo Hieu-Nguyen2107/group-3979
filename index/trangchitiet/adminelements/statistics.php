@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="../../themify-icons-font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="adminelements.css" type="text/css">
         <link rel="stylesheet" href="../chitiet.css" type="text/css">
-        <link rel="shortcut icon" type="image/png" href="../../logo.jpg">
     </head>
     <body>
       <?php include "headerAdmin.php" ; ?>
@@ -33,35 +32,41 @@
           <div class="container-statistics">' ;
 
             include "../connection.php" ;
-            $sql = "SELECT * FROM receipt INNER JOIN customer ON receipt.NameAccount = customer.NameAccount WHERE DateReceipt BETWEEN '$start' AND '$end' AND receipt.Status != 2" ;
+            $sql = "SELECT receipt.NameAccount,SUM(Total) as sum FROM receipt INNER JOIN customer ON receipt.NameAccount = customer.NameAccount WHERE receipt.Status !=2 GROUP BY receipt.NameAccount ORDER BY sum DESC" ;
             $result = mysqli_query($conn,$sql) ;
             $endTotal = 0 ;
+            $count = 0 ;
             while ( $row = mysqli_fetch_assoc($result) )
             {
-              $total = 0 ;
-              $sql = "SELECT * FROM receiptdetail WHERE ReceiptID = '" .$row["ReceiptID"]. "'" ;
+              $name = $row["NameAccount"] ;
+              $sql = "SELECT * FROM customer WHERE NameAccount='$name'" ;
               $result2 = mysqli_query($conn,$sql) ;
-              while($rec = mysqli_fetch_assoc($result2)){
-                $sql = "SELECT * FROM product WHERE ProductName = '" .$rec["ProductName"]. "'" ;
-                $result2 = mysqli_query($conn,$sql) ;
-                $pro = mysqli_fetch_assoc($result2) ;
-                $total += (int) $pro["Price"] * $rec["Amount"] ;
-              }
+              $cus = mysqli_fetch_assoc($result2) ;
               echo '<div class="receipt">
-                <span id="code">Thông tin khách hàng
-                  <!-- <a href="../receipt/receipt1.php">Xem thông tin đơn hàng</a> -->
+                <span id="code">
+                  <span>Thông tin khách hàng</span>
                 </span>
-      
+    
                 <span id="status">     
-                  <span id="receipt-inform">     
-                    Tên: ' .$row["Name"]. '    <br/>
-                    Email: ' .$row["Email"]. '  <br/>
-                    Địa chỉ: ' .$row["Address"]. '<br/>
-                  </span>
-                  <span id="receipt-total">Tổng giá tiền của đơn hàng: &#8363 ' .$total. ' VNĐ</span>
+                <span id="receipt-inform">     
+                  Tên: ' .$cus["Name"]. '    <br/>
+                  Email: ' .$cus["Email"]. '  <br/>
+                  Địa chỉ: ' .$cus["Address"]. '<br/>
+                </span>
+                <span id="receipts" style="margin-left: 280px">Mã đơn hàng:&nbsp' ;
+              $sql = "SELECT * FROM receipt WHERE receipt.Status !=2 AND NameAccount='$name'" ;
+              $result2 = mysqli_query($conn,$sql) ;
+              while ( $rec = mysqli_fetch_assoc($result2) ){
+                echo '<a href="receiptdetailAd.php?statis=true&receiptid=' .$rec["ReceiptID"]. '">#' .$rec["ReceiptID"]. '</a>,&nbsp' ;
+              }
+              echo '</span>
+                  <span id="receipt-total">Tổng giá tiền của khách hàng: &#8363 ' .$row["sum"]. ' VNĐ</span>
                 </span>
               </div>' ;
-              $endTotal += $total ;
+              $endTotal += $row["sum"] ;
+              $count++ ;
+              if ($count == 5)
+                break ;
             }
 
             echo '<span id="total"><i class="ti-money"></i>Tổng cộng: &#8363 ' .$endTotal. '</span>
